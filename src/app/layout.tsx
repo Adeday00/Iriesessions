@@ -1,5 +1,19 @@
 import type { Metadata } from "next";
+import { Archivo, Space_Mono } from "next/font/google";
 import "./globals.css";
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-archivo",
+});
+
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+  variable: "--font-space-mono",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://iriesessions.com"),
@@ -31,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="en" className={`${archivo.variable} ${spaceMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
