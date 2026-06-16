@@ -101,9 +101,9 @@ export const sessions: ContentItem[] = [
     kicker: "Paris / Mar 7 / Book launch",
     image: "/media/soho-house.jpg",
     summary:
-      "A Paris gathering around BORDERS: The Visualscaping Zine, built as a live room, object launch, and cultural timestamp.",
+      "A Paris night launching BORDERS: The Visualscaping Zine — live room, book launch, and the city in one place.",
     body:
-      "A session built around the BORDERS visual world: book launch, performance context, city energy, and documentary texture in one room. The gathering connects editorial object, sound, collaborators, and the images that remain after the night ends.",
+      "Held in Paris around the BORDERS world: the zine launch, a live performance, and the people who made it happen. We documented the night so the room outlasts it.",
     href: "/sessions/soho-house-paris",
     metadata: ["Paris", "Book launch", "Archive-ready"],
   },
@@ -114,9 +114,9 @@ export const sessions: ContentItem[] = [
     kicker: "London / Live series",
     image: "/media/session-crowd.jpg",
     summary:
-      "A live-format bridge between scene, sound, and audience memory. Built to become more than a flyer after the night ends.",
+      "Our London live series — a room for new sound, built with the community that fills it.",
     body:
-      "Culture Shock moves through live sound, city-specific energy, and community presence. Each edition is treated as more than an announcement: the lineup, room, partner context, and recap become part of the Irie archive.",
+      "Each Culture Shock edition is a London night first and an archive entry second: the lineup, the room, the partners, and the recap all live on here after the doors close.",
     href: "/sessions/culture-shock",
     metadata: ["London", "Live series", "Community room"],
   },
@@ -127,9 +127,9 @@ export const sessions: ContentItem[] = [
     kicker: "New York / Collaboration",
     image: "/media/irie-paris.jpg",
     summary:
-      "A collaborative activation connecting Irie’s visual language with artist-led performance and documentary energy.",
+      "A New York collaboration with Bayo — artist-led performance, shot and kept.",
     body:
-      "A collaboration entry shaped by artist presence, visual direction, and the kind of room Irie is built to hold. Credits, stills, campaign language, and partner context all sit together as proof of the cultural work behind the moment.",
+      "Built with Bayo in New York: the performance, the visual direction, and the credits behind it. The stills and the story stay here as proof of the work, not just the night.",
     href: "/sessions/irie-sessions-x-bayo",
     metadata: ["New York", "Collaboration", "Visual archive"],
   },
@@ -142,9 +142,9 @@ export const releases: ContentItem[] = [
     category: "release",
     kicker: "2025 / Album",
     image: "/media/lust-on-the-coast.jpg",
-    summary: "A coastal, nocturnal release page designed for cover art, credits, stream links, visuals, and related stories.",
+    summary: "A coastal, nocturnal 2025 album — cover art, credits, and where to hear it.",
     body:
-      "A coastal, nocturnal release with its own visual atmosphere and listener path. Cover art, credits, stream links, and supporting visuals come together as one owned destination before listeners move out to DSPs.",
+      "Lust on the Coast carries its own late-night atmosphere. The artwork, the credits, and the visuals all sit here in one place before you head out to listen.",
     href: "/music/lust-on-the-coast",
     metadata: ["Album", "2025", "Stream-ready"],
     links: [
@@ -171,9 +171,9 @@ export const releases: ContentItem[] = [
     category: "release",
     kicker: "2022 / Album + zine",
     image: "/media/borders-cover.jpg",
-    summary: "A foundational artifact for the archive: record, visual world, zine object, and launch memory.",
+    summary: "The 2022 album and zine — executive produced by Aday with Chopstix.",
     body:
-      "BORDERS is where Irie’s music, editorial eye, and physical artifact language meet. The record, visualscaping zine, launch memory, photography, and credits all point back to one wider creative world.",
+      "BORDERS is where the music, the photography, and the printed zine meet. Executive produced by Aday alongside Grammy-winning Nigerian producer Chopstix, it remains the cornerstone of the archive.",
     href: "/music/borders",
     metadata: ["Album", "Zine", "Archive object"],
     links: [
@@ -205,9 +205,9 @@ export const releases: ContentItem[] = [
     category: "release",
     kicker: "2025 / EP",
     image: "/media/iforgot-cover.jpg",
-    summary: "A concise EP page for artwork, collaborator notes, playlist embeds, and DSP routing.",
+    summary: "A short 2025 EP — artwork, collaborators, and the stream links in one place.",
     body:
-      "A concise EP with a direct listener path: artwork, premise, streaming links, and supporting media in one place. The page keeps campaign attention with Irie before sending listeners outward to their preferred platform.",
+      "A concise EP that keeps things close: the artwork, the people on it, and where to listen, gathered before you head out to your platform.",
     href: "/music/i-forgot-to-press-send",
     metadata: ["EP", "2025", "DSP funnel"],
     links: [
@@ -239,9 +239,9 @@ export const releases: ContentItem[] = [
     category: "release",
     kicker: "2025 / Single + EP",
     image: "/media/alte-cover.jpg",
-    summary: "A campaign object connecting sound, artwork, credits, and archive context.",
+    summary: "A 2025 single and EP — sound, artwork, and credits together.",
     body:
-      "A.L.T.E is a compact campaign entry connecting sound, artwork, and the surrounding visual language. It gives listeners a clean route into the release while leaving room for collaborators, video, and future archive context.",
+      "A.L.T.E pairs the sound with its artwork and the people behind it — a clean way in, with room for the video and collaborators around it.",
     href: "/music/alte",
     metadata: ["Single", "2025", "Campaign"],
     links: [
@@ -268,9 +268,9 @@ export const releases: ContentItem[] = [
     category: "release",
     kicker: "2026 / Single",
     image: "/media/2am-cover.jpeg",
-    summary: "A late-night entry point for listeners moving from social preview to the owned Irie archive.",
+    summary: "A 2026 late-night single — hear it, then explore what surrounds it.",
     body:
-      "2AM is structured as a direct listener path: arrive from a social clip, understand the release, choose a stream destination, and discover the surrounding Irie archive.",
+      "2AM is built for after-hours: the song, where to stream it, and the wider Irie archive a click away.",
     href: "/music/2am",
     metadata: ["Single", "2026", "Listener path"],
     links: [
@@ -302,7 +302,7 @@ export const artifacts: ContentItem[] = [
     image: "/media/irie-book-cover.jpg",
     summary: "A full-color archival print publication documenting the creative process behind BORDERS.",
     body:
-      "BORDERS: The Visualscaping Zine is a limited first edition softcover publication with a matte finish cover. It documents the creative process behind the 2022 EP executive produced by Aday alongside Grammy Award-winning Nigerian producer Chopstix, transforming photography, layered composition, and intentional sequencing into a record of artistry, diaspora, and collaboration.",
+      "A limited first-edition softcover with a matte cover, documenting the making of the 2022 BORDERS EP — executive produced by Aday with Grammy-winning Nigerian producer Chopstix. Photography, layered composition, and sequencing become a record of artistry, diaspora, and collaboration.",
     href: "/shop/borders-visualscaping-zine",
     metadata: ["Full-color print", "Limited edition", "BORDERS"],
     commerce: {
@@ -342,7 +342,7 @@ export const artifacts: ContentItem[] = [
     image: "/media/hat-black-front.jpg",
     summary: "A limited edition 100% corduroy cotton hat with 3D embroidered Irie text.",
     body:
-      "The Women Make Things 10X Better hat is a black corduroy cotton piece with classic snap closure, 3D embroidered statement text, and the Irie logo. The product details support the black hat with white embroidery, with standard shipping within 24-48 hours of order processing.",
+      "Black corduroy with a classic snap closure, 3D-embroidered statement text, and the Irie logo in white. Ships within 24–48 hours of processing.",
     href: "/shop/women-make-things-10x-better-hat",
     metadata: ["100% corduroy cotton", "Limited edition", "Snap closure"],
     commerce: {
@@ -378,7 +378,7 @@ export const artifacts: ContentItem[] = [
     image: "/media/irie-stud-box.jpg",
     summary: "925 sterling silver stud earrings with sculpted 3D Irie lettering.",
     body:
-      "Irie Stud Earrings are a signature jewelry piece made from 925 sterling silver with a high-polish finish, sculpted 3D Irie lettering, and butterfly back closures for pierced ears. Timeless in spirit and distinctive by design, they ship within 24-48 hours of order processing.",
+      "925 sterling silver with a high-polish finish, sculpted 3D Irie lettering, and butterfly backs for pierced ears. Ships within 24–48 hours of processing.",
     href: "/shop/irie-stud-earrings",
     metadata: ["925 sterling silver", "High-polish finish", "Butterfly backs"],
     commerce: {
@@ -416,9 +416,9 @@ export const opportunities: ContentItem[] = [
     kicker: "Open call / Artist support",
     image: "/media/irie-paris.jpg",
     summary:
-      "A recurring home for grants, criteria, application windows, alumni stories, and collaborative release outcomes.",
+      "Artist support, application windows, and where past grantees ended up.",
     body:
-      "The Irie Global Grant makes reciprocity visible through artist support, collaboration, and release pathways. This is the home for eligibility, submission windows, timelines, alumni notes, and the outcomes connected to each cycle.",
+      "The Irie Global Grant backs artists with support, collaboration, and a route to release. Find eligibility, submission windows, and what past cycles produced.",
     href: "/opportunities/irie-global-grant",
     metadata: ["Grant", "Artists", "Reciprocity"],
   },

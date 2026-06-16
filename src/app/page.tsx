@@ -15,13 +15,13 @@ const pillars = [
   {
     title: "Music",
     kicker: "Releases / Visuals / Credits",
-    copy: "A release architecture for albums, singles, videos, collaborators, liner notes, and stream paths.",
+    copy: "Albums, singles, videos, and the credits behind them — with a clear path to listen.",
     image: "/media/lust-on-the-coast.jpg",
   },
   {
     title: "Artifacts",
     kicker: "Zines / Merch / Objects",
-    copy: "The pieces that remain after the room clears: zines, product drops, photo essays, and printed evidence.",
+    copy: "What stays after the room clears: zines, drops, photo essays, and print.",
     image: "/media/zine-page.jpg",
   },
 ];
