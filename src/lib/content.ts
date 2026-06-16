@@ -98,14 +98,22 @@ export const sessions: ContentItem[] = [
     title: "Soho House Paris",
     slug: "soho-house-paris",
     category: "session",
-    kicker: "Paris / Mar 7 / Book launch",
-    image: "/media/soho-house.jpg",
+    kicker: "Paris / Mar 6 / Soho House",
+    image: "/media/session-paris-02.jpg",
     summary:
-      "A Paris night launching BORDERS: The Visualscaping Zine — live room, book launch, and the city in one place.",
+      "An intimate Paris night at Soho House — the launch of Aday's first book, with sets from RONI and Shifa Ligero.",
     body:
-      "Held in Paris around the BORDERS world: the zine launch, a live performance, and the people who made it happen. We documented the night so the room outlasts it.",
+      "Held at Soho House Paris on March 6th: Aday's first book, unveiled in the city, with a room curated by A Day Living. The night moved from the book to the music — and we kept the images that prove it happened.",
     href: "/sessions/soho-house-paris",
-    metadata: ["Paris", "Book launch", "Archive-ready"],
+    metadata: ["Paris", "Book launch", "Soho House"],
+    gallery: [
+      { src: "/media/session-paris-01.jpg", label: "Women Make Things wall" },
+      { src: "/media/session-paris-04.jpg", label: "Soho House Paris" },
+      { src: "/media/session-paris-05.jpg", label: "The room" },
+      { src: "/media/session-paris-03.jpg", label: "Paris" },
+      { src: "/media/session-paris-06.jpg", label: "Line-up" },
+      { src: "/media/session-paris-07.jpg", label: "On the night" },
+    ],
   },
   {
     title: "Culture Shock",
@@ -125,13 +133,17 @@ export const sessions: ContentItem[] = [
     slug: "irie-sessions-x-bayo",
     category: "session",
     kicker: "New York / Collaboration",
-    image: "/media/irie-paris.jpg",
+    image: "/media/collab-michael-brun.jpg",
     summary:
       "A New York collaboration with Bayo — artist-led performance, shot and kept.",
     body:
       "Built with Bayo in New York: the performance, the visual direction, and the credits behind it. The stills and the story stay here as proof of the work, not just the night.",
     href: "/sessions/irie-sessions-x-bayo",
     metadata: ["New York", "Collaboration", "Visual archive"],
+    gallery: [
+      { src: "/media/bayo-01.jpg", label: "Bayo × Irie" },
+      { src: "/media/bayo-polaroid.jpg", label: "Polaroid" },
+    ],
   },
 ];
 
@@ -147,6 +159,11 @@ export const releases: ContentItem[] = [
       "Lust on the Coast carries its own late-night atmosphere. The artwork, the credits, and the visuals all sit here in one place before you head out to listen.",
     href: "/music/lust-on-the-coast",
     metadata: ["Album", "2025", "Stream-ready"],
+    gallery: [
+      { src: "/media/lotc-bts-01.jpg", label: "Lust on the Coast" },
+      { src: "/media/lotc-bts-02.jpg", label: "On set" },
+      { src: "/media/lotc-bts-03.jpg", label: "Visual world" },
+    ],
     links: [
       {
         label: "Spotify",
@@ -176,6 +193,11 @@ export const releases: ContentItem[] = [
       "BORDERS is where the music, the photography, and the printed zine meet. Executive produced by Aday alongside Grammy-winning Nigerian producer Chopstix, it remains the cornerstone of the archive.",
     href: "/music/borders",
     metadata: ["Album", "Zine", "Archive object"],
+    gallery: [
+      { src: "/media/borders-bts-01.jpg", label: "BORDERS session" },
+      { src: "/media/borders-bts-02.jpg", label: "Behind the record" },
+      { src: "/media/borders-bts-03.jpg", label: "Film still" },
+    ],
     links: [
       {
         label: "Spotify",

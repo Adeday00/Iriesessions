@@ -9,6 +9,12 @@ const pillars = [
   ["Platforms", "Irie Sessions is the flagship platform: releases, original series, live events, stories, products, and collaborators."],
 ];
 
+const collaborators = [
+  { name: "Chopstix", role: "Producer", image: "/media/collab-chopstix.jpg" },
+  { name: "Michael Brun", role: "Bayo × Irie", image: "/media/collab-michael-brun.jpg" },
+  { name: "Mohogany", role: "DJ / Transitions", image: "/media/collab-mohogany.jpg" },
+];
+
 export default function AboutPage() {
   return (
     <PageShell
@@ -42,6 +48,32 @@ export default function AboutPage() {
             <p className="mt-5 text-base leading-7 text-[#bdb3a5]">{copy}</p>
           </article>
         ))}
+      </section>
+
+      <section className="border-b border-white/15 px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+        <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">Collaborators</p>
+        <h2 className="mt-4 max-w-2xl text-4xl font-black uppercase leading-none md:text-6xl">
+          The people in the room.
+        </h2>
+        <div className="mt-10 grid gap-px overflow-hidden border border-white/15 bg-white/15 sm:grid-cols-3">
+          {collaborators.map((person) => (
+            <figure key={person.name} className="group bg-[#0c0c0c]">
+              <div className="relative aspect-[4/5] overflow-hidden bg-[#1a1a1a]">
+                <Image
+                  src={person.image}
+                  alt={person.name}
+                  fill
+                  sizes="(min-width: 640px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                />
+              </div>
+              <figcaption className="flex items-baseline justify-between gap-3 p-5">
+                <span className="text-2xl font-black uppercase">{person.name}</span>
+                <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#81786d]">{person.role}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </section>
 
       <section className="px-5 py-20 sm:px-8 lg:px-12">

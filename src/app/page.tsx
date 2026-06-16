@@ -37,6 +37,15 @@ const signalItems = [
   ["Open channel", "Irie Global Grant", "/opportunities/irie-global-grant"],
 ] as const;
 
+const eventPhotos = [
+  { src: "/media/session-paris-01.jpg", alt: "Women Make Things hats on display in Paris" },
+  { src: "/media/session-jan10-01.jpg", alt: "Irie session at night" },
+  { src: "/media/session-paris-05.jpg", alt: "The room at Soho House Paris" },
+  { src: "/media/session-paris-03.jpg", alt: "Irie in Paris" },
+  { src: "/media/session-jan10-03.jpg", alt: "Irie Paris session" },
+  { src: "/media/session-paris-07.jpg", alt: "Soho House Paris, on the night" },
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#090909] text-[#f4efe5]">
@@ -155,6 +164,45 @@ export default function Home() {
             <p className="mt-4 max-w-md text-base leading-7 text-[#bdb3a5]">{pillar.copy}</p>
           </article>
         ))}
+      </section>
+      </Reveal>
+
+      <Reveal>
+      <section className="border-b border-white/15 bg-[#0c0c0c] py-12 sm:py-16">
+        <div className="flex items-end justify-between gap-6 px-5 sm:px-8 lg:px-12">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">From the room</p>
+            <h2 className="mt-4 max-w-xl text-4xl font-black uppercase leading-[0.9] md:text-6xl">
+              Sessions, not posts.
+            </h2>
+          </div>
+          <Link
+            href="/sessions"
+            className="group hidden shrink-0 items-center gap-2 font-mono text-xs uppercase tracking-[0.22em] text-[#b9ff3b] transition-colors duration-300 hover:text-[#f4efe5] sm:inline-flex"
+          >
+            All sessions
+            <span aria-hidden className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1">
+              →
+            </span>
+          </Link>
+        </div>
+        <div className="mt-8 flex snap-x gap-3 overflow-x-auto px-5 pb-2 sm:px-8 lg:px-12">
+          {eventPhotos.map((photo) => (
+            <Link
+              key={photo.src}
+              href="/sessions"
+              className="group relative aspect-[4/5] w-60 shrink-0 snap-start overflow-hidden bg-[#1a1a1a] sm:w-72"
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                sizes="288px"
+                className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+              />
+            </Link>
+          ))}
+        </div>
       </section>
       </Reveal>
 
