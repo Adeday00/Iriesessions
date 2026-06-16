@@ -30,10 +30,24 @@ export default function OpportunitiesPage() {
             <h2 className="mt-5 max-w-xl text-5xl font-black uppercase leading-none">Build the next room.</h2>
           </div>
           <div className="grid gap-4">
-            <input className="min-h-14 border border-white/20 bg-white/5 px-4 outline-none focus:border-[#b9ff3b]" placeholder="Name" />
-            <input className="min-h-14 border border-white/20 bg-white/5 px-4 outline-none focus:border-[#b9ff3b]" placeholder="Email" />
-            <textarea className="min-h-36 border border-white/20 bg-white/5 p-4 outline-none focus:border-[#b9ff3b]" placeholder="Tell us what you want to build" />
-            <button className="min-h-14 bg-[#b9ff3b] px-6 font-mono text-xs uppercase tracking-[0.2em] text-black transition hover:bg-[#f4efe5]">
+            <input
+              type="text"
+              aria-label="Name"
+              className="min-h-14 border border-white/20 bg-white/5 px-4 outline-none transition-colors placeholder:text-[#847b70] focus:border-[#b9ff3b]"
+              placeholder="Name"
+            />
+            <input
+              type="email"
+              aria-label="Email"
+              className="min-h-14 border border-white/20 bg-white/5 px-4 outline-none transition-colors placeholder:text-[#847b70] focus:border-[#b9ff3b]"
+              placeholder="Email"
+            />
+            <textarea
+              aria-label="Tell us what you want to build"
+              className="min-h-36 border border-white/20 bg-white/5 p-4 outline-none transition-colors placeholder:text-[#847b70] focus:border-[#b9ff3b]"
+              placeholder="Tell us what you want to build"
+            />
+            <button className="min-h-14 bg-[#b9ff3b] px-6 font-mono text-xs uppercase tracking-[0.2em] text-black transition-colors hover:bg-[#f4efe5]">
               Submit interest
             </button>
           </div>
