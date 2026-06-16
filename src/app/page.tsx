@@ -115,13 +115,19 @@ export default function Home() {
           <Link
             key={href}
             href={href}
-            className="group border-white/15 p-5 transition hover:bg-[#b9ff3b] hover:text-black md:border-r lg:p-8"
+            className="group flex flex-col border-white/15 p-5 transition-colors duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-white/[0.04] md:border-r lg:p-8"
           >
-            <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#b9ff3b] group-hover:text-black">
+            <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#b9ff3b]">
               {label}
             </span>
             <span className="mt-3 block text-2xl font-black uppercase leading-none md:text-3xl">
               {title}
+            </span>
+            <span
+              aria-hidden
+              className="mt-4 font-mono text-sm text-[#b9ff3b] transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1.5"
+            >
+              →
             </span>
           </Link>
         ))}

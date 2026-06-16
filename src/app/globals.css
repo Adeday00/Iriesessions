@@ -36,6 +36,30 @@ a {
   text-decoration: none;
 }
 
+/* Underline that draws in from the left on hover/focus — acid-green as
+   punctuation rather than a full color swap. Used for nav and inline links. */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 1px;
+  width: 100%;
+  background: #b9ff3b;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.link-underline:hover::after,
+.link-underline:focus-visible::after {
+  transform: scaleX(1);
+}
+
 /* Branded keyboard focus ring (acid-green). Offset so it reads on dark and
    light sections alike; mouse clicks don't trigger it (focus-visible only). */
 :focus-visible {

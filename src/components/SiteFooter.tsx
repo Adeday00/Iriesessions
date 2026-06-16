@@ -19,21 +19,25 @@ export function SiteFooter() {
           </p>
         </div>
         <div className="grid gap-8 sm:grid-cols-2">
-          <div className="grid gap-3 font-mono text-xs uppercase tracking-[0.18em] text-[#c8c0b4]">
+          <div className="grid justify-items-start gap-3 font-mono text-xs uppercase tracking-[0.18em] text-[#c8c0b4]">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="transition hover:text-[#b9ff3b]">
+              <Link
+                key={item.href}
+                href={item.href}
+                className="link-underline transition-colors duration-300 hover:text-[#f4efe5]"
+              >
                 {item.label}
               </Link>
             ))}
           </div>
-          <div className="grid gap-3 font-mono text-xs uppercase tracking-[0.18em] text-[#c8c0b4]">
+          <div className="grid justify-items-start gap-3 font-mono text-xs uppercase tracking-[0.18em] text-[#c8c0b4]">
             {socialLinks.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 target={item.href.startsWith("mailto:") ? undefined : "_blank"}
                 rel={item.href.startsWith("mailto:") ? undefined : "noreferrer"}
-                className="transition hover:text-[#b9ff3b]"
+                className="link-underline transition-colors duration-300 hover:text-[#f4efe5]"
               >
                 {item.label}
               </a>

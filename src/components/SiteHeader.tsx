@@ -50,7 +50,11 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
         </Link>
         <nav className="hidden items-center gap-6 font-mono text-[11px] uppercase tracking-[0.18em] text-[#c8c0b4] lg:flex">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="transition hover:text-[#b9ff3b]">
+            <Link
+              key={item.href}
+              href={item.href}
+              className="link-underline transition-colors duration-300 hover:text-[#f4efe5]"
+            >
               {item.label}
             </Link>
           ))}
