@@ -17,19 +17,25 @@ type PageShellProps = {
   eyebrow: string;
   title: string;
   intro: string;
+  meta?: string;
   children: React.ReactNode;
 };
 
-export function PageShell({ eyebrow, title, intro, children }: PageShellProps) {
+export function PageShell({ eyebrow, title, intro, meta = "Irie Archive", children }: PageShellProps) {
   return (
     <main className="min-h-screen bg-[#090909] text-[#f4efe5]">
       <SiteHeader />
-      <section className="px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
-        <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">{eyebrow}</p>
-        <h1 className="mt-5 max-w-6xl text-6xl font-black uppercase leading-[0.86] md:text-8xl lg:text-9xl">
-          {title}
-        </h1>
-        <p className="mt-8 max-w-3xl text-xl leading-8 text-[#cfc5b8] md:text-2xl">{intro}</p>
+      <section className="border-b border-white/15 px-5 pb-12 pt-16 sm:px-8 lg:px-12 lg:pb-16 lg:pt-24">
+        <div className="flex items-center justify-between gap-6 border-b border-white/10 pb-6">
+          <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">{eyebrow}</p>
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#81786d]">{meta}</p>
+        </div>
+        <div className="grid gap-8 pt-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-end lg:gap-16 lg:pt-14">
+          <h1 className="text-[clamp(2.75rem,6.5vw,6.5rem)] font-black uppercase leading-[0.86] lg:leading-[0.84]">
+            {title}
+          </h1>
+          <p className="max-w-xl text-xl leading-8 text-[#cfc5b8] md:text-2xl lg:pb-3">{intro}</p>
+        </div>
       </section>
       {children}
       <SiteFooter />
@@ -39,32 +45,52 @@ export function PageShell({ eyebrow, title, intro, children }: PageShellProps) {
 
 export function EditorialGrid({ items, cta = "Open" }: { items: Card[]; cta?: string }) {
   return (
-    <section className="grid border-y border-white/15 bg-[#111111] md:grid-cols-2 xl:grid-cols-3">
-      {items.map((item) => {
+    <section className="grid border-b border-white/15 bg-[#111111] md:grid-cols-2 xl:grid-cols-3">
+      {items.map((item, index) => {
         const isRelease = item.category === "release";
 
         return (
-          <article key={item.title} className="group border-white/15 p-5 md:border-r lg:p-8">
-            <div className={`relative mb-6 overflow-hidden bg-[#1a1a1a] ${isRelease ? "aspect-square" : "aspect-[4/5]"}`}>
-              <Image
-                src={item.image}
-                alt=""
-                fill
-                sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
-                className={`${isRelease ? "object-contain" : "object-cover"} transition duration-700 group-hover:scale-105`}
-              />
-              <div className={`absolute inset-0 bg-gradient-to-t ${isRelease ? "from-black/55 via-transparent to-transparent" : "from-black/75 via-black/10 to-transparent"}`} />
-              <p className="absolute bottom-4 left-4 max-w-[calc(100%-2rem)] font-mono text-[11px] uppercase tracking-[0.2em] text-[#b9ff3b]">
-                {item.kicker ?? item.metadata?.slice(0, 2).join(" / ")}
-              </p>
+          <article
+            key={item.title}
+            className="group flex flex-col border-b border-white/15 p-5 md:border-r lg:p-8"
+          >
+            <div className="mb-6 flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.22em] text-[#81786d]">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <span className="text-[#b9ff3b]">{item.category ?? "Archive"}</span>
             </div>
-            <h2 className="text-3xl font-black uppercase tracking-tight md:text-4xl">{item.title}</h2>
-            <p className="mt-4 max-w-md text-base leading-7 text-[#bdb3a5]">{item.summary}</p>
             <Link
               href={item.href}
-              className="mt-6 inline-block font-mono text-xs uppercase tracking-[0.22em] text-[#b9ff3b] transition hover:text-[#f4efe5]"
+              className="relative mb-6 block overflow-hidden bg-[#1a1a1a]"
+              aria-label={`${cta}: ${item.title}`}
+            >
+              <div className={`relative ${isRelease ? "aspect-square" : "aspect-[4/5]"}`}>
+                <Image
+                  src={item.image}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className={`${isRelease ? "object-contain" : "object-cover"} transition duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]`}
+                />
+                <div
+                  className={`absolute inset-0 bg-gradient-to-t ${
+                    isRelease ? "from-black/55 via-transparent to-transparent" : "from-black/75 via-black/10 to-transparent"
+                  }`}
+                />
+                <p className="absolute bottom-4 left-4 max-w-[calc(100%-2rem)] font-mono text-[11px] uppercase tracking-[0.2em] text-[#b9ff3b]">
+                  {item.kicker ?? item.metadata?.slice(0, 2).join(" / ")}
+                </p>
+              </div>
+            </Link>
+            <h2 className="text-3xl font-black uppercase tracking-tight md:text-4xl">{item.title}</h2>
+            <p className="mt-4 max-w-md grow text-base leading-7 text-[#bdb3a5]">{item.summary}</p>
+            <Link
+              href={item.href}
+              className="group/cta mt-6 inline-flex w-fit items-center gap-2 font-mono text-xs uppercase tracking-[0.22em] text-[#b9ff3b] transition-colors hover:text-[#f4efe5]"
             >
               {cta}
+              <span aria-hidden className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/cta:translate-x-1">
+                →
+              </span>
             </Link>
           </article>
         );
@@ -89,7 +115,7 @@ export function SplitFeature({
   href?: string;
 }) {
   return (
-    <section className="grid border-y border-white/15 bg-[#e9e2d5] text-[#101010] lg:grid-cols-2">
+    <section className="grid border-b border-white/15 bg-[#e9e2d5] text-[#101010] lg:grid-cols-2">
       <div className="relative min-h-[520px]">
         <Image src={image} alt="" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
       </div>
@@ -101,9 +127,12 @@ export function SplitFeature({
         </div>
         <Link
           href={href}
-          className="w-fit bg-black px-5 py-4 font-mono text-xs uppercase tracking-[0.22em] text-[#f4efe5] transition hover:bg-[#b9ff3b] hover:text-black"
+          className="group inline-flex w-fit items-center gap-2 bg-black px-5 py-4 font-mono text-xs uppercase tracking-[0.22em] text-[#f4efe5] transition-colors hover:bg-[#b9ff3b] hover:text-black"
         >
           {cta}
+          <span aria-hidden className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1">
+            →
+          </span>
         </Link>
       </div>
     </section>
