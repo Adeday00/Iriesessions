@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo, Space_Mono } from "next/font/google";
+import { BasketProvider } from "@/components/commerce/BasketProvider";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -46,7 +47,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${archivo.variable} ${spaceMono.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <BasketProvider>{children}</BasketProvider>
+      </body>
     </html>
   );
 }

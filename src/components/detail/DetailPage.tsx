@@ -2,8 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { ShopifyBasketButton } from "@/components/commerce/ShopifyBasketButton";
+import { AddToBasket } from "@/components/commerce/AddToBasket";
 import type { ContentItem } from "@/lib/content";
+
+const trustPoints = ["Ships in 24–48h", "Secure checkout", "Tracked delivery"];
 
 function getLinkSectionLabel(item: ContentItem) {
   if (item.category === "release") {
@@ -121,12 +123,18 @@ function ProductDetailPage({ item, backHref, backLabel }: { item: ContentItem; b
                 </div>
 
                 {commerce.variants && commerce.variants.length > 0 ? (
-                  <div className="grid gap-px bg-white/15">
-                    {commerce.variants.map((variant) => (
-                      <ShopifyBasketButton key={variant.id} item={item} variant={variant} />
-                    ))}
-                  </div>
+                  <AddToBasket item={item} />
                 ) : null}
+                <div className="grid grid-cols-3 border-t border-white/15">
+                  {trustPoints.map((point) => (
+                    <span
+                      key={point}
+                      className="border-r border-white/10 px-3 py-3 text-center font-mono text-[9px] uppercase leading-tight tracking-[0.12em] text-[#81786d] last:border-r-0"
+                    >
+                      {point}
+                    </span>
+                  ))}
+                </div>
               </section>
             ) : null}
 
@@ -250,14 +258,8 @@ export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; b
                 <p className="mt-5 max-w-2xl text-base leading-7 text-[#bdb3a5]">{item.commerce.note}</p>
               ) : null}
               {item.commerce.variants && item.commerce.variants.length > 0 ? (
-                <div className="mt-6 grid gap-px overflow-hidden border border-white/15 bg-white/15 sm:grid-cols-2">
-                  {item.commerce.variants.map((variant) => (
-                    <ShopifyBasketButton
-                      key={variant.id}
-                      item={item}
-                      variant={variant}
-                    />
-                  ))}
+                <div className="mt-6 border border-white/15 bg-[#090909]">
+                  <AddToBasket item={item} />
                 </div>
               ) : null}
             </div>

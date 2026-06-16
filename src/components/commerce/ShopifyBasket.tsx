@@ -10,7 +10,9 @@ import {
   canCreateShopifyCart,
   clearBasket,
   createShopifyCart,
+  formatCents,
   getBasketLines,
+  getBasketSubtotal,
   type ShopifyBasketLine,
   updateBasketLineQuantity,
 } from "@/components/commerce/basketStorage";
@@ -23,6 +25,7 @@ function getQuantityLabel(lines: ShopifyBasketLine[]) {
 export function ShopifyBasket() {
   const [lines, setLines] = useState<ShopifyBasketLine[]>([]);
   const canCheckout = useMemo(() => canCreateShopifyCart(lines), [lines]);
+  const subtotal = useMemo(() => getBasketSubtotal(lines), [lines]);
   const hasMissingConfig = lines.some((line) => !line.shopifyVariantId);
   const [isCheckingOut, setIsCheckingOut] = useState(false);
   const [checkoutError, setCheckoutError] = useState<string | null>(null);
@@ -164,11 +167,19 @@ export function ShopifyBasket() {
             <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">Summary</p>
             <div className="mt-6 border-y border-white/15 py-5">
               <div className="flex items-center justify-between gap-4">
-                <span className="font-mono text-xs uppercase tracking-[0.16em] text-[#c8c0b4]">Basket</span>
+                <span className="font-mono text-xs uppercase tracking-[0.16em] text-[#c8c0b4]">Items</span>
                 <span className="font-mono text-xs uppercase tracking-[0.16em]">{getQuantityLabel(lines)}</span>
               </div>
+              {lines.length > 0 ? (
+                <div className="mt-4 flex items-center justify-between gap-4">
+                  <span className="font-mono text-xs uppercase tracking-[0.16em] text-[#c8c0b4]">
+                    {subtotal.complete ? "Subtotal" : "Subtotal (est.)"}
+                  </span>
+                  <span className="font-mono text-lg uppercase tracking-[0.12em]">{formatCents(subtotal.cents)}</span>
+                </div>
+              ) : null}
               <p className="mt-5 text-sm leading-6 text-[#bdb3a5]">
-                Shipping, taxes, discounts, and final totals are calculated in Shopify checkout.
+                Shipping, taxes, and discounts are finalized in secure Shopify checkout.
               </p>
             </div>
             {hasMissingConfig && lines.length > 0 ? (

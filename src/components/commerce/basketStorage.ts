@@ -50,12 +50,13 @@ export function getBasketQuantity() {
   return readLines().reduce((total, line) => total + line.quantity, 0);
 }
 
-export function addBasketLine(item: ContentItem, variant: CommerceVariant) {
+export function addBasketLine(item: ContentItem, variant: CommerceVariant, quantity = 1) {
+  const addQuantity = Math.max(1, Math.floor(quantity));
   const lines = readLines();
   const existingLine = lines.find((line) => line.itemSlug === item.slug && line.variantId === variant.id);
 
   if (existingLine) {
-    existingLine.quantity += 1;
+    existingLine.quantity += addQuantity;
   } else {
     lines.push({
       itemSlug: item.slug,
@@ -65,11 +66,42 @@ export function addBasketLine(item: ContentItem, variant: CommerceVariant) {
       shopifyVariantId: variant.shopifyVariantId,
       label: variant.label,
       price: variant.price,
-      quantity: 1,
+      quantity: addQuantity,
     });
   }
 
   writeLines(lines);
+}
+
+/** Parse a display price like "$60.00" or "$40.00 USD" into integer cents. Returns null if unparseable. */
+export function parsePriceToCents(price: string): number | null {
+  const match = price.replace(/,/g, "").match(/(\d+(?:\.\d{1,2})?)/);
+  if (!match) {
+    return null;
+  }
+  return Math.round(parseFloat(match[1]) * 100);
+}
+
+export function formatCents(cents: number): string {
+  return `$${(cents / 100).toFixed(2)}`;
+}
+
+/**
+ * Estimated subtotal across all lines. `complete` is false if any line's price
+ * could not be parsed, so the UI can label the figure as approximate.
+ */
+export function getBasketSubtotal(lines: ShopifyBasketLine[]): { cents: number; complete: boolean } {
+  let cents = 0;
+  let complete = true;
+  for (const line of lines) {
+    const unit = parsePriceToCents(line.price);
+    if (unit === null) {
+      complete = false;
+      continue;
+    }
+    cents += unit * line.quantity;
+  }
+  return { cents, complete };
 }
 
 export function updateBasketLineQuantity(itemSlug: string, variantId: string, quantity: number) {

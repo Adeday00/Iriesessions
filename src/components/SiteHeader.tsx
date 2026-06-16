@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { BASKET_UPDATED_EVENT, getBasketQuantity } from "@/components/commerce/basketStorage";
+import { useBasket } from "@/components/commerce/BasketProvider";
 import { navItems } from "@/lib/content";
 
 type SiteHeaderProps = {
@@ -12,7 +12,7 @@ type SiteHeaderProps = {
 
 export function SiteHeader({ overlay = false }: SiteHeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [basketQuantity, setBasketQuantity] = useState(0);
+  const { quantity: basketQuantity, openDrawer } = useBasket();
 
   useEffect(() => {
     if (!menuOpen) {
@@ -28,21 +28,6 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [menuOpen]);
-
-  useEffect(() => {
-    function refreshBasketQuantity() {
-      setBasketQuantity(getBasketQuantity());
-    }
-
-    refreshBasketQuantity();
-    window.addEventListener("storage", refreshBasketQuantity);
-    window.addEventListener(BASKET_UPDATED_EVENT, refreshBasketQuantity);
-
-    return () => {
-      window.removeEventListener("storage", refreshBasketQuantity);
-      window.removeEventListener(BASKET_UPDATED_EVENT, refreshBasketQuantity);
-    };
-  }, []);
 
   const basketLabel = `Basket${basketQuantity > 0 ? ` ${basketQuantity}` : ""}`;
 
@@ -71,17 +56,21 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <Link
+          <a
             href="/shop/basket"
-            aria-label={basketLabel}
-            className="inline-flex min-h-12 items-center gap-2 border border-[#b9ff3b] px-3 font-mono text-[11px] uppercase tracking-[0.18em] text-[#b9ff3b] transition hover:bg-[#b9ff3b] hover:text-black sm:px-4"
+            aria-label={`Open ${basketLabel}`}
+            onClick={(event) => {
+              event.preventDefault();
+              openDrawer();
+            }}
+            className="inline-flex min-h-12 items-center gap-2 border border-[#b9ff3b] px-3 font-mono text-[11px] uppercase tracking-[0.18em] text-[#b9ff3b] transition-colors hover:bg-[#b9ff3b] hover:text-black sm:px-4"
           >
             <span className="hidden sm:inline">Basket</span>
             <span className="sm:hidden">Bag</span>
             <span className="grid min-w-5 place-items-center rounded-full bg-[#b9ff3b] px-1.5 py-0.5 text-[10px] leading-none text-black">
               {basketQuantity}
             </span>
-          </Link>
+          </a>
           <button
             type="button"
             aria-controls="mobile-menu"
@@ -123,13 +112,17 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
               </Link>
             ))}
           </div>
-          <Link
+          <a
             href="/shop/basket"
-            onClick={() => setMenuOpen(false)}
-            className="mt-4 block bg-[#b9ff3b] px-4 py-4 text-center font-mono text-xs uppercase tracking-[0.22em] text-black transition hover:bg-[#f4efe5]"
+            onClick={(event) => {
+              event.preventDefault();
+              setMenuOpen(false);
+              openDrawer();
+            }}
+            className="mt-4 block bg-[#b9ff3b] px-4 py-4 text-center font-mono text-xs uppercase tracking-[0.22em] text-black transition-colors hover:bg-[#f4efe5]"
           >
             {basketLabel}
-          </Link>
+          </a>
         </nav>
       ) : null}
     </header>
