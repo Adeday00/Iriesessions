@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { PageShell } from "@/components/PageShell";
 
 const pillars = [
@@ -41,6 +42,26 @@ export default function AboutPage() {
             <p className="mt-5 text-base leading-7 text-[#bdb3a5]">{copy}</p>
           </article>
         ))}
+      </section>
+
+      <section className="px-5 py-20 sm:px-8 lg:px-12">
+        <div className="flex flex-col gap-6 border border-white/15 p-8 sm:flex-row sm:items-center sm:justify-between lg:p-12">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">Giving back</p>
+            <h2 className="mt-4 max-w-2xl text-4xl font-black uppercase leading-none md:text-5xl">
+              Grants, open calls, and partner rooms.
+            </h2>
+          </div>
+          <Link
+            href="/opportunities"
+            className="group inline-flex w-fit shrink-0 items-center gap-2 bg-[#b9ff3b] px-5 py-4 font-mono text-xs uppercase tracking-[0.22em] text-black transition-colors duration-300 hover:bg-[#f4efe5]"
+          >
+            See opportunities
+            <span aria-hidden className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1">
+              →
+            </span>
+          </Link>
+        </div>
       </section>
     </PageShell>
   );

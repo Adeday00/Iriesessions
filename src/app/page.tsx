@@ -165,6 +165,15 @@ export default function Home() {
           <h2 className="mt-5 max-w-xl text-5xl font-black uppercase leading-none md:text-7xl">
             Featured traces from the archive.
           </h2>
+          <Link
+            href="/journal"
+            className="group mt-8 inline-flex w-fit items-center gap-2 border border-white/25 px-5 py-4 font-mono text-xs uppercase tracking-[0.22em] text-[#f4efe5] transition-colors duration-300 hover:border-[#b9ff3b] hover:text-[#b9ff3b]"
+          >
+            Browse the full archive
+            <span aria-hidden className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1">
+              →
+            </span>
+          </Link>
         </div>
         <div className="grid gap-px overflow-hidden border border-white/15 bg-white/15">
           {featuredArchiveItems.map(([title, type, year, href]) => (

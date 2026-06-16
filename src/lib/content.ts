@@ -86,9 +86,12 @@ export const navItems = [
   { label: "Music", href: "/music" },
   { label: "Journal", href: "/journal" },
   { label: "Shop", href: "/shop" },
-  { label: "Opportunities", href: "/opportunities" },
   { label: "About", href: "/about" },
 ];
+
+// Secondary destinations — surfaced in the footer and via in-page CTAs
+// rather than the primary nav.
+export const footerExtraLinks = [{ label: "Opportunities", href: "/opportunities" }];
 
 export const sessions: ContentItem[] = [
   {

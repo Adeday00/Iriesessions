@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { navItems, socialLinks } from "@/lib/content";
+import { footerExtraLinks, navItems, socialLinks } from "@/lib/content";
 
 export function SiteFooter() {
   return (
@@ -22,7 +22,7 @@ export function SiteFooter() {
         </div>
         <div className="grid gap-8 sm:grid-cols-2">
           <div className="grid justify-items-start gap-3 font-mono text-xs uppercase tracking-[0.18em] text-[#c8c0b4]">
-            {navItems.map((item) => (
+            {[...navItems, ...footerExtraLinks].map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
