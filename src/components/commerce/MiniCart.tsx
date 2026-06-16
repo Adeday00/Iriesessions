@@ -76,7 +76,7 @@ export function MiniCart() {
         </div>
 
         {lines.length > 0 ? (
-          <div className="flex-1 overflow-y-auto">
+          <div className="flex-1 overflow-y-auto" data-lenis-prevent>
             {lines.map((line) => (
               <article
                 key={`${line.itemSlug}-${line.variantId}`}

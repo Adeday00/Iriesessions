@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Reveal } from "@/components/motion/Reveal";
 import { featuredArchiveItems } from "@/lib/content";
 
 const pillars = [
@@ -108,6 +109,7 @@ export default function Home() {
         </div>
       </section>
 
+      <Reveal>
       <section className="grid border-y border-white/15 bg-[#090909] md:grid-cols-3">
         {signalItems.map(([label, title, href]) => (
           <Link
@@ -124,7 +126,9 @@ export default function Home() {
           </Link>
         ))}
       </section>
+      </Reveal>
 
+      <Reveal>
       <section className="grid border-y border-white/15 bg-[#111111] md:grid-cols-3">
         {pillars.map((pillar) => (
           <article key={pillar.title} id={pillar.title.toLowerCase()} className="group border-white/15 p-5 md:border-r lg:p-8">
@@ -146,7 +150,9 @@ export default function Home() {
           </article>
         ))}
       </section>
+      </Reveal>
 
+      <Reveal>
       <section id="journal" className="grid gap-10 px-5 py-20 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:px-12 lg:py-28">
         <div>
           <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">Archive wall</p>
@@ -170,7 +176,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+      </Reveal>
 
+      <Reveal>
       <section id="shop" className="grid border-y border-white/15 bg-[#e9e2d5] text-[#101010] lg:grid-cols-2">
         <div className="relative min-h-[520px]">
           <Image src="/media/hat-black-front.jpg" alt="" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
@@ -194,7 +202,9 @@ export default function Home() {
           </Link>
         </div>
       </section>
+      </Reveal>
 
+      <Reveal>
       <section id="opportunities" className="px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
         <div className="grid gap-8 border border-white/15 p-6 sm:p-10 lg:grid-cols-[1fr_0.8fr] lg:p-14">
           <div>
@@ -224,6 +234,7 @@ export default function Home() {
           </form>
         </div>
       </section>
+      </Reveal>
       <SiteFooter />
     </main>
   );
