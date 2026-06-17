@@ -58,7 +58,7 @@ export default function Home() {
     <main className="min-h-screen overflow-hidden bg-[#090909] text-[#f4efe5]">
       <section className="relative min-h-screen">
         <video
-          className="absolute inset-0 h-full w-full object-cover opacity-45"
+          className="hero-video absolute inset-0 h-full w-full object-cover opacity-45"
           autoPlay
           muted
           loop
@@ -74,14 +74,14 @@ export default function Home() {
 
         <div className="relative z-10 grid min-h-[100svh] content-end px-5 pb-8 pt-32 sm:px-8 lg:px-12">
           <div className="max-w-6xl">
-            <p className="mb-5 font-mono text-xs uppercase tracking-[0.42em] text-[#b9ff3b]">
+            <p className="hero-enter mb-5 font-mono text-xs uppercase tracking-[0.42em] text-[#b9ff3b]">
               Diasporic culture studio
             </p>
-            <h1 className="max-w-full text-[clamp(3rem,14vw,9.25rem)] font-black uppercase leading-[0.86] text-[#f4efe5] lg:text-[clamp(5.5rem,9.5vw,9.25rem)]">
+            <h1 className="hero-enter hero-enter-2 max-w-full text-[clamp(3rem,14vw,9.25rem)] font-black uppercase leading-[0.86] text-[#f4efe5] lg:text-[clamp(5.5rem,9.5vw,9.25rem)]">
               <span className="block lg:whitespace-nowrap">Think Global.</span>
               <span className="block text-[#b9ff3b] lg:whitespace-nowrap">Create Local.</span>
             </h1>
-            <div className="mt-8 grid gap-6 border-t border-white/20 pt-6 md:grid-cols-[1fr_0.8fr_0.8fr]">
+            <div className="hero-enter hero-enter-3 mt-8 grid gap-6 border-t border-white/20 pt-6 md:grid-cols-[1fr_0.8fr_0.8fr]">
               <p className="max-w-2xl text-lg leading-8 text-[#ded5c7] sm:text-xl md:text-2xl">
                 Irie Global is a cultural ecosystem designing the future of creative expression
                 through music, media, fashion, events, and technology.
@@ -95,12 +95,12 @@ export default function Home() {
                 People / Togetherness / Giving back
               </div>
             </div>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="hero-enter hero-enter-4 mt-8 flex flex-col gap-3 sm:flex-row">
               {heroActions.map((action, index) => (
                 <Link
                   key={action.href}
                   href={action.href}
-                  className={`min-h-14 w-full px-5 py-4 text-center font-mono text-xs uppercase tracking-[0.22em] transition sm:w-fit ${
+                  className={`pressable min-h-14 w-full px-5 py-4 text-center font-mono text-xs uppercase tracking-[0.22em] sm:w-fit ${
                     index === 0
                       ? "bg-[#b9ff3b] text-black hover:bg-[#f4efe5]"
                       : "border border-white/25 text-[#f4efe5] hover:border-[#b9ff3b] hover:text-[#b9ff3b]"
@@ -120,7 +120,7 @@ export default function Home() {
           <Link
             key={href}
             href={href}
-            className="group flex flex-col border-white/15 p-5 transition-colors duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-white/[0.04] md:border-r lg:p-8"
+            className="archive-row group flex flex-col border-white/15 p-5 hover:bg-white/[0.04] md:border-r lg:p-8"
           >
             <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#b9ff3b]">
               {label}
@@ -142,14 +142,14 @@ export default function Home() {
       <Reveal>
       <section className="grid border-y border-white/15 bg-[#111111] md:grid-cols-3">
         {pillars.map((pillar) => (
-          <article key={pillar.title} id={pillar.title.toLowerCase()} className="group border-white/15 p-5 md:border-r lg:p-8">
+          <article key={pillar.title} id={pillar.title.toLowerCase()} className="media-lift group border-white/15 p-5 md:border-r lg:p-8">
             <div className="relative mb-6 aspect-[4/5] overflow-hidden bg-[#1a1a1a]">
               <Image
                 src={pillar.image}
                 alt=""
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
-                className="object-cover transition duration-700 group-hover:scale-105"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
               <p className="absolute bottom-4 left-4 font-mono text-[11px] uppercase tracking-[0.22em] text-[#b9ff3b]">
@@ -187,14 +187,14 @@ export default function Home() {
             <Link
               key={photo.src}
               href="/sessions"
-              className="group relative aspect-[4/5] w-60 shrink-0 snap-start overflow-hidden bg-[#1a1a1a] sm:w-72"
+              className="media-lift group relative aspect-[4/5] w-60 shrink-0 snap-start overflow-hidden bg-[#1a1a1a] sm:w-72"
             >
               <Image
                 src={photo.src}
                 alt={photo.alt}
                 fill
                 sizes="288px"
-                className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                className="object-cover"
               />
             </Link>
           ))}
@@ -211,7 +211,7 @@ export default function Home() {
           </h2>
           <Link
             href="/journal"
-            className="group mt-8 inline-flex w-fit items-center gap-2 border border-white/25 px-5 py-4 font-mono text-xs uppercase tracking-[0.22em] text-[#f4efe5] transition-colors duration-300 hover:border-[#b9ff3b] hover:text-[#b9ff3b]"
+            className="pressable group mt-8 inline-flex w-fit items-center gap-2 border border-white/25 px-5 py-4 font-mono text-xs uppercase tracking-[0.22em] text-[#f4efe5] hover:border-[#b9ff3b] hover:text-[#b9ff3b]"
           >
             Browse the full archive
             <span aria-hidden className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1">
@@ -224,7 +224,7 @@ export default function Home() {
             <Link
               key={title}
               href={href}
-              className="grid grid-cols-[1fr_auto] gap-4 bg-[#090909] p-5 transition hover:bg-[#b9ff3b] hover:text-black sm:grid-cols-[1fr_180px_90px]"
+              className="archive-row grid grid-cols-[1fr_auto] gap-4 bg-[#090909] p-5 hover:bg-[#b9ff3b] hover:text-black sm:grid-cols-[1fr_180px_90px]"
             >
               <span className="text-xl font-bold uppercase">{title}</span>
               <span className="font-mono text-xs uppercase tracking-[0.16em] opacity-75">{type}</span>
@@ -255,7 +255,7 @@ export default function Home() {
           </div>
           <Link
             href="/shop"
-            className="w-fit bg-black px-5 py-4 font-mono text-xs uppercase tracking-[0.22em] text-[#f4efe5] transition hover:bg-[#b9ff3b] hover:text-black"
+            className="pressable w-fit bg-black px-5 py-4 font-mono text-xs uppercase tracking-[0.22em] text-[#f4efe5] hover:bg-[#b9ff3b] hover:text-black"
           >
             Shop artifacts
           </Link>
@@ -286,7 +286,7 @@ export default function Home() {
                 placeholder="you@example.com"
                 className="min-h-14 flex-1 border border-white/20 bg-white/5 px-4 text-base text-[#f4efe5] outline-none transition placeholder:text-[#847b70] focus:border-[#b9ff3b]"
               />
-              <button className="min-h-14 bg-[#b9ff3b] px-6 font-mono text-xs uppercase tracking-[0.2em] text-black transition hover:bg-[#f4efe5]">
+              <button className="pressable min-h-14 bg-[#b9ff3b] px-6 font-mono text-xs uppercase tracking-[0.2em] text-black hover:bg-[#f4efe5]">
                 Join list
               </button>
             </div>

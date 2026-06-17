@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { AddToBasket } from "@/components/commerce/AddToBasket";
+import { Reveal } from "@/components/motion/Reveal";
 import type { ContentItem } from "@/lib/content";
 
 const trustPoints = ["Ships in 24–48h", "Secure checkout", "Tracked delivery"];
@@ -64,7 +65,7 @@ function ProductDetailPage({ item, backHref, backLabel }: { item: ContentItem; b
           {gallery.length > 1 ? (
             <div className="grid grid-cols-2 gap-px border-t border-white/15 bg-white/15 sm:grid-cols-3">
               {gallery.map((image) => (
-                <figure key={image.src} className="bg-[#111111]">
+                <figure key={image.src} className="media-lift bg-[#111111]">
                   <div className="relative aspect-square bg-[#f4efe5]">
                     <Image
                       src={image.src}
@@ -87,15 +88,15 @@ function ProductDetailPage({ item, backHref, backLabel }: { item: ContentItem; b
 
         <aside className="p-5 sm:p-8 lg:p-12">
           <div className="lg:sticky lg:top-28">
-            <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">{item.kicker}</p>
-            <h1 className="mt-4 text-5xl font-black uppercase leading-[0.9] md:text-7xl">
+            <p className="hero-enter font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">{item.kicker}</p>
+            <h1 className="hero-enter hero-enter-2 mt-4 text-5xl font-black uppercase leading-[0.9] md:text-7xl">
               {item.title}
             </h1>
             {commerce?.price ? (
-              <p className="mt-5 font-mono text-lg uppercase tracking-[0.16em] text-[#f4efe5]">{commerce.price}</p>
+              <p className="hero-enter hero-enter-3 mt-5 font-mono text-lg uppercase tracking-[0.16em] text-[#f4efe5]">{commerce.price}</p>
             ) : null}
 
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-[#d8cfc2]">{item.summary}</p>
+            <p className="hero-enter hero-enter-3 mt-7 max-w-2xl text-lg leading-8 text-[#d8cfc2]">{item.summary}</p>
 
             <div className="mt-8 grid gap-2 sm:grid-cols-3">
               {item.metadata.map((meta) => (
@@ -190,11 +191,11 @@ export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; b
             <Link href={backHref} className="font-mono text-xs uppercase tracking-[0.22em] text-[#b9ff3b]">
               {backLabel}
             </Link>
-            <p className="mt-10 font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">{item.kicker}</p>
-            <h1 className="mt-5 max-w-4xl text-5xl font-black uppercase leading-[0.88] md:text-7xl lg:text-8xl">
+            <p className="hero-enter font-mono mt-10 text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">{item.kicker}</p>
+            <h1 className="hero-enter hero-enter-2 mt-5 max-w-4xl text-5xl font-black uppercase leading-[0.88] md:text-7xl lg:text-8xl">
               {item.title}
             </h1>
-            <p className="mt-8 max-w-2xl text-xl leading-9 text-[#cfc5b8]">{item.summary}</p>
+            <p className="hero-enter hero-enter-3 mt-8 max-w-2xl text-xl leading-9 text-[#cfc5b8]">{item.summary}</p>
           </div>
           <div className="mt-10 flex flex-wrap gap-3">
             {item.metadata.map((meta) => (
@@ -218,8 +219,13 @@ export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; b
                 Media
               </p>
               <div className="mt-5 grid gap-px overflow-hidden border border-white/15 bg-white/15 sm:grid-cols-2">
-                {item.gallery.map((image) => (
-                  <figure key={image.src} className="bg-[#111111]">
+                {item.gallery.map((image, index) => (
+                  <Reveal
+                    key={image.src}
+                    as="article"
+                    delay={Math.min(index * 45, 360)}
+                    className="media-lift bg-[#111111]"
+                  >
                     <div className="relative aspect-[4/5] overflow-hidden bg-[#1a1a1a]">
                       <Image
                         src={image.src}
@@ -232,7 +238,7 @@ export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; b
                     <figcaption className="p-4 font-mono text-[11px] uppercase tracking-[0.18em] text-[#c8c0b4]">
                       {image.label}
                     </figcaption>
-                  </figure>
+                  </Reveal>
                 ))}
               </div>
             </div>
@@ -276,7 +282,7 @@ export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; b
                     href={link.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="bg-[#111111] p-5 transition hover:bg-[#b9ff3b] hover:text-black"
+                    className="archive-row bg-[#111111] p-5 hover:bg-[#b9ff3b] hover:text-black"
                   >
                     <span className="block font-mono text-[11px] uppercase tracking-[0.18em] opacity-70">
                       {link.kind}

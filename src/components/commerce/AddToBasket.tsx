@@ -105,7 +105,7 @@ export function AddToBasket({ item }: { item: ContentItem }) {
         onClick={handleAdd}
         disabled={!canAdd}
         aria-live="polite"
-        className={`group flex min-h-14 w-full items-center justify-center gap-2 px-5 py-4 font-mono text-xs uppercase tracking-[0.22em] transition-colors ${
+      className={`pressable group flex min-h-14 w-full items-center justify-center gap-2 px-5 py-4 font-mono text-xs uppercase tracking-[0.22em] ${
           canAdd
             ? "bg-[#b9ff3b] text-black hover:bg-[#f4efe5]"
             : "cursor-not-allowed bg-white/10 text-white/45"

@@ -52,7 +52,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${archivo.variable} ${spaceMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="motion-safe min-h-full flex flex-col">
         <script
           dangerouslySetInnerHTML={{
             __html: "document.documentElement.classList.add('js')",

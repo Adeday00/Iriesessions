@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { type ElementType, useEffect, useRef, useState } from "react";
 
 /**
  * Reveals its children with a subtle fade + short rise the first time they
@@ -12,12 +12,15 @@ export function Reveal({
   children,
   className = "",
   delay = 0,
+  as: Tag = "div",
 }: {
   children: React.ReactNode;
   className?: string;
   delay?: number;
+  as?: "div" | "section" | "article";
 }) {
-  const ref = useRef<HTMLDivElement>(null);
+  const Component = Tag as ElementType;
+  const ref = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -47,12 +50,12 @@ export function Reveal({
   }, []);
 
   return (
-    <div
+    <Component
       ref={ref}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
       className={`motion-reveal ${visible ? "is-visible" : ""} ${className}`}
     >
       {children}
-    </div>
+    </Component>
   );
 }

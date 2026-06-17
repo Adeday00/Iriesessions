@@ -48,7 +48,7 @@ export function JournalArchive({ items }: { items: readonly ArchiveRow[] }) {
             <Link
               key={title}
               href={href}
-              className="grid gap-4 bg-[#090909] p-5 transition-colors duration-300 hover:bg-[#b9ff3b] hover:text-black sm:grid-cols-[1fr_220px_120px]"
+              className="archive-row grid gap-4 bg-[#090909] p-5 hover:bg-[#b9ff3b] hover:text-black sm:grid-cols-[1fr_220px_120px]"
             >
               <span className="text-2xl font-black uppercase">{title}</span>
               <span className="font-mono text-xs uppercase tracking-[0.16em] opacity-75">{type}</span>

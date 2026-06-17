@@ -38,7 +38,7 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
       }`}
     >
       <div className="flex items-center justify-between gap-5">
-        <Link href="/" className="block shrink-0" aria-label="Irie Sessions home">
+        <Link href="/" className="brand-mark block shrink-0" aria-label="Irie Sessions home">
           <Image
             src="/irie-logo.png"
             alt="Irie"
@@ -67,7 +67,7 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
               event.preventDefault();
               openDrawer();
             }}
-            className="inline-flex min-h-12 items-center gap-2 border border-[#b9ff3b] px-3 font-mono text-[11px] uppercase tracking-[0.18em] text-[#b9ff3b] transition-colors hover:bg-[#b9ff3b] hover:text-black sm:px-4"
+            className="pressable inline-flex min-h-12 items-center gap-2 border border-[#b9ff3b] px-3 font-mono text-[11px] uppercase tracking-[0.18em] text-[#b9ff3b] hover:bg-[#b9ff3b] hover:text-black sm:px-4"
           >
             <span className="hidden sm:inline">Basket</span>
             <span className="sm:hidden">Bag</span>
@@ -80,7 +80,7 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
             aria-controls="mobile-menu"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((isOpen) => !isOpen)}
-            className="grid size-12 place-items-center border border-white/20 bg-black/20 text-[#f4efe5] backdrop-blur transition hover:border-[#b9ff3b] hover:text-[#b9ff3b] lg:hidden"
+            className="pressable grid size-12 place-items-center border border-white/20 bg-black/20 text-[#f4efe5] backdrop-blur hover:border-[#b9ff3b] hover:text-[#b9ff3b] lg:hidden"
           >
             <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
             <span className="grid w-5 gap-1.5">
@@ -102,7 +102,7 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
       {menuOpen ? (
         <nav
           id="mobile-menu"
-          className="absolute left-5 right-5 top-[calc(100%-0.5rem)] border border-white/15 bg-[#090909]/96 p-4 shadow-2xl shadow-black/40 backdrop-blur-xl sm:left-8 sm:right-8 lg:hidden"
+          className="mobile-menu-panel absolute left-5 right-5 top-[calc(100%-0.5rem)] border border-white/15 bg-[#090909]/96 p-4 shadow-2xl shadow-black/40 backdrop-blur-xl sm:left-8 sm:right-8 lg:hidden"
         >
           <div className="grid gap-px overflow-hidden border border-white/10 bg-white/10">
             {navItems.map((item) => (
@@ -110,7 +110,7 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
                 key={item.href}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="bg-[#101010] px-4 py-4 font-mono text-xs uppercase tracking-[0.22em] text-[#f4efe5] transition hover:bg-[#b9ff3b] hover:text-black"
+                className="archive-row bg-[#101010] px-4 py-4 font-mono text-xs uppercase tracking-[0.22em] text-[#f4efe5] hover:bg-[#b9ff3b] hover:text-black"
               >
                 {item.label}
               </Link>
@@ -123,7 +123,7 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
               setMenuOpen(false);
               openDrawer();
             }}
-            className="mt-4 block bg-[#b9ff3b] px-4 py-4 text-center font-mono text-xs uppercase tracking-[0.22em] text-black transition-colors hover:bg-[#f4efe5]"
+            className="pressable mt-4 block bg-[#b9ff3b] px-4 py-4 text-center font-mono text-xs uppercase tracking-[0.22em] text-black hover:bg-[#f4efe5]"
           >
             {basketLabel}
           </a>

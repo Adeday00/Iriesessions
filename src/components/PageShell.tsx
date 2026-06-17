@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Reveal } from "@/components/motion/Reveal";
 
 type Card = {
   title: string;
@@ -27,14 +28,14 @@ export function PageShell({ eyebrow, title, intro, meta = "Irie Archive", childr
       <SiteHeader />
       <section className="border-b border-white/15 px-5 pb-12 pt-16 sm:px-8 lg:px-12 lg:pb-16 lg:pt-24">
         <div className="flex items-center justify-between gap-6 border-b border-white/10 pb-6">
-          <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">{eyebrow}</p>
-          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#81786d]">{meta}</p>
+          <p className="hero-enter font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">{eyebrow}</p>
+          <p className="hero-enter font-mono text-[11px] uppercase tracking-[0.22em] text-[#81786d]">{meta}</p>
         </div>
         <div className="grid gap-8 pt-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-end lg:gap-16 lg:pt-14">
-          <h1 className="text-[clamp(2.75rem,6.5vw,6.5rem)] font-black uppercase leading-[0.86] lg:leading-[0.84]">
+          <h1 className="hero-enter hero-enter-2 text-[clamp(2.75rem,6.5vw,6.5rem)] font-black uppercase leading-[0.86] lg:leading-[0.84]">
             {title}
           </h1>
-          <p className="max-w-xl text-xl leading-8 text-[#cfc5b8] md:text-2xl lg:pb-3">{intro}</p>
+          <p className="hero-enter hero-enter-3 max-w-xl text-xl leading-8 text-[#cfc5b8] md:text-2xl lg:pb-3">{intro}</p>
         </div>
       </section>
       {children}
@@ -50,9 +51,11 @@ export function EditorialGrid({ items, cta = "Open" }: { items: Card[]; cta?: st
         const isRelease = item.category === "release";
 
         return (
-          <article
+          <Reveal
             key={item.title}
-            className="group flex flex-col border-b border-white/15 p-5 md:border-r lg:p-8"
+            as="article"
+            delay={index * 70}
+            className="media-lift group flex flex-col border-b border-white/15 p-5 md:border-r lg:p-8"
           >
             <div className="mb-6 flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.22em] text-[#81786d]">
               <span>{String(index + 1).padStart(2, "0")}</span>
@@ -69,7 +72,7 @@ export function EditorialGrid({ items, cta = "Open" }: { items: Card[]; cta?: st
                   alt=""
                   fill
                   sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  className={`${isRelease ? "object-contain" : "object-cover"} transition duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]`}
+                  className={isRelease ? "object-contain" : "object-cover"}
                 />
                 <div
                   className={`absolute inset-0 bg-gradient-to-t ${
@@ -92,7 +95,7 @@ export function EditorialGrid({ items, cta = "Open" }: { items: Card[]; cta?: st
                 →
               </span>
             </Link>
-          </article>
+          </Reveal>
         );
       })}
     </section>
@@ -116,7 +119,7 @@ export function SplitFeature({
 }) {
   return (
     <section className="grid border-b border-white/15 bg-[#e9e2d5] text-[#101010] lg:grid-cols-2">
-      <div className="relative min-h-[520px]">
+      <div className="media-lift relative min-h-[520px] overflow-hidden">
         <Image src={image} alt="" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
       </div>
       <div className="flex min-h-[520px] flex-col justify-between p-6 sm:p-10 lg:p-14">
@@ -127,7 +130,7 @@ export function SplitFeature({
         </div>
         <Link
           href={href}
-          className="group inline-flex w-fit items-center gap-2 bg-black px-5 py-4 font-mono text-xs uppercase tracking-[0.22em] text-[#f4efe5] transition-colors hover:bg-[#b9ff3b] hover:text-black"
+          className="pressable group inline-flex w-fit items-center gap-2 bg-black px-5 py-4 font-mono text-xs uppercase tracking-[0.22em] text-[#f4efe5] hover:bg-[#b9ff3b] hover:text-black"
         >
           {cta}
           <span aria-hidden className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1">
