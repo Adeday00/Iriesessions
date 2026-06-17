@@ -10,7 +10,7 @@ const pillars = [
     title: "Sessions",
     kicker: "Paris / Lagos / New York",
     copy: "Live rooms, pop-ups, listening nights, and recaps that turn a date on the calendar into a cultural memory.",
-    image: "/media/irie-paris.jpg",
+    image: "/media/session-paris-04.jpg",
   },
   {
     title: "Music",
@@ -39,11 +39,18 @@ const signalItems = [
 
 const eventPhotos = [
   { src: "/media/session-paris-01.jpg", alt: "Women Make Things hats on display in Paris" },
+  { src: "/media/session-mar6-01.jpg", alt: "Irie session arrival frame" },
+  { src: "/media/btw-01.jpg", alt: "Be There Weekly event artwork" },
+  { src: "/media/btw-photo-03.jpg", alt: "Be There Weekly guest moment" },
+  { src: "/media/btw-live-02.jpg", alt: "Be There Weekly dance floor" },
+  { src: "/media/btw-live-08.jpg", alt: "Be There Weekly portrait" },
   { src: "/media/session-jan10-01.jpg", alt: "Irie session at night" },
+  { src: "/media/session-jan10-04.jpg", alt: "Irie January session archive still" },
   { src: "/media/session-paris-05.jpg", alt: "The room at Soho House Paris" },
   { src: "/media/session-paris-03.jpg", alt: "Irie in Paris" },
   { src: "/media/session-jan10-03.jpg", alt: "Irie Paris session" },
-  { src: "/media/session-paris-07.jpg", alt: "Soho House Paris, on the night" },
+  { src: "/media/session-paris-10.jpg", alt: "Soho House Paris closing image" },
+  { src: "/media/culture-shock-02.jpg", alt: "Culture Shock live archive" },
 ];
 
 export default function Home() {

@@ -5,59 +5,32 @@ import { useMemo, useState } from "react";
 
 type ArchiveRow = readonly [string, string, string, string];
 
-const FILTERS: { label: string; match: (href: string) => boolean }[] = [
-  { label: "All", match: () => true },
-  { label: "Music", match: (href) => href.startsWith("/music") },
-  { label: "Sessions", match: (href) => href.startsWith("/sessions") },
-  { label: "Shop", match: (href) => href.startsWith("/shop") },
-  { label: "Opportunities", match: (href) => href.startsWith("/opportunities") },
-];
-
 export function JournalArchive({ items }: { items: readonly ArchiveRow[] }) {
   const [query, setQuery] = useState("");
-  const [filter, setFilter] = useState("All");
 
-  const active = FILTERS.find((entry) => entry.label === filter) ?? FILTERS[0];
   const normalizedQuery = query.trim().toLowerCase();
 
   const filtered = useMemo(
     () =>
       items.filter(([title, type, year, href]) => {
-        if (!active.match(href)) {
-          return false;
-        }
         if (normalizedQuery === "") {
           return true;
         }
         return `${title} ${type} ${year}`.toLowerCase().includes(normalizedQuery);
       }),
-    [items, active, normalizedQuery],
+    [items, normalizedQuery],
   );
 
   return (
-    <section className="px-5 pb-20 sm:px-8 lg:px-12">
-      <div className="flex flex-col gap-5 border-b border-white/15 pb-6 lg:flex-row lg:items-center lg:justify-between">
-        <div className="flex flex-wrap gap-2">
-          {FILTERS.map((entry) => {
-            const isActive = entry.label === filter;
-            return (
-              <button
-                key={entry.label}
-                type="button"
-                onClick={() => setFilter(entry.label)}
-                aria-pressed={isActive}
-                className={`border px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] transition-colors duration-300 ${
-                  isActive
-                    ? "border-[#b9ff3b] bg-[#b9ff3b] text-black"
-                    : "border-white/20 text-[#c8c0b4] hover:border-[#b9ff3b] hover:text-[#b9ff3b]"
-                }`}
-              >
-                {entry.label}
-              </button>
-            );
-          })}
+    <section className="px-5 pb-20 pt-8 sm:px-8 lg:px-12">
+      <div className="flex flex-col gap-3 border-b border-white/15 pb-6 lg:flex-row lg:items-end lg:justify-between">
+        <div>
+          <p className="font-mono text-xs uppercase tracking-[0.28em] text-[#b9ff3b]">Archive index</p>
+          <p className="mt-2 max-w-xl text-sm leading-6 text-[#9d9488]">
+            Search by title, format, year, or city.
+          </p>
         </div>
-        <label className="relative w-full lg:w-80">
+        <label className="relative w-full lg:w-[28rem]">
           <span className="sr-only">Search the archive</span>
           <input
             type="search"
@@ -85,7 +58,7 @@ export function JournalArchive({ items }: { items: readonly ArchiveRow[] }) {
         </div>
       ) : (
         <p className="mt-10 max-w-xl text-xl leading-8 text-[#cfc5b8]">
-          No traces match{normalizedQuery ? ` “${query}”` : " that filter"} yet — try another search or filter.
+          No traces match{normalizedQuery ? ` “${query}”` : ""} yet.
         </p>
       )}
 

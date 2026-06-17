@@ -10,7 +10,7 @@ export default function SessionsPage() {
     >
       <EditorialGrid items={sessions} cta="View session" />
       <SplitFeature
-        image="/media/session-crowd.jpg"
+        image="/media/culture-shock-02.jpg"
         eyebrow="Session lifecycle"
         title="Before. During. After."
         copy="Each room carries its own arc: announcement, RSVP, lineup, partner context, recap, and the media that keeps the moment alive."

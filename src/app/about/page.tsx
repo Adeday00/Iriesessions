@@ -23,8 +23,15 @@ export default function AboutPage() {
       intro="Irie Global builds at the intersection of music, media, fashion, events, and technology. What began in 2017 as an intimate Afrobeats and Caribbean music gathering has evolved into a global house of ideas rooted in diaspora."
     >
       <section className="grid border-y border-white/15 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="relative min-h-[560px]">
-          <Image src="/media/irie-paris.jpg" alt="" fill sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
+        <div className="grid min-h-[560px] place-items-center bg-[#0c0c0c] p-10">
+          <Image
+            src="/irie-logo.png"
+            alt="Irie"
+            width={360}
+            height={211}
+            sizes="(min-width: 1024px) 360px, 58vw"
+            className="h-auto w-[min(58vw,360px)]"
+          />
         </div>
         <div className="grid content-center gap-8 p-6 sm:p-10 lg:p-14">
           <h2 className="max-w-2xl text-5xl font-black uppercase leading-none md:text-7xl">
