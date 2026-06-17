@@ -57,24 +57,13 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#090909] text-[#f4efe5]">
       <section className="relative min-h-screen">
-        {/* Mobile: static poster only — no video download on small screens / cellular */}
-        <Image
-          src="/media/irie-paris.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover opacity-45 sm:hidden"
-        />
-        {/* Desktop: compressed (~4MB) muted background loop */}
         <video
-          className="absolute inset-0 hidden h-full w-full object-cover opacity-45 sm:block"
+          className="absolute inset-0 h-full w-full object-cover opacity-45"
           autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
-          poster="/media/irie-paris.jpg"
+          preload="auto"
           aria-hidden="true"
         >
           <source src="/media/irie-trailer.mp4" type="video/mp4" />
