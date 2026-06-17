@@ -22,7 +22,7 @@ const pillars = [
     title: "Artifacts",
     kicker: "Zines / Merch / Objects",
     copy: "What stays after the room clears: zines, drops, photo essays, and print.",
-    image: "/media/zine-page.jpg",
+    image: "/media/hat-black-front.jpg",
   },
 ];
 
