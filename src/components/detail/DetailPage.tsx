@@ -207,18 +207,18 @@ export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; b
         </div>
       </section>
 
-      <section className="grid gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[0.7fr_1.3fr] lg:px-12 lg:py-24">
-        <div>
-          <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">Archive note</p>
-        </div>
-        <div>
-          <p className="max-w-3xl text-2xl leading-10 text-[#e6ddcf]">{item.body}</p>
+      <section className="px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+        <div className="mx-auto max-w-[1500px]">
+          <div className="grid gap-8 border-b border-white/15 pb-10 lg:grid-cols-[280px_1fr] lg:gap-16">
+            <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">Archive note</p>
+            <p className="max-w-5xl text-2xl leading-10 text-[#e6ddcf] lg:text-3xl lg:leading-[1.45]">{item.body}</p>
+          </div>
           {item.gallery && item.gallery.length > 0 ? (
             <div className="mt-12">
               <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">
                 Media
               </p>
-              <div className="mt-5 grid gap-px overflow-hidden border border-white/15 bg-white/15 sm:grid-cols-2">
+              <div className="mt-5 grid gap-px overflow-hidden border border-white/15 bg-white/15 sm:grid-cols-2 xl:grid-cols-3">
                 {item.gallery.map((image, index) => (
                   <Reveal
                     key={image.src}
@@ -231,7 +231,7 @@ export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; b
                         src={image.src}
                         alt={image.alt ?? ""}
                         fill
-                        sizes="(min-width: 1024px) 40vw, 100vw"
+                        sizes="(min-width: 1280px) 32vw, (min-width: 640px) 50vw, 100vw"
                         className="object-cover"
                       />
                     </div>
@@ -275,7 +275,7 @@ export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; b
               <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">
                 {linkSectionLabel}
               </p>
-              <div className="mt-5 grid gap-px overflow-hidden border border-white/15 bg-white/15 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-5 grid gap-px overflow-hidden border border-white/15 bg-white/15 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {item.links.map((link) => (
                   <a
                     key={`${link.label}-${link.href}`}
@@ -301,7 +301,7 @@ export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; b
               <iframe
                 title={item.embed.title}
                 src={item.embed.src}
-                className="h-[352px] w-full border-0"
+                className="h-[352px] w-full border-0 lg:h-[420px]"
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
               />
