@@ -400,6 +400,42 @@ export const releases: ContentItem[] = [
       title: "2AM on Spotify",
     },
   },
+  {
+    title: "Ridiculous Flex",
+    slug: "ridiculous-flex",
+    category: "release",
+    kicker: "Legacy portfolio / Release",
+    image: "/media/ridiculous-flex-cover.jpeg",
+    summary: "A legacy Irie release entry restored from the original portfolio archive.",
+    body:
+      "Ridiculous Flex exists on the legacy Irie portfolio as a release with cover art but no long-form note attached. This page preserves it inside the new archive so the music catalog stays complete while the story can be expanded later.",
+    href: "/music/ridiculous-flex",
+    metadata: ["Release", "Legacy archive", "Cover art"],
+  },
+  {
+    title: "Go outside",
+    slug: "go-outside",
+    category: "release",
+    kicker: "Legacy portfolio / Release",
+    image: "/media/go-outside-cover.jpg",
+    summary: "A restored Irie release from the original portfolio archive.",
+    body:
+      "Go outside appears on the legacy Irie portfolio with cover art but no extended written description. The new archive keeps the release visible and gives it a permanent music page alongside the rest of the catalog.",
+    href: "/music/go-outside",
+    metadata: ["Release", "Legacy archive", "Cover art"],
+  },
+  {
+    title: "Ibiza",
+    slug: "ibiza",
+    category: "release",
+    kicker: "Legacy portfolio / Release",
+    image: "/media/ibiza-cover.jpg",
+    summary: "A legacy Irie release entry brought into the new music archive.",
+    body:
+      "Ibiza is part of the original Irie portfolio catalog. The legacy page includes cover art but no long-form release note, so this archive entry keeps the track present while leaving room for credits, stream links, and story details to be added.",
+    href: "/music/ibiza",
+    metadata: ["Release", "Legacy archive", "Cover art"],
+  },
 ];
 
 export const artifacts: ContentItem[] = [
@@ -645,6 +681,10 @@ export const archiveItems = [
   ["Culture Shock", "Live Series", "London", "/sessions/culture-shock"],
   ["I forgot to press send", "Single", "2025", "/music/i-forgot-to-press-send"],
   ["A.L.T.E", "Single / EP", "2025", "/music/alte"],
+  ["2AM", "Single", "2026", "/music/2am"],
+  ["Ridiculous Flex", "Release", "Legacy", "/music/ridiculous-flex"],
+  ["Go outside", "Release", "Legacy", "/music/go-outside"],
+  ["Ibiza", "Release", "Legacy", "/music/ibiza"],
 ] as const;
 
 export const featuredArchiveItems = archiveItems.slice(0, 5);
