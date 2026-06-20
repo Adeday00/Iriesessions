@@ -225,9 +225,10 @@ export const releases: ContentItem[] = [
     category: "release",
     kicker: "2025 / Album",
     image: "/media/lust-on-the-coast.jpg",
-    summary: "A coastal, nocturnal 2025 album — cover art, credits, and where to hear it.",
+    summary:
+      "An escape, a coastal feeling, and a sonic passport to wherever feels like home.",
     body:
-      "Lust on the Coast carries its own late-night atmosphere. The artwork, the credits, and the visuals all sit here in one place before you head out to listen.",
+      "LUST On The Coast was executive produced by Aday, founder of Irie Sessions, and Grammy-winning producer Chopstix. Born on the shores of Puerto Escondido, Mexico, the project follows Aday's search for new sounds, new motion, and a new way to feel free. From that journey came Island Disco: a fresh, sexy, liberating collision of Afrobeats, Dancehall, Global Pop, and Disco, with Zen Univrse, Niels, Le Mav, Mellissa, Deyon AGOI, Decalyn, and D'Phlowz each bringing their own perspective to the sessions.",
     href: "/music/lust-on-the-coast",
     metadata: ["Album", "2025", "Stream-ready"],
     gallery: [
@@ -265,9 +266,10 @@ export const releases: ContentItem[] = [
     category: "release",
     kicker: "2022 / Album + zine",
     image: "/media/borders-cover.jpg",
-    summary: "The 2022 album and zine — executive produced by Aday with Chopstix.",
+    summary:
+      "An audiovisual exploration of identity in motion, conceived and executive produced by Aday with Chopstix.",
     body:
-      "BORDERS is where the music, the photography, and the printed zine meet. Executive produced by Aday alongside Grammy-winning Nigerian producer Chopstix, it remains the cornerstone of the archive.",
+      "BORDERS began as a question: what exists between where we come from and where we're going? Conceived and executive produced by Aday in collaboration with Grammy-winning producer Chopstix, the project was developed as an audiovisual exploration of identity in motion, where geography dissolves and culture becomes fluid. Irie Sessions did not simply assemble an EP; it built a world around sound as a bridge, bringing together Krisirie, Skillz 8Figure, Tessellated, BenjiFlow, Ria Sean, Minz, and Yung L as portals into different cultural perspectives. The BORDERS Soundscaping Series extends that world into immersive film, where music is not just heard but experienced.",
     href: "/music/borders",
     metadata: ["Album", "Zine", "Archive object"],
     gallery: [
@@ -312,9 +314,9 @@ export const releases: ContentItem[] = [
     category: "release",
     kicker: "2025 / EP",
     image: "/media/iforgot-cover.jpg",
-    summary: "A short 2025 EP — artwork, collaborators, and the stream links in one place.",
+    summary: "A short 2025 EP with the artwork, collaborators, and stream links in one place.",
     body:
-      "A concise EP that keeps things close: the artwork, the people on it, and where to listen, gathered before you head out to your platform.",
+      "The legacy portfolio page for I forgot to press send does not carry a long-form note, so the archive keeps this entry focused: the artwork, the people around it, and the direct paths to listen.",
     href: "/music/i-forgot-to-press-send",
     metadata: ["EP", "2025", "DSP funnel"],
     links: [
@@ -346,9 +348,9 @@ export const releases: ContentItem[] = [
     category: "release",
     kicker: "2025 / Single + EP",
     image: "/media/alte-cover.jpg",
-    summary: "A 2025 single and EP — sound, artwork, and credits together.",
+    summary: "All Lost Things Evolve, curated and creative directed by Aday Living.",
     body:
-      "A.L.T.E pairs the sound with its artwork and the people behind it — a clean way in, with room for the video and collaborators around it.",
+      "A.L.T.E, All Lost Things Evolve, is streaming on all digital platforms. The project was curated and creative directed by Aday Living, with all songs written by Omagz and music produced by Duggie.",
     href: "/music/alte",
     metadata: ["Single", "2025", "Campaign"],
     links: [
@@ -377,7 +379,7 @@ export const releases: ContentItem[] = [
     image: "/media/2am-cover.jpeg",
     summary: "A 2026 late-night single — hear it, then explore what surrounds it.",
     body:
-      "2AM is built for after-hours: the song, where to stream it, and the wider Irie archive a click away.",
+      "The legacy portfolio page for 2AM does not include a long-form note yet. For now, this release page stays direct: the song, the stream paths, and the wider Irie archive a click away.",
     href: "/music/2am",
     metadata: ["Single", "2026", "Listener path"],
     links: [
