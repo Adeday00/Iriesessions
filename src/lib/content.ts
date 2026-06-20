@@ -223,14 +223,14 @@ export const releases: ContentItem[] = [
     title: "Lust on the Coast",
     slug: "lust-on-the-coast",
     category: "release",
-    kicker: "2025 / Album",
+    kicker: "Apr 25, 2025 / Album",
     image: "/media/lust-on-the-coast.jpg",
     summary:
       "An escape, a coastal feeling, and a sonic passport to wherever feels like home.",
     body:
       "LUST On The Coast was executive produced by Aday, founder of Irie Sessions, and Grammy-winning producer Chopstix. Born on the shores of Puerto Escondido, Mexico, the project follows Aday's search for new sounds, new motion, and a new way to feel free. From that journey came Island Disco: a fresh, sexy, liberating collision of Afrobeats, Dancehall, Global Pop, and Disco, with Zen Univrse, Niels, Le Mav, Mellissa, Deyon AGOI, Decalyn, and D'Phlowz each bringing their own perspective to the sessions.",
     href: "/music/lust-on-the-coast",
-    metadata: ["Album", "2025", "Stream-ready"],
+    metadata: ["Album", "Released Apr 25, 2025", "7 songs"],
     gallery: [
       { src: "/media/lotc-bts-01.jpg", label: "Lust on the Coast" },
       { src: "/media/lotc-bts-02.jpg", label: "On set" },
@@ -264,14 +264,14 @@ export const releases: ContentItem[] = [
     title: "BORDERS",
     slug: "borders",
     category: "release",
-    kicker: "2022 / Album + zine",
+    kicker: "May 6, 2022 / EP + zine",
     image: "/media/borders-cover.jpg",
     summary:
       "An audiovisual exploration of identity in motion, conceived and executive produced by Aday with Chopstix.",
     body:
       "BORDERS began as a question: what exists between where we come from and where we're going? Conceived and executive produced by Aday in collaboration with Grammy-winning producer Chopstix, the project was developed as an audiovisual exploration of identity in motion, where geography dissolves and culture becomes fluid. Irie Sessions did not simply assemble an EP; it built a world around sound as a bridge, bringing together Krisirie, Skillz 8Figure, Tessellated, BenjiFlow, Ria Sean, Minz, and Yung L as portals into different cultural perspectives. The BORDERS Soundscaping Series extends that world into immersive film, where music is not just heard but experienced.",
     href: "/music/borders",
-    metadata: ["Album", "Zine", "Archive object"],
+    metadata: ["EP", "Released May 6, 2022", "Zine"],
     gallery: [
       { src: "/media/borders-bts-01.jpg", label: "BORDERS session" },
       { src: "/media/borders-bts-02.jpg", label: "Behind the record" },
@@ -293,7 +293,7 @@ export const releases: ContentItem[] = [
       },
       {
         label: "Apple Music",
-        href: "https://music.apple.com/us/album/borders/1621606862",
+        href: "https://music.apple.com/us/album/borders-ep/1621606862",
         kind: "dsp",
       },
       {
@@ -312,13 +312,13 @@ export const releases: ContentItem[] = [
     title: "I forgot to press send",
     slug: "i-forgot-to-press-send",
     category: "release",
-    kicker: "2025 / EP",
+    kicker: "Nov 14, 2025 / EP",
     image: "/media/iforgot-cover.jpg",
     summary: "A short 2025 EP with the artwork, collaborators, and stream links in one place.",
     body:
       "The legacy portfolio page for I forgot to press send does not carry a long-form note, so the archive keeps this entry focused: the artwork, the people around it, and the direct paths to listen.",
     href: "/music/i-forgot-to-press-send",
-    metadata: ["EP", "2025", "DSP funnel"],
+    metadata: ["EP", "Released Nov 14, 2025", "4 songs"],
     links: [
       {
         label: "Spotify",
@@ -346,13 +346,13 @@ export const releases: ContentItem[] = [
     title: "A.L.T.E",
     slug: "alte",
     category: "release",
-    kicker: "2025 / Single + EP",
+    kicker: "Oct 10, 2025 / EP",
     image: "/media/alte-cover.jpg",
     summary: "All Lost Things Evolve, curated and creative directed by Aday Living.",
     body:
       "A.L.T.E, All Lost Things Evolve, is streaming on all digital platforms. The project was curated and creative directed by Aday Living, with all songs written by Omagz and music produced by Duggie.",
     href: "/music/alte",
-    metadata: ["Single", "2025", "Campaign"],
+    metadata: ["EP", "Released Oct 10, 2025", "Omagz"],
     links: [
       {
         label: "Spotify",
@@ -361,7 +361,7 @@ export const releases: ContentItem[] = [
       },
       {
         label: "Apple Music",
-        href: "https://music.apple.com/us/album/a-l-t-e-single/1836208468",
+        href: "https://music.apple.com/us/album/a-l-t-e-all-lost-things-evolve-ep/1836208468",
         kind: "dsp",
       },
     ],
@@ -375,13 +375,13 @@ export const releases: ContentItem[] = [
     title: "2AM",
     slug: "2am",
     category: "release",
-    kicker: "2026 / Single",
+    kicker: "Jul 18, 2025 / Single",
     image: "/media/2am-cover.jpeg",
-    summary: "A 2026 late-night single — hear it, then explore what surrounds it.",
+    summary: "A 2025 late-night single — hear it, then explore what surrounds it.",
     body:
       "The legacy portfolio page for 2AM does not include a long-form note yet. For now, this release page stays direct: the song, the stream paths, and the wider Irie archive a click away.",
     href: "/music/2am",
-    metadata: ["Single", "2026", "Listener path"],
+    metadata: ["Single", "Released Jul 18, 2025", "Skillz 8Figure / Projexx"],
     links: [
       {
         label: "Spotify",
@@ -404,37 +404,88 @@ export const releases: ContentItem[] = [
     title: "Ridiculous Flex",
     slug: "ridiculous-flex",
     category: "release",
-    kicker: "Legacy portfolio / Release",
+    kicker: "Oct 3, 2025 / Single",
     image: "/media/ridiculous-flex-cover.jpeg",
-    summary: "A legacy Irie release entry restored from the original portfolio archive.",
+    summary: "A 2025 Irie Sessions and Zen Univrse single restored from the original portfolio archive.",
     body:
-      "Ridiculous Flex exists on the legacy Irie portfolio as a release with cover art but no long-form note attached. This page preserves it inside the new archive so the music catalog stays complete while the story can be expanded later.",
+      "Ridiculous Flex exists on the legacy Irie portfolio as a release with cover art but no long-form note attached. The new archive keeps the single present with its correct release date and direct paths to listen.",
     href: "/music/ridiculous-flex",
-    metadata: ["Release", "Legacy archive", "Cover art"],
+    metadata: ["Single", "Released Oct 3, 2025", "Zen Univrse"],
+    links: [
+      {
+        label: "Spotify",
+        href: "https://open.spotify.com/track/0l9NMqXgPxBYChcNPBqIV5",
+        kind: "dsp",
+      },
+      {
+        label: "Apple Music",
+        href: "https://music.apple.com/us/album/ridiculous-flex-single/1837435476",
+        kind: "dsp",
+      },
+    ],
+    embed: {
+      type: "spotify",
+      src: "https://open.spotify.com/embed/track/0l9NMqXgPxBYChcNPBqIV5?utm_source=generator",
+      title: "Ridiculous Flex on Spotify",
+    },
   },
   {
     title: "Go outside",
     slug: "go-outside",
     category: "release",
-    kicker: "Legacy portfolio / Release",
+    kicker: "Aug 24, 2023 / Single",
     image: "/media/go-outside-cover.jpg",
-    summary: "A restored Irie release from the original portfolio archive.",
+    summary: "A 2023 Irie Sessions and Kobi Jonz single restored from the original portfolio archive.",
     body:
-      "Go outside appears on the legacy Irie portfolio with cover art but no extended written description. The new archive keeps the release visible and gives it a permanent music page alongside the rest of the catalog.",
+      "Go outside appears on the legacy Irie portfolio with cover art but no extended written description. The new archive keeps the single visible with its correct release date and direct stream paths alongside the rest of the catalog.",
     href: "/music/go-outside",
-    metadata: ["Release", "Legacy archive", "Cover art"],
+    metadata: ["Single", "Released Aug 24, 2023", "Kobi Jonz"],
+    links: [
+      {
+        label: "Spotify",
+        href: "https://open.spotify.com/album/3J49EKlW1qKyTwAt5K2Kij",
+        kind: "dsp",
+      },
+      {
+        label: "Apple Music",
+        href: "https://music.apple.com/us/album/go-outside-single/1701859758",
+        kind: "dsp",
+      },
+    ],
+    embed: {
+      type: "spotify",
+      src: "https://open.spotify.com/embed/album/3J49EKlW1qKyTwAt5K2Kij?utm_source=generator",
+      title: "Go Outside on Spotify",
+    },
   },
   {
     title: "Ibiza",
     slug: "ibiza",
     category: "release",
-    kicker: "Legacy portfolio / Release",
+    kicker: "Feb 12, 2024 / Single",
     image: "/media/ibiza-cover.jpg",
-    summary: "A legacy Irie release entry brought into the new music archive.",
+    summary: "A 2024 Irie Sessions and D'Phlowz single brought into the new music archive.",
     body:
-      "Ibiza is part of the original Irie portfolio catalog. The legacy page includes cover art but no long-form release note, so this archive entry keeps the track present while leaving room for credits, stream links, and story details to be added.",
+      "Ibiza is part of the original Irie portfolio catalog. The legacy page includes cover art but no long-form release note, so this archive entry keeps the single present with its correct release date, credits, and stream paths.",
     href: "/music/ibiza",
-    metadata: ["Release", "Legacy archive", "Cover art"],
+    metadata: ["Single", "Released Feb 12, 2024", "D'Phlowz"],
+    links: [
+      {
+        label: "Spotify",
+        href: "https://open.spotify.com/album/6lstxp1MLNbQFuCynrZVWk",
+        kind: "dsp",
+      },
+      {
+        label: "Apple Music",
+        href: "https://music.apple.com/us/album/ibiza-single/1730010933",
+        kind: "dsp",
+      },
+    ],
+    embed: {
+      type: "spotify",
+      src: "https://open.spotify.com/embed/album/6lstxp1MLNbQFuCynrZVWk?utm_source=generator",
+      title: "Ibiza on Spotify",
+    },
   },
 ];
 
@@ -666,7 +717,7 @@ export const projects: ContentItem[] = [
 export const allItems = [...sessions, ...releases, ...artifacts, ...opportunities, ...projects];
 
 export const archiveItems = [
-  ["BORDERS", "Album / Zine", "2022", "/music/borders"],
+  ["BORDERS", "EP / Zine", "2022", "/music/borders"],
   ["BORDERS: The Visualscaping Zine", "Print artifact", "2022", "/shop/borders-visualscaping-zine"],
   ["IRIE Sessions x BAYO", "Project", "2024-2025", "/journal/irie-sessions-x-bayo-project"],
   ["Culture Shock x Eventbrite", "Project", "London", "/journal/culture-shock-eventbrite"],
@@ -679,12 +730,12 @@ export const archiveItems = [
   ["Irie Stud Earrings", "Jewelry", "2026", "/shop/irie-stud-earrings"],
   ["Irie Global Grant", "Opportunity", "2025", "/opportunities/irie-global-grant"],
   ["Culture Shock", "Live Series", "London", "/sessions/culture-shock"],
-  ["I forgot to press send", "Single", "2025", "/music/i-forgot-to-press-send"],
-  ["A.L.T.E", "Single / EP", "2025", "/music/alte"],
-  ["2AM", "Single", "2026", "/music/2am"],
-  ["Ridiculous Flex", "Release", "Legacy", "/music/ridiculous-flex"],
-  ["Go outside", "Release", "Legacy", "/music/go-outside"],
-  ["Ibiza", "Release", "Legacy", "/music/ibiza"],
+  ["I forgot to press send", "EP", "2025", "/music/i-forgot-to-press-send"],
+  ["A.L.T.E", "EP", "2025", "/music/alte"],
+  ["2AM", "Single", "2025", "/music/2am"],
+  ["Ridiculous Flex", "Single", "2025", "/music/ridiculous-flex"],
+  ["Go outside", "Single", "2023", "/music/go-outside"],
+  ["Ibiza", "Single", "2024", "/music/ibiza"],
 ] as const;
 
 export const featuredArchiveItems = archiveItems.slice(0, 5);
