@@ -164,6 +164,7 @@ function ProductDetailPage({ item, backHref, backLabel }: { item: ContentItem; b
 export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; backHref: string; backLabel: string }) {
   const linkSectionLabel = getLinkSectionLabel(item);
   const isRelease = item.category === "release";
+  const embeds = item.embeds ?? (item.embed ? [item.embed] : []);
 
   if (item.href.startsWith("/shop/")) {
     return <ProductDetailPage item={item} backHref={backHref} backLabel={backLabel} />;
@@ -293,18 +294,23 @@ export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; b
               </div>
             </div>
           ) : null}
-          {item.embed ? (
+          {embeds.length > 0 ? (
             <div className="mt-12">
               <p className="mb-5 font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">
-                Embedded player
+                Embedded players
               </p>
-              <iframe
-                title={item.embed.title}
-                src={item.embed.src}
-                className="h-[352px] w-full border-0 lg:h-[420px]"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-              />
+              <div className="grid gap-5 lg:grid-cols-2">
+                {embeds.map((embed) => (
+                  <iframe
+                    key={`${embed.title}-${embed.src}`}
+                    title={embed.title}
+                    src={embed.src}
+                    className={`w-full border-0 ${embed.type === "spotify" ? "h-[352px]" : "h-[352px] lg:h-[420px]"}`}
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                  />
+                ))}
+              </div>
             </div>
           ) : null}
         </div>

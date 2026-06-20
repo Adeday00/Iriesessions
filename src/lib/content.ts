@@ -15,6 +15,11 @@ export type ContentItem = {
     src: string;
     title: string;
   };
+  embeds?: {
+    type: "spotify" | "youtube";
+    src: string;
+    title: string;
+  }[];
   gallery?: {
     src: string;
     label: string;
@@ -269,13 +274,22 @@ export const releases: ContentItem[] = [
     summary:
       "An audiovisual exploration of identity in motion, conceived and executive produced by Aday with Chopstix.",
     body:
-      "BORDERS began as a question: what exists between where we come from and where we're going? Conceived and executive produced by Aday in collaboration with Grammy-winning producer Chopstix, the project was developed as an audiovisual exploration of identity in motion, where geography dissolves and culture becomes fluid. Irie Sessions did not simply assemble an EP; it built a world around sound as a bridge, bringing together Krisirie, Skillz 8Figure, Tessellated, BenjiFlow, Ria Sean, Minz, and Yung L as portals into different cultural perspectives. The BORDERS Soundscaping Series extends that world into immersive film, where music is not just heard but experienced.",
+      "BORDERS began as a question: what exists between where we come from and where we're going? Conceived and executive produced by Aday in collaboration with Grammy-winning producer Chopstix, the project was developed as an audiovisual exploration of identity in motion, where geography dissolves and culture becomes fluid. Irie Sessions did not simply assemble an EP; it built a world around sound as a bridge, curating Krisirie, Skillz 8Figure, Tessellated, BenjiFlow, Ria Sean, Minz, and Yung L as portals into different cultural perspectives. Different accents, rhythms, and emotional textures become one borderless sonic language. The project was designed as a sensory experience: mood-driven lighting, cinematic pacing, and spatial environments that mirror emotional states. The BORDERS Soundscaping Series extends that world into immersive film, where music is not just heard but experienced.",
     href: "/music/borders",
     metadata: ["EP", "Released May 6, 2022", "Zine"],
     gallery: [
       { src: "/media/borders-bts-01.jpg", label: "BORDERS session" },
       { src: "/media/borders-bts-02.jpg", label: "Behind the record" },
       { src: "/media/borders-bts-03.jpg", label: "Film still" },
+      { src: "/media/borders-legacy-01.jpg", label: "Archive portrait" },
+      { src: "/media/borders-legacy-02.jpg", label: "Women Make Things frame" },
+      { src: "/media/borders-legacy-03.jpg", label: "Golden portrait" },
+      { src: "/media/borders-legacy-04.jpg", label: "Artist frame" },
+      { src: "/media/borders-legacy-05.jpg", label: "Room memory" },
+      { src: "/media/borders-legacy-06.jpg", label: "Outdoor frame" },
+      { src: "/media/borders-legacy-07.jpg", label: "Studio portrait" },
+      { src: "/media/borders-legacy-08.jpg", label: "Night portrait" },
+      { src: "/media/borders-legacy-09.jpg", label: "Seated portrait" },
       { src: "/media/borders-soundscaping-01.jpg", label: "Soundscaping" },
       { src: "/media/borders-soundscaping-02.jpg", label: "Lagos frame" },
       { src: "/media/borders-soundscaping-03.jpg", label: "Behind the series" },
@@ -307,6 +321,18 @@ export const releases: ContentItem[] = [
       src: "https://www.youtube.com/embed/b0fiJnOZU-0?start=2",
       title: "BORDERS: The Soundscaping Series",
     },
+    embeds: [
+      {
+        type: "spotify",
+        src: "https://open.spotify.com/embed/album/4qVkTUwn51kRQs82Jnktnw?utm_source=generator",
+        title: "BORDERS on Spotify",
+      },
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/b0fiJnOZU-0?start=2",
+        title: "BORDERS: The Soundscaping Series",
+      },
+    ],
   },
   {
     title: "I forgot to press send",
