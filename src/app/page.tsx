@@ -83,12 +83,12 @@ export default function Home() {
             </h1>
             <div className="hero-enter hero-enter-3 mt-8 grid gap-6 border-t border-white/20 pt-6 md:grid-cols-[1fr_0.8fr_0.8fr]">
               <p className="max-w-2xl text-lg leading-8 text-[#ded5c7] sm:text-xl md:text-2xl">
-                Irie Global is a cultural ecosystem designing the future of creative expression
-                through music, media, fashion, events, and technology.
+                Irie Global is a culture-driven company building platforms across music, media,
+                fashion, and technology.
               </p>
               <div className="font-mono text-xs uppercase leading-6 tracking-[0.18em] text-[#a9a095]">
                 <span className="block text-[#f4efe5]">Next room</span>
-                Sessions / Music / Artifacts
+                Artists / Creators / Ideas
               </div>
               <div className="font-mono text-xs uppercase leading-6 tracking-[0.18em] text-[#a9a095]">
                 <span className="block text-[#f4efe5]">Operating line</span>
