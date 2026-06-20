@@ -19,6 +19,12 @@ export function SiteFooter() {
           <p className="mt-6 max-w-md text-xl leading-8 text-[#cfc5b8]">
             Think global. Create local. Leave an artifact.
           </p>
+          <p className="mt-4 font-mono text-xs uppercase tracking-[0.22em] text-[#81786d]">
+            Have a cool project?{" "}
+            <Link href="/contact" className="link-underline text-[#b9ff3b]">
+              Get in touch
+            </Link>
+          </p>
         </div>
         <div className="grid gap-8 sm:grid-cols-2">
           <div className="grid justify-items-start gap-3 font-mono text-xs uppercase tracking-[0.18em] text-[#c8c0b4]">

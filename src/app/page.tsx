@@ -37,6 +37,27 @@ const signalItems = [
   ["Open channel", "Irie Global Grant", "/opportunities/irie-global-grant"],
 ] as const;
 
+const programming = [
+  {
+    kind: "Live event",
+    title: "Book Launch - BORDERS: The Visualscaping Zine",
+    date: "March 7, 2026",
+    href: "/shop/borders-visualscaping-zine",
+  },
+  {
+    kind: "Live event",
+    title: "Soho House Paris",
+    date: "March 6, 2026",
+    href: "/sessions/soho-house-paris",
+  },
+  {
+    kind: "Live event",
+    title: "Paris",
+    date: "January 10, 2025",
+    href: "/sessions/january-session",
+  },
+] as const;
+
 const eventPhotos = [
   { src: "/media/session-paris-01.jpg", alt: "Women Make Things hats on display in Paris" },
   { src: "/media/session-mar6-01.jpg", alt: "Irie session arrival frame" },
@@ -84,8 +105,8 @@ export default function Home() {
                 fashion, and technology.
               </p>
               <div className="font-mono text-xs uppercase leading-6 tracking-[0.18em] text-[#a9a095]">
-                <span className="block text-[#f4efe5]">Next room</span>
-                Artists / Creators / Ideas
+                <span className="block text-[#f4efe5]">Support line</span>
+                Artists at every stage
               </div>
               <div className="font-mono text-xs uppercase leading-6 tracking-[0.18em] text-[#a9a095]">
                 <span className="block text-[#f4efe5]">Operating line</span>
@@ -133,6 +154,30 @@ export default function Home() {
             </span>
           </Link>
         ))}
+      </section>
+      </Reveal>
+
+      <Reveal>
+      <section className="grid border-b border-white/15 bg-[#0c0c0c] lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="border-b border-white/15 p-5 sm:p-8 lg:border-b-0 lg:border-r lg:p-12">
+          <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">Events & Programming</p>
+          <h2 className="mt-4 max-w-xl text-4xl font-black uppercase leading-none md:text-6xl">
+            We support artists at every stage.
+          </h2>
+        </div>
+        <div className="grid">
+          {programming.map((event) => (
+            <Link
+              key={event.title}
+              href={event.href}
+              className="archive-row grid gap-3 border-b border-white/15 p-5 hover:bg-[#b9ff3b] hover:text-black sm:grid-cols-[140px_1fr_140px] sm:items-center lg:p-8"
+            >
+              <span className="font-mono text-[11px] uppercase tracking-[0.2em] opacity-70">{event.kind}</span>
+              <span className="text-2xl font-black uppercase leading-none md:text-3xl">{event.title}</span>
+              <span className="font-mono text-[11px] uppercase tracking-[0.16em] opacity-70 sm:text-right">{event.date}</span>
+            </Link>
+          ))}
+        </div>
       </section>
       </Reveal>
 
@@ -246,8 +291,8 @@ export default function Home() {
               Wear the archive.
             </h2>
             <p className="mt-6 max-w-lg text-lg leading-8 text-black/70">
-              Drops connect back to the city, sound, and story that made them necessary.
-              Merch becomes memory, not inventory.
+              From limited-edition drops to timeless essentials, merch is a way to connect with
+              the movement, support the artists, and carry the experience beyond the moment.
             </p>
           </div>
           <Link

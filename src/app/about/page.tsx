@@ -22,6 +22,15 @@ const collaborators = [
   { name: "Mohogany", role: "DJ / Transitions", image: "/media/collab-mohogany.jpg" },
 ];
 
+const talentSignals = [
+  ["Mohogany", "Collaborator"],
+  ["Easyscope", "Singer"],
+  ["TrillXoe", "Pop singer"],
+  ["Michael Brun", "Collaborator"],
+  ["Chopstix", "Collaborator"],
+  ["Zen", "Artist"],
+];
+
 export default function AboutPage() {
   return (
     <PageShell
@@ -89,9 +98,9 @@ export default function AboutPage() {
       </section>
 
       <section className="border-b border-white/15 px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
-        <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">Collaborators</p>
+        <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">Our talents</p>
         <h2 className="mt-4 max-w-2xl text-4xl font-black uppercase leading-none md:text-6xl">
-          The people in the room.
+          Artist development & collaboration.
         </h2>
         <div className="mt-10 grid gap-px overflow-hidden border border-white/15 bg-white/15 sm:grid-cols-3">
           {collaborators.map((person) => (
@@ -112,6 +121,14 @@ export default function AboutPage() {
             </figure>
           ))}
         </div>
+        <div className="mt-px grid overflow-hidden border border-white/15 bg-white/15 sm:grid-cols-2 lg:grid-cols-3">
+          {talentSignals.map(([name, role]) => (
+            <div key={`${name}-${role}`} className="archive-row bg-[#090909] p-5 hover:bg-[#b9ff3b] hover:text-black">
+              <p className="text-2xl font-black uppercase">{name}</p>
+              <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.18em] opacity-70">{role}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="px-5 py-20 sm:px-8 lg:px-12">
@@ -123,7 +140,8 @@ export default function AboutPage() {
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-[#bdb3a5] md:text-lg md:leading-8">
               Irie Global designs ecosystems where artists, brands, and ideas can grow with
-              intention, longevity, and global relevance.
+              intention, longevity, and global relevance. We focus on building worlds, not moments:
+              spaces where storytelling, identity, and commerce align.
             </p>
           </div>
           <Link

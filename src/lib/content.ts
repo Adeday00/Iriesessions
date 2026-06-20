@@ -87,6 +87,7 @@ export const navItems = [
   { label: "Journal", href: "/journal" },
   { label: "Shop", href: "/shop" },
   { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 // Secondary destinations — surfaced in the footer and via in-page CTAs
