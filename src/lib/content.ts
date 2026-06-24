@@ -235,7 +235,7 @@ export const releases: ContentItem[] = [
     body:
       "LUST On The Coast was executive produced by Aday, founder of Irie Sessions, and Grammy-winning producer Chopstix. Born on the shores of Puerto Escondido, Mexico, the project follows Aday's search for new sounds, new motion, and a new way to feel free. From that journey came Island Disco: a fresh, sexy, liberating collision of Afrobeats, Dancehall, Global Pop, and Disco, with Zen Univrse, Niels, Le Mav, Mellissa, Deyon AGOI, Decalyn, and D'Phlowz each bringing their own perspective to the sessions.",
     href: "/music/lust-on-the-coast",
-    metadata: ["Album", "Released Apr 25, 2025", "7 songs"],
+    metadata: ["Island Disco", "Album", "Released Apr 25, 2025", "7 songs"],
     gallery: [
       { src: "/media/lotc-bts-01.jpg", label: "Lust on the Coast" },
       { src: "/media/lotc-bts-02.jpg", label: "On set" },
@@ -276,7 +276,7 @@ export const releases: ContentItem[] = [
     body:
       "BORDERS began as a question: what exists between where we come from and where we're going? Conceived and executive produced by Aday in collaboration with Grammy-winning producer Chopstix, the project was developed as an audiovisual exploration of identity in motion, where geography dissolves and culture becomes fluid. Irie Sessions did not simply assemble an EP; it built a world around sound as a bridge, curating Krisirie, Skillz 8Figure, Tessellated, BenjiFlow, Ria Sean, Minz, and Yung L as portals into different cultural perspectives. Different accents, rhythms, and emotional textures become one borderless sonic language. The project was designed as a sensory experience: mood-driven lighting, cinematic pacing, and spatial environments that mirror emotional states. The BORDERS Soundscaping Series extends that world into immersive film, where music is not just heard but experienced.",
     href: "/music/borders",
-    metadata: ["EP", "Released May 6, 2022", "Zine"],
+    metadata: ["Afrobeats", "EP", "Released May 6, 2022", "Zine"],
     gallery: [
       { src: "/media/borders-bts-01.jpg", label: "BORDERS session" },
       { src: "/media/borders-bts-02.jpg", label: "Behind the record" },
@@ -344,7 +344,7 @@ export const releases: ContentItem[] = [
     body:
       "A short, after-hours EP built around the things left unsaid — four tracks deep: \"Big Back (Swing Up)\" with Topic Kasente, \"My Love\" with J.E.N.N.Y, \"2 Wrongs\" with WANI, and the closer, \"Sade's Outrolude (The Last Call),\" with Easyscope and Trill Xoe.",
     href: "/music/i-forgot-to-press-send",
-    metadata: ["EP", "Released Nov 14, 2025", "4 songs"],
+    metadata: ["Afrobeats / Alté", "EP", "Released Nov 14, 2025", "4 songs"],
     links: [
       {
         label: "Spotify",
@@ -378,7 +378,7 @@ export const releases: ContentItem[] = [
     body:
       "A.L.T.E, All Lost Things Evolve, is streaming on all digital platforms. The project was curated and creative directed by Aday Living, with all songs written by Omagz and music produced by Duggie.",
     href: "/music/alte",
-    metadata: ["EP", "Released Oct 10, 2025", "Omagz"],
+    metadata: ["Alté", "EP", "Released Oct 10, 2025", "Omagz"],
     links: [
       {
         label: "Spotify",
@@ -407,7 +407,7 @@ export const releases: ContentItem[] = [
     body:
       "\"2AM\" brings Nigerian artist Skillz 8Figure together with Jamaican artist Projexx for an after-hours record — Afrobeats and dancehall meeting in that quiet, restless hour. Atmospheric production and vulnerable writing, built for the solitude and longing that arrive when the night runs late.",
     href: "/music/2am",
-    metadata: ["Single", "Released Jul 18, 2025", "Skillz 8Figure / Projexx"],
+    metadata: ["Afrobeats / Dancehall", "Single", "Released Jul 18, 2025", "Skillz 8Figure / Projexx"],
     links: [
       {
         label: "Spotify",
@@ -436,7 +436,7 @@ export const releases: ContentItem[] = [
     body:
       "\"Ridiculous Flex\" pairs Irie Sessions with Zen Univrse for a swaggering, good-time cut — the sound of a night with nothing to prove. Released October 2025.",
     href: "/music/ridiculous-flex",
-    metadata: ["Single", "Released Oct 3, 2025", "Zen Univrse"],
+    metadata: ["Afrobeats", "Single", "Released Oct 3, 2025", "Zen Univrse"],
     links: [
       {
         label: "Spotify",
@@ -465,7 +465,7 @@ export const releases: ContentItem[] = [
     body:
       "\"Go Outside\" teams Irie Sessions with Kobi Jonz for a breezy, get-up-and-move single. Its video — directed by Aday Living and shot across Lagos and Los Angeles — carries the track's two-cities, one-feeling energy.",
     href: "/music/go-outside",
-    metadata: ["Single", "Released Aug 24, 2023", "Kobi Jonz"],
+    metadata: ["Afrobeats", "Single", "Released Aug 24, 2023", "Kobi Jonz"],
     links: [
       {
         label: "Spotify",
@@ -494,7 +494,7 @@ export const releases: ContentItem[] = [
     body:
       "\"Ibiza\" links Irie Sessions with D'Phlowz for a warm, Afro-pop single — short, bright, and built for the dance floor at golden hour. Released February 2024.",
     href: "/music/ibiza",
-    metadata: ["Single", "Released Feb 12, 2024", "D'Phlowz"],
+    metadata: ["Afro-pop", "Single", "Released Feb 12, 2024", "D'Phlowz"],
     links: [
       {
         label: "Spotify",
