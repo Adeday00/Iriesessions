@@ -340,9 +340,9 @@ export const releases: ContentItem[] = [
     category: "release",
     kicker: "Nov 14, 2025 / EP",
     image: "/media/iforgot-cover.jpg",
-    summary: "A short 2025 EP with the artwork, collaborators, and stream links in one place.",
+    summary: "A four-track 2025 EP about the late-night messages you almost didn't send.",
     body:
-      "The legacy portfolio page for I forgot to press send does not carry a long-form note, so the archive keeps this entry focused: the artwork, the people around it, and the direct paths to listen.",
+      "A short, after-hours EP built around the things left unsaid — four tracks deep: \"Big Back (Swing Up)\" with Topic Kasente, \"My Love\" with J.E.N.N.Y, \"2 Wrongs\" with WANI, and the closer, \"Sade's Outrolude (The Last Call),\" with Easyscope and Trill Xoe.",
     href: "/music/i-forgot-to-press-send",
     metadata: ["EP", "Released Nov 14, 2025", "4 songs"],
     links: [
@@ -403,9 +403,9 @@ export const releases: ContentItem[] = [
     category: "release",
     kicker: "Jul 18, 2025 / Single",
     image: "/media/2am-cover.jpeg",
-    summary: "A 2025 late-night single — hear it, then explore what surrounds it.",
+    summary: "Skillz 8Figure and Projexx trade a moody late-night confession across Afrobeats and dancehall.",
     body:
-      "The legacy portfolio page for 2AM does not include a long-form note yet. For now, this release page stays direct: the song, the stream paths, and the wider Irie archive a click away.",
+      "\"2AM\" brings Nigerian artist Skillz 8Figure together with Jamaican artist Projexx for an after-hours record — Afrobeats and dancehall meeting in that quiet, restless hour. Atmospheric production and vulnerable writing, built for the solitude and longing that arrive when the night runs late.",
     href: "/music/2am",
     metadata: ["Single", "Released Jul 18, 2025", "Skillz 8Figure / Projexx"],
     links: [
@@ -432,9 +432,9 @@ export const releases: ContentItem[] = [
     category: "release",
     kicker: "Oct 3, 2025 / Single",
     image: "/media/ridiculous-flex-cover.jpeg",
-    summary: "A 2025 Irie Sessions and Zen Univrse single restored from the original portfolio archive.",
+    summary: "A self-assured, cross-genre single with Zen Univrse.",
     body:
-      "Ridiculous Flex exists on the legacy Irie portfolio as a release with cover art but no long-form note attached. The new archive keeps the single present with its correct release date and direct paths to listen.",
+      "\"Ridiculous Flex\" pairs Irie Sessions with Zen Univrse for a swaggering, good-time cut — the sound of a night with nothing to prove. Released October 2025.",
     href: "/music/ridiculous-flex",
     metadata: ["Single", "Released Oct 3, 2025", "Zen Univrse"],
     links: [
@@ -461,9 +461,9 @@ export const releases: ContentItem[] = [
     category: "release",
     kicker: "Aug 24, 2023 / Single",
     image: "/media/go-outside-cover.jpg",
-    summary: "A 2023 Irie Sessions and Kobi Jonz single restored from the original portfolio archive.",
+    summary: "A 2023 single with Kobi Jonz — and a video shot across Lagos and Los Angeles.",
     body:
-      "Go outside appears on the legacy Irie portfolio with cover art but no extended written description. The new archive keeps the single visible with its correct release date and direct stream paths alongside the rest of the catalog.",
+      "\"Go Outside\" teams Irie Sessions with Kobi Jonz for a breezy, get-up-and-move single. Its video — directed by Aday Living and shot across Lagos and Los Angeles — carries the track's two-cities, one-feeling energy.",
     href: "/music/go-outside",
     metadata: ["Single", "Released Aug 24, 2023", "Kobi Jonz"],
     links: [
@@ -490,9 +490,9 @@ export const releases: ContentItem[] = [
     category: "release",
     kicker: "Feb 12, 2024 / Single",
     image: "/media/ibiza-cover.jpg",
-    summary: "A 2024 Irie Sessions and D'Phlowz single brought into the new music archive.",
+    summary: "A sun-soaked Afro-pop single with D'Phlowz, made for the island.",
     body:
-      "Ibiza is part of the original Irie portfolio catalog. The legacy page includes cover art but no long-form release note, so this archive entry keeps the single present with its correct release date, credits, and stream paths.",
+      "\"Ibiza\" links Irie Sessions with D'Phlowz for a warm, Afro-pop single — short, bright, and built for the dance floor at golden hour. Released February 2024.",
     href: "/music/ibiza",
     metadata: ["Single", "Released Feb 12, 2024", "D'Phlowz"],
     links: [
