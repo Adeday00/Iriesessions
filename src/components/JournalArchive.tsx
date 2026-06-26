@@ -12,7 +12,7 @@ export function JournalArchive({ items }: { items: readonly ArchiveRow[] }) {
 
   const filtered = useMemo(
     () =>
-      items.filter(([title, type, year, href]) => {
+      items.filter(([title, type, year]) => {
         if (normalizedQuery === "") {
           return true;
         }

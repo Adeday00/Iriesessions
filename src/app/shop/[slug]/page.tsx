@@ -11,7 +11,14 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const item = getItemBySlug(shopItems, slug);
-  return { title: item ? `${item.title} | Irie Sessions` : "Shop | Irie Sessions" };
+  return item
+    ? {
+        title: item.title,
+        description: item.summary,
+        alternates: { canonical: item.href },
+        openGraph: { title: item.title, description: item.summary, images: [item.image] },
+      }
+    : { title: "Shop" };
 }
 
 export default async function ShopDetailPage({ params }: { params: Promise<{ slug: string }> }) {

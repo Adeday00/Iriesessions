@@ -18,13 +18,16 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://iriesessions.com"),
+  metadataBase: new URL("https://iriesessions.netlify.app"),
   title: {
     default: "Irie Sessions",
-    template: "%s",
+    template: "%s | Irie Sessions",
   },
   description:
     "A diasporic culture studio turning local scenes into shared global memory through sound, style, image, and gathering.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Irie Sessions",
     description:

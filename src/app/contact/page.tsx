@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { PageShell } from "@/components/PageShell";
 import { socialLinks } from "@/lib/content";
 
@@ -8,8 +9,10 @@ const contactPaths = [
   ["Artist support", "Open calls, grants, release pathways, and collaborator windows."],
 ];
 
-export const metadata = {
-  title: "Contact | Irie Sessions",
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Contact Irie Global for creative direction, programming, partnerships, artist support, and cultural collaboration.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

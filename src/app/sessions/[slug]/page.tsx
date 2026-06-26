@@ -9,7 +9,14 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const item = getItemBySlug(sessions, slug);
-  return { title: item ? `${item.title} | Irie Sessions` : "Session | Irie Sessions" };
+  return item
+    ? {
+        title: item.title,
+        description: item.summary,
+        alternates: { canonical: item.href },
+        openGraph: { title: item.title, description: item.summary, images: [item.image] },
+      }
+    : { title: "Sessions" };
 }
 
 export default async function SessionDetailPage({ params }: { params: Promise<{ slug: string }> }) {

@@ -45,4 +45,26 @@ SHOPIFY_STORE_DOMAIN=irie-sessions-6873.myshopify.com
 SHOPIFY_STOREFRONT_API_VERSION=2026-04
 ```
 
+`2026-04` is the current stable Storefront API version as of June 2026. Shopify supports it through April 16, 2027. Review the version quarterly before it reaches end of support.
+
 The public variant environment variables are optional overrides. If Shopify products are deleted and recreated, update the fallback `shopifyVariantId` values in `src/lib/content.ts` or set new Netlify environment variables.
+
+### Production checkout verification
+
+After each Shopify or Netlify configuration change:
+
+1. Confirm `SHOPIFY_STOREFRONT_ACCESS_TOKEN` exists in the Netlify production environment.
+2. Add one product to the basket on the production site.
+3. Select **Checkout** and confirm Shopify opens with the correct product, variant, quantity, and price.
+4. Return to the site and confirm the checkout button is no longer stuck in a loading state.
+5. Complete a low-value test order only when end-to-end payment, taxes, shipping, notifications, and fulfillment need verification.
+
+Cart creation can be smoke-tested without placing an order:
+
+```bash
+curl -X POST https://iriesessions.netlify.app/.netlify/functions/create-shopify-cart \
+  -H 'Content-Type: application/json' \
+  --data '{"lines":[{"merchandiseId":"gid://shopify/ProductVariant/49582180696357","quantity":1}]}'
+```
+
+A successful response includes a Shopify `checkoutUrl`. Do not publish or log the Storefront access token.

@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "@/components/PageShell";
 import { ClearBasketOnMount } from "@/components/commerce/ClearBasketOnMount";
+
+export const metadata: Metadata = {
+  title: "Order Received",
+  robots: { index: false, follow: false },
+};
 
 export default function CheckoutSuccessPage() {
   return (

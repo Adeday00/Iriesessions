@@ -1,6 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { PageShell } from "@/components/PageShell";
+
+export const metadata: Metadata = {
+  title: "About",
+  description: "Meet Irie Global, a culture-driven company building platforms across music, media, fashion, events, and technology.",
+  alternates: { canonical: "/about" },
+};
 
 const pillars = [
   ["People", "We center artists, curators, and creative minds, building meaningful relationships that fuel everything we create."],

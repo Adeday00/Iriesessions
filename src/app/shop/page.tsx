@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { EditorialGrid, PageShell, SplitFeature } from "@/components/PageShell";
 import { artifacts } from "@/lib/content";
+
+export const metadata: Metadata = {
+  title: "Shop",
+  description: "Shop limited Irie headwear, jewelry, print objects, and artifacts connected to the music and community.",
+  alternates: { canonical: "/shop" },
+};
 
 export default function ShopPage() {
   return (

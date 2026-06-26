@@ -316,8 +316,21 @@ export default function Home() {
               Build the next room with us.
             </h2>
           </div>
-          <form id="newsletter" name="newsletter" method="POST" data-netlify="true" className="self-end">
+          <form
+            id="newsletter"
+            name="newsletter"
+            method="POST"
+            action="/thanks"
+            data-netlify="true"
+            data-netlify-honeypot="company-website"
+            className="self-end"
+          >
             <input type="hidden" name="form-name" value="newsletter" />
+            <p className="hidden" aria-hidden="true">
+              <label>
+                Do not fill this out: <input name="company-website" tabIndex={-1} autoComplete="off" />
+              </label>
+            </p>
             <label htmlFor="email" className="font-mono text-xs uppercase tracking-[0.22em] text-[#bdb3a5]">
               Get drops, grants, and session windows
             </label>
@@ -326,6 +339,7 @@ export default function Home() {
                 id="email"
                 type="email"
                 name="email"
+                autoComplete="email"
                 required
                 placeholder="you@example.com"
                 className="min-h-14 flex-1 border border-white/20 bg-white/5 px-4 text-base text-[#f4efe5] outline-none transition placeholder:text-[#847b70] focus:border-[#b9ff3b]"

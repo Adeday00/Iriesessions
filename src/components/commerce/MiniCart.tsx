@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useBasket } from "@/components/commerce/BasketProvider";
 import {
   canCreateShopifyCart,
@@ -14,26 +14,12 @@ import {
 
 export function MiniCart() {
   const { lines, quantity, isOpen, closeDrawer } = useBasket();
-  const [isMounted, setIsMounted] = useState(isOpen);
-  const [isVisible, setIsVisible] = useState(false);
   const [isCheckingOut, setIsCheckingOut] = useState(false);
   const [checkoutError, setCheckoutError] = useState<string | null>(null);
 
   const subtotal = getBasketSubtotal(lines);
   const canCheckout = canCreateShopifyCart(lines);
   const hasMissingConfig = lines.some((line) => !line.shopifyVariantId);
-
-  useEffect(() => {
-    if (isOpen) {
-      setIsMounted(true);
-      const frame = requestAnimationFrame(() => setIsVisible(true));
-      return () => cancelAnimationFrame(frame);
-    }
-
-    setIsVisible(false);
-    const timeout = window.setTimeout(() => setIsMounted(false), 520);
-    return () => window.clearTimeout(timeout);
-  }, [isOpen]);
 
   async function handleCheckout() {
     if (!canCheckout || isCheckingOut) {
@@ -50,14 +36,10 @@ export function MiniCart() {
     }
   }
 
-  if (!isMounted) {
-    return null;
-  }
-
   return (
     <div
-      className={`fixed inset-0 z-[100] overflow-hidden ${isVisible ? "" : "pointer-events-none"}`}
-      aria-hidden={!isVisible}
+      className={`fixed inset-0 z-[100] overflow-hidden ${isOpen ? "" : "pointer-events-none invisible delay-500"}`}
+      aria-hidden={!isOpen}
     >
       {/* Scrim */}
       <button
@@ -66,7 +48,7 @@ export function MiniCart() {
         aria-label="Close basket"
         onClick={closeDrawer}
         className={`absolute inset-0 bg-black/65 transition-opacity duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          isVisible ? "opacity-100" : "opacity-0"
+          isOpen ? "opacity-100" : "opacity-0"
         }`}
       />
 
@@ -76,7 +58,7 @@ export function MiniCart() {
         aria-modal="true"
         aria-label="Basket"
         className={`absolute right-0 top-0 flex h-full w-full max-w-md flex-col border-l border-white/15 bg-[#0c0c0c] text-[#f4efe5] shadow-2xl shadow-black/50 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          isVisible ? "translate-x-0" : "translate-x-full"
+          isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="flex items-center justify-between border-b border-white/15 px-5 py-5">

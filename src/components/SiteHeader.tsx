@@ -60,7 +60,7 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <a
+          <Link
             href="/shop/basket"
             aria-label={`Open ${basketLabel}`}
             onClick={(event) => {
@@ -74,7 +74,7 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
             <span className="grid min-w-5 place-items-center rounded-full bg-[#b9ff3b] px-1.5 py-0.5 text-[10px] leading-none text-black">
               {basketQuantity}
             </span>
-          </a>
+          </Link>
           <button
             type="button"
             aria-controls="mobile-menu"
@@ -116,7 +116,7 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
               </Link>
             ))}
           </div>
-          <a
+          <Link
             href="/shop/basket"
             onClick={(event) => {
               event.preventDefault();
@@ -126,7 +126,7 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
             className="pressable mt-4 block bg-[#b9ff3b] px-4 py-4 text-center font-mono text-xs uppercase tracking-[0.22em] text-black hover:bg-[#f4efe5]"
           >
             {basketLabel}
-          </a>
+          </Link>
         </nav>
       ) : null}
     </header>

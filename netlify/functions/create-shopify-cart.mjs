@@ -1,5 +1,9 @@
 const DEFAULT_SHOPIFY_STORE_DOMAIN = "irie-sessions-6873.myshopify.com";
 const DEFAULT_API_VERSION = "2026-04";
+const MAX_LINES = 25;
+const MAX_LINE_QUANTITY = 25;
+const MAX_REQUEST_BYTES = 16_384;
+const SHOPIFY_TIMEOUT_MS = 10_000;
 
 function json(statusCode, body) {
   return {
@@ -37,11 +41,23 @@ function normalizeLines(lines) {
   }
 
   return lines
+    .slice(0, MAX_LINES)
     .map((line) => ({
       merchandiseId: normalizeMerchandiseId(line?.merchandiseId),
       quantity: Number(line?.quantity),
     }))
-    .filter((line) => line.merchandiseId && Number.isInteger(line.quantity) && line.quantity > 0);
+    .filter(
+      (line) =>
+        line.merchandiseId &&
+        Number.isInteger(line.quantity) &&
+        line.quantity > 0 &&
+        line.quantity <= MAX_LINE_QUANTITY,
+    );
+}
+
+function normalizeApiVersion(version) {
+  const value = String(version || DEFAULT_API_VERSION).trim();
+  return /^\d{4}-(01|04|07|10)$/.test(value) ? value : DEFAULT_API_VERSION;
 }
 
 function getStorefrontAuthHeader(accessToken) {
@@ -55,6 +71,10 @@ function getStorefrontAuthHeader(accessToken) {
 export async function handler(event) {
   if (event.httpMethod !== "POST") {
     return json(405, { error: "Method not allowed." });
+  }
+
+  if ((event.body || "").length > MAX_REQUEST_BYTES) {
+    return json(413, { error: "Checkout request is too large." });
   }
 
   const accessToken = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN;
@@ -78,7 +98,7 @@ export async function handler(event) {
   }
 
   const domain = normalizeDomain(process.env.SHOPIFY_STORE_DOMAIN || process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN);
-  const apiVersion = process.env.SHOPIFY_STOREFRONT_API_VERSION || DEFAULT_API_VERSION;
+  const apiVersion = normalizeApiVersion(process.env.SHOPIFY_STOREFRONT_API_VERSION);
   const endpoint = `https://${domain}/api/${apiVersion}/graphql.json`;
 
   const mutation = `
@@ -97,23 +117,38 @@ export async function handler(event) {
     }
   `;
 
-  const response = await fetch(endpoint, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      ...getStorefrontAuthHeader(accessToken),
-    },
-    body: JSON.stringify({
-      query: mutation,
-      variables: {
-        input: {
-          lines,
-        },
-      },
-    }),
-  });
+  let response;
 
-  const payload = await response.json();
+  try {
+    response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        ...getStorefrontAuthHeader(accessToken),
+      },
+      body: JSON.stringify({
+        query: mutation,
+        variables: {
+          input: {
+            lines,
+          },
+        },
+      }),
+      signal: AbortSignal.timeout(SHOPIFY_TIMEOUT_MS),
+    });
+  } catch (error) {
+    return json(502, {
+      error: error?.name === "TimeoutError" ? "Shopify checkout timed out." : "Shopify checkout is unavailable.",
+    });
+  }
+
+  let payload;
+
+  try {
+    payload = await response.json();
+  } catch {
+    return json(502, { error: "Shopify returned an invalid response." });
+  }
 
   if (!response.ok || payload.errors?.length) {
     return json(response.status || 502, {

@@ -9,7 +9,14 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const item = getItemBySlug(releases, slug);
-  return { title: item ? `${item.title} | Irie Sessions` : "Music | Irie Sessions" };
+  return item
+    ? {
+        title: item.title,
+        description: item.summary,
+        alternates: { canonical: item.href },
+        openGraph: { title: item.title, description: item.summary, images: [item.image] },
+      }
+    : { title: "Music" };
 }
 
 export default async function MusicDetailPage({ params }: { params: Promise<{ slug: string }> }) {
