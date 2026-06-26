@@ -325,10 +325,12 @@ export default function Home() {
               <input
                 id="email"
                 type="email"
+                name="email"
+                required
                 placeholder="you@example.com"
                 className="min-h-14 flex-1 border border-white/20 bg-white/5 px-4 text-base text-[#f4efe5] outline-none transition placeholder:text-[#847b70] focus:border-[#b9ff3b]"
               />
-              <button className="pressable min-h-14 bg-[#b9ff3b] px-6 font-mono text-xs uppercase tracking-[0.2em] text-black hover:bg-[#f4efe5]">
+              <button type="submit" className="pressable min-h-14 bg-[#b9ff3b] px-6 font-mono text-xs uppercase tracking-[0.2em] text-black hover:bg-[#f4efe5]">
                 Join list
               </button>
             </div>

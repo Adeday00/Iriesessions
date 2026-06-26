@@ -24,7 +24,8 @@ export default function OpportunitiesPage() {
       </section>
 
       <section className="px-5 py-20 sm:px-8 lg:px-12">
-        <form className="grid gap-6 border border-white/15 p-6 sm:p-10 lg:grid-cols-[1fr_1.2fr] lg:p-12">
+        <form name="opportunities" method="POST" data-netlify="true" className="grid gap-6 border border-white/15 p-6 sm:p-10 lg:grid-cols-[1fr_1.2fr] lg:p-12">
+          <input type="hidden" name="form-name" value="opportunities" />
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">Interest form</p>
             <h2 className="mt-5 max-w-xl text-5xl font-black uppercase leading-none">Build the next room.</h2>
@@ -32,22 +33,27 @@ export default function OpportunitiesPage() {
           <div className="grid gap-4">
             <input
               type="text"
+              name="name"
               aria-label="Name"
+              required
               className="min-h-14 border border-white/20 bg-white/5 px-4 outline-none transition-colors placeholder:text-[#847b70] focus:border-[#b9ff3b]"
               placeholder="Name"
             />
             <input
               type="email"
+              name="email"
               aria-label="Email"
+              required
               className="min-h-14 border border-white/20 bg-white/5 px-4 outline-none transition-colors placeholder:text-[#847b70] focus:border-[#b9ff3b]"
               placeholder="Email"
             />
             <textarea
+              name="message"
               aria-label="Tell us what you want to build"
               className="min-h-36 border border-white/20 bg-white/5 p-4 outline-none transition-colors placeholder:text-[#847b70] focus:border-[#b9ff3b]"
               placeholder="Tell us what you want to build"
             />
-            <button className="min-h-14 bg-[#b9ff3b] px-6 font-mono text-xs uppercase tracking-[0.2em] text-black transition-colors hover:bg-[#f4efe5]">
+            <button type="submit" className="min-h-14 bg-[#b9ff3b] px-6 font-mono text-xs uppercase tracking-[0.2em] text-black transition-colors hover:bg-[#f4efe5]">
               Submit interest
             </button>
           </div>
