@@ -233,7 +233,7 @@ export const releases: ContentItem[] = [
     summary:
       "An escape, a coastal feeling, and a sonic passport to wherever feels like home.",
     body:
-      "LUST On The Coast was executive produced by Aday, founder of Irie Sessions, and Grammy-winning producer Chopstix. Born on the shores of Puerto Escondido, Mexico, the project follows Aday's search for new sounds, new motion, and a new way to feel free. From that journey came Island Disco: a fresh, sexy, liberating collision of Afrobeats, Dancehall, Global Pop, and Disco, with Zen Univrse, Niels, Le Mav, Mellissa, Deyon AGOI, Decalyn, and D'Phlowz each bringing their own perspective to the sessions.",
+      "LUST On The Coast was executive produced by Irie Sessions founder Aday alongside Grammy Award-winning producer Chopstix. It began on the shores of Puerto Escondido, Mexico, where the days moved slower, the nights stretched longer, and every sound carried a different kind of freedom. Following the release of BORDERS, Aday arrived in search of something he couldn't quite name. He left with Island Disco, a meeting point between African and Caribbean rhythms, Pop, and Disco. The project's opening record, Was I Not The Man, became the first expression of that idea, laying the foundation for the sound that followed. Featuring Zen Univrse, Niels, Le Mav, Mellissa, Deyon Agoi, Decalyn, and D'Phlowz, LUST On The Coast captures the feeling of movement, discovery, and making music without borders.",
     href: "/music/lust-on-the-coast",
     metadata: ["Island Disco", "Album", "Released Apr 25, 2025", "7 songs"],
     gallery: [

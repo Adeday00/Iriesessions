@@ -17,7 +17,7 @@ export function SiteFooter() {
             />
           </Link>
           <p className="mt-6 max-w-md text-xl leading-8 text-[#cfc5b8]">
-            Think global. Create local. Leave an artifact.
+            Think global. Create local.
           </p>
           <p className="mt-4 font-mono text-xs uppercase tracking-[0.22em] text-[#81786d]">
             Have a cool project?{" "}

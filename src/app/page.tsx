@@ -3,25 +3,26 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/motion/Reveal";
+import { PosterWall } from "@/components/PosterWall";
 import { featuredArchiveItems } from "@/lib/content";
 
 const pillars = [
   {
     title: "Sessions",
-    kicker: "Paris / Lagos / New York",
-    copy: "Live rooms, pop-ups, listening nights, and recaps that turn a date on the calendar into a cultural memory.",
+    kicker: "Gather / Experience / Connect",
+    copy: "Spaces for music, conversation, and creative exchange.",
     image: "/media/session-paris-04.jpg",
   },
   {
     title: "Music",
-    kicker: "Releases / Visuals / Credits",
-    copy: "Albums, singles, videos, and the credits behind them — with a clear path to listen.",
+    kicker: "Listen / Watch / Discover",
+    copy: "An archive of sound, process, and the people behind it.",
     image: "/media/lust-on-the-coast.jpg",
   },
   {
-    title: "Artifacts",
-    kicker: "Zines / Merch / Objects",
-    copy: "What stays after the room clears: zines, drops, photo essays, and print.",
+    title: "Shop",
+    kicker: "Wear / Read / Collect",
+    copy: "Objects, books, apparel, and editions designed to carry culture beyond the moment.",
     image: "/media/hat-black-front.jpg",
   },
 ];
@@ -30,12 +31,6 @@ const heroActions = [
   { label: "Browse archive", href: "/journal" },
   { label: "Listen now", href: "/music" },
 ];
-
-const signalItems = [
-  ["Latest release", "I forgot to press send", "/music/i-forgot-to-press-send"],
-  ["Product drop", "Women Make Things 10X Better", "/shop/women-make-things-10x-better-hat"],
-  ["Open channel", "Irie Global Grant", "/opportunities/irie-global-grant"],
-] as const;
 
 const programming = [
   {
@@ -57,22 +52,6 @@ const programming = [
     href: "/sessions/january-session",
   },
 ] as const;
-
-const eventPhotos = [
-  { src: "/media/session-paris-01.jpg", alt: "Women Make Things hats on display in Paris" },
-  { src: "/media/session-mar6-01.jpg", alt: "Irie session arrival frame" },
-  { src: "/media/btw-01.jpg", alt: "Be There Weekly event artwork" },
-  { src: "/media/btw-photo-03.jpg", alt: "Be There Weekly guest moment" },
-  { src: "/media/btw-live-02.jpg", alt: "Be There Weekly dance floor" },
-  { src: "/media/btw-live-08.jpg", alt: "Be There Weekly portrait" },
-  { src: "/media/session-jan10-01.jpg", alt: "Irie session at night" },
-  { src: "/media/session-jan10-04.jpg", alt: "Irie January session archive still" },
-  { src: "/media/session-paris-05.jpg", alt: "The room at Soho House Paris" },
-  { src: "/media/session-paris-03.jpg", alt: "Irie in Paris" },
-  { src: "/media/session-jan10-03.jpg", alt: "Irie Paris session" },
-  { src: "/media/session-paris-10.jpg", alt: "Soho House Paris closing image" },
-  { src: "/media/culture-shock-02.jpg", alt: "Culture Shock live archive" },
-];
 
 export default function Home() {
   return (
@@ -99,17 +78,13 @@ export default function Home() {
               <span className="block lg:whitespace-nowrap">Think Global.</span>
               <span className="block text-[#b9ff3b] lg:whitespace-nowrap">Create Local.</span>
             </h1>
-            <div className="hero-enter hero-enter-3 mt-8 grid gap-6 border-t border-white/20 pt-6 md:grid-cols-[1fr_0.8fr_0.8fr]">
+            <div className="hero-enter hero-enter-3 mt-8 grid gap-6 border-t border-white/20 pt-6 md:grid-cols-[1fr_0.8fr]">
               <p className="max-w-2xl text-lg leading-8 text-[#ded5c7] sm:text-xl md:text-2xl">
                 Irie Global is a culture-driven company building platforms across music, media,
                 fashion, and technology.
               </p>
               <div className="font-mono text-xs uppercase leading-6 tracking-[0.18em] text-[#a9a095]">
-                <span className="block text-[#f4efe5]">Support line</span>
-                Artists at every stage
-              </div>
-              <div className="font-mono text-xs uppercase leading-6 tracking-[0.18em] text-[#a9a095]">
-                <span className="block text-[#f4efe5]">Operating line</span>
+                <span className="block text-[#f4efe5]">Our key pillars</span>
                 People / Togetherness / Giving back
               </div>
             </div>
@@ -133,36 +108,11 @@ export default function Home() {
       </section>
 
       <Reveal>
-      <section className="grid border-y border-white/15 bg-[#090909] md:grid-cols-3">
-        {signalItems.map(([label, title, href]) => (
-          <Link
-            key={href}
-            href={href}
-            className="archive-row group flex flex-col border-white/15 p-5 hover:bg-white/[0.04] md:border-r lg:p-8"
-          >
-            <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#b9ff3b]">
-              {label}
-            </span>
-            <span className="mt-3 block text-2xl font-black uppercase leading-none md:text-3xl">
-              {title}
-            </span>
-            <span
-              aria-hidden
-              className="mt-4 font-mono text-sm text-[#b9ff3b] transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1.5"
-            >
-              →
-            </span>
-          </Link>
-        ))}
-      </section>
-      </Reveal>
-
-      <Reveal>
       <section className="grid border-b border-white/15 bg-[#0c0c0c] lg:grid-cols-[0.8fr_1.2fr]">
         <div className="border-b border-white/15 p-5 sm:p-8 lg:border-b-0 lg:border-r lg:p-12">
           <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">Events & Programming</p>
           <h2 className="mt-4 max-w-xl text-4xl font-black uppercase leading-none md:text-6xl">
-            We support artists at every stage.
+            We create moments that move culture.
           </h2>
         </div>
         <div className="grid">
@@ -184,7 +134,7 @@ export default function Home() {
       <Reveal>
       <section className="grid border-y border-white/15 bg-[#111111] md:grid-cols-3">
         {pillars.map((pillar) => (
-          <article key={pillar.title} id={pillar.title.toLowerCase()} className="media-lift group border-white/15 p-5 md:border-r lg:p-8">
+          <article key={pillar.title} className="media-lift group border-white/15 p-5 md:border-r lg:p-8">
             <div className="relative mb-6 aspect-[4/5] overflow-hidden bg-[#1a1a1a]">
               <Image
                 src={pillar.image}
@@ -206,42 +156,7 @@ export default function Home() {
       </Reveal>
 
       <Reveal>
-      <section className="border-b border-white/15 bg-[#0c0c0c] py-12 sm:py-16">
-        <div className="flex items-end justify-between gap-6 px-5 sm:px-8 lg:px-12">
-          <div>
-            <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">From the room</p>
-            <h2 className="mt-4 max-w-xl text-4xl font-black uppercase leading-[0.9] md:text-6xl">
-              Sessions, not posts.
-            </h2>
-          </div>
-          <Link
-            href="/sessions"
-            className="group hidden shrink-0 items-center gap-2 font-mono text-xs uppercase tracking-[0.22em] text-[#b9ff3b] transition-colors duration-300 hover:text-[#f4efe5] sm:inline-flex"
-          >
-            All sessions
-            <span aria-hidden className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1">
-              →
-            </span>
-          </Link>
-        </div>
-        <div className="mt-8 flex snap-x gap-3 overflow-x-auto px-5 pb-2 sm:px-8 lg:px-12">
-          {eventPhotos.map((photo) => (
-            <Link
-              key={photo.src}
-              href="/sessions"
-              className="media-lift group relative aspect-[4/5] w-60 shrink-0 snap-start overflow-hidden bg-[#1a1a1a] sm:w-72"
-            >
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                sizes="288px"
-                className="object-cover"
-              />
-            </Link>
-          ))}
-        </div>
-      </section>
+        <PosterWall />
       </Reveal>
 
       <Reveal>

@@ -12,10 +12,15 @@ export default function ShopPage() {
   return (
     <PageShell
       eyebrow="Shop"
-      title="Shop the artifacts."
-      intro="Limited headwear, jewelry, print objects, and product drops connected to the sound, story, and community behind the platform."
+      title="Take a piece of the story."
+      intro="Explore limited editions inspired by our music, events, and creative collaborations, from books and prints to apparel, jewelry, and collectible objects."
     >
-      <EditorialGrid items={artifacts} cta="Shop / view" />
+      <EditorialGrid
+        items={artifacts}
+        cta="Shop / view"
+        categoryLabels={["Publication", "Headwear", "Jewelry"]}
+        kickerLabels={["Print / Edition", "Wear / Edition", "Object / Edition"]}
+      />
       <SplitFeature
         image="/media/hat-black-white-text.jpg"
         eyebrow="Limited edition"

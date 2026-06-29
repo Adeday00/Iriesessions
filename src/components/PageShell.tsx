@@ -19,10 +19,11 @@ type PageShellProps = {
   title: string;
   intro: string;
   meta?: string;
+  compact?: boolean;
   children: React.ReactNode;
 };
 
-export function PageShell({ eyebrow, title, intro, meta = "Irie Archive", children }: PageShellProps) {
+export function PageShell({ eyebrow, title, intro, meta = "Irie Archive", compact = false, children }: PageShellProps) {
   return (
     <main className="min-h-screen bg-[#090909] text-[#f4efe5]">
       <SiteHeader />
@@ -32,10 +33,22 @@ export function PageShell({ eyebrow, title, intro, meta = "Irie Archive", childr
           <p className="hero-enter font-mono text-[11px] uppercase tracking-[0.22em] text-[#81786d]">{meta}</p>
         </div>
         <div className="grid gap-8 pt-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-end lg:gap-16 lg:pt-14">
-          <h1 className="hero-enter hero-enter-2 text-[clamp(2.75rem,6.5vw,6.5rem)] font-black uppercase leading-[0.86] lg:leading-[0.84]">
+          <h1
+            className={`hero-enter hero-enter-2 font-black uppercase ${
+              compact
+                ? "max-w-4xl text-[clamp(2.5rem,5vw,5rem)] leading-[0.9]"
+                : "text-[clamp(2.75rem,6.5vw,6.5rem)] leading-[0.86] lg:leading-[0.84]"
+            }`}
+          >
             {title}
           </h1>
-          <p className="hero-enter hero-enter-3 max-w-xl text-xl leading-8 text-[#cfc5b8] md:text-2xl lg:pb-3">{intro}</p>
+          <p
+            className={`hero-enter hero-enter-3 max-w-xl text-[#cfc5b8] lg:pb-3 ${
+              compact ? "text-lg leading-7 md:text-xl md:leading-8" : "text-xl leading-8 md:text-2xl"
+            }`}
+          >
+            {intro}
+          </p>
         </div>
       </section>
       {children}
@@ -44,7 +57,17 @@ export function PageShell({ eyebrow, title, intro, meta = "Irie Archive", childr
   );
 }
 
-export function EditorialGrid({ items, cta = "Open" }: { items: Card[]; cta?: string }) {
+export function EditorialGrid({
+  items,
+  cta = "Open",
+  categoryLabels,
+  kickerLabels,
+}: {
+  items: Card[];
+  cta?: string;
+  categoryLabels?: string[];
+  kickerLabels?: string[];
+}) {
   return (
     <section className="grid border-b border-white/15 bg-[#111111] md:grid-cols-2 xl:grid-cols-3">
       {items.map((item, index) => {
@@ -59,7 +82,7 @@ export function EditorialGrid({ items, cta = "Open" }: { items: Card[]; cta?: st
           >
             <div className="mb-6 flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.22em] text-[#81786d]">
               <span>{String(index + 1).padStart(2, "0")}</span>
-              <span className="text-[#b9ff3b]">{item.category ?? "Archive"}</span>
+              <span className="text-[#b9ff3b]">{categoryLabels?.[index] ?? item.category ?? "Archive"}</span>
             </div>
             <Link
               href={item.href}
@@ -80,7 +103,7 @@ export function EditorialGrid({ items, cta = "Open" }: { items: Card[]; cta?: st
                   }`}
                 />
                 <p className="absolute bottom-4 left-4 max-w-[calc(100%-2rem)] font-mono text-[11px] uppercase tracking-[0.2em] text-[#b9ff3b]">
-                  {item.kicker ?? item.metadata?.slice(0, 2).join(" / ")}
+                  {kickerLabels?.[index] ?? item.kicker ?? item.metadata?.slice(0, 2).join(" / ")}
                 </p>
               </div>
             </Link>

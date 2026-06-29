@@ -22,22 +22,23 @@ export default function ContactPage() {
       title="Have a cool project?"
       intro="Get in touch with Irie Global for projects, partnerships, programming, artist support, and cultural collaboration."
       meta="Stay Connected"
+      compact
     >
       <section className="grid border-b border-white/15 bg-[#111111] lg:grid-cols-[0.85fr_1.15fr]">
         <div className="border-b border-white/15 p-6 sm:p-10 lg:border-b-0 lg:border-r lg:p-12">
           <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">Stay Connected</p>
           <a
             href="mailto:info@iriesessions.global"
-            className="link-underline mt-5 inline-block break-all text-4xl font-black uppercase leading-none text-[#f4efe5] md:text-6xl"
+            className="link-underline mt-5 inline-block break-all text-3xl font-black uppercase leading-none text-[#f4efe5] sm:text-4xl lg:text-5xl"
           >
             info@iriesessions.global
           </a>
         </div>
-        <div className="grid sm:grid-cols-3">
+        <div className="grid md:grid-cols-3">
           {contactPaths.map(([title, copy]) => (
-            <article key={title} className="border-b border-white/15 p-6 sm:border-r lg:p-8">
-              <h2 className="text-3xl font-black uppercase leading-none">{title}</h2>
-              <p className="mt-5 text-base leading-7 text-[#bdb3a5]">{copy}</p>
+            <article key={title} className="border-b border-white/15 p-6 md:border-r lg:p-7">
+              <h2 className="break-words text-lg font-black uppercase leading-[0.98] lg:text-xl">{title}</h2>
+              <p className="mt-4 text-sm leading-6 text-[#bdb3a5] lg:text-base lg:leading-7">{copy}</p>
             </article>
           ))}
         </div>
