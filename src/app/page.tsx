@@ -195,32 +195,6 @@ export default function Home() {
       </Reveal>
 
       <Reveal>
-      <section id="shop" className="grid border-y border-white/15 bg-[#e9e2d5] text-[#101010] lg:grid-cols-2">
-        <div className="relative min-h-[520px]">
-          <Image src="/media/hat-black-front.jpg" alt="" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
-        </div>
-        <div className="flex min-h-[520px] flex-col justify-between p-6 sm:p-10 lg:p-14">
-          <p className="font-mono text-xs uppercase tracking-[0.34em]">Artifact commerce</p>
-          <div>
-            <h2 className="max-w-xl text-5xl font-black uppercase leading-none md:text-7xl">
-              Wear the archive.
-            </h2>
-            <p className="mt-6 max-w-lg text-lg leading-8 text-black/70">
-              From limited-edition drops to timeless essentials, merch is a way to connect with
-              the movement, support the artists, and carry the experience beyond the moment.
-            </p>
-          </div>
-          <Link
-            href="/shop"
-            className="pressable w-fit bg-black px-5 py-4 font-mono text-xs uppercase tracking-[0.22em] text-[#f4efe5] hover:bg-[#b9ff3b] hover:text-black"
-          >
-            Shop artifacts
-          </Link>
-        </div>
-      </section>
-      </Reveal>
-
-      <Reveal>
       <section id="opportunities" className="px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
         <div className="grid gap-8 border border-white/15 p-6 sm:p-10 lg:grid-cols-[1fr_0.8fr] lg:p-14">
           <div>

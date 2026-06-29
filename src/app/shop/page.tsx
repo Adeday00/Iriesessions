@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { EditorialGrid, PageShell, SplitFeature } from "@/components/PageShell";
+import { EditorialGrid, PageShell } from "@/components/PageShell";
 import { artifacts } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -20,14 +20,6 @@ export default function ShopPage() {
         cta="Shop / view"
         categoryLabels={["Publication", "Headwear", "Jewelry"]}
         kickerLabels={["Print / Edition", "Wear / Edition", "Object / Edition"]}
-      />
-      <SplitFeature
-        image="/media/hat-black-white-text.jpg"
-        eyebrow="Limited edition"
-        title="Objects with a reason."
-        copy="Current product details include corduroy cotton hats with 3D embroidered text, sterling silver Irie stud earrings, and BORDERS: The Visualscaping Zine as a limited first edition archival print publication."
-        cta="Join the list"
-        href="/opportunities"
       />
     </PageShell>
   );
