@@ -41,7 +41,7 @@ function ProductDetailPage({ item, backHref, backLabel }: { item: ContentItem; b
   const commerce = item.commerce;
 
   return (
-    <main className="min-h-screen bg-[#090909] text-[#f4efe5]">
+    <main className="min-h-screen bg-[#090909] pb-24 text-[#f4efe5] lg:pb-0">
       <SiteHeader />
 
       <section className="border-b border-white/15 px-5 py-5 sm:px-8 lg:px-12">
@@ -109,6 +109,11 @@ function ProductDetailPage({ item, backHref, backLabel }: { item: ContentItem; b
               ))}
             </div>
 
+            <section className="mt-8 border-t border-white/15 pt-8">
+              <p className="font-mono text-xs uppercase tracking-[0.26em] text-[#b9ff3b]">Details</p>
+              <p className="mt-4 text-base leading-8 text-[#d8cfc2]">{item.body}</p>
+            </section>
+
             {commerce ? (
               <section className="mt-8 border border-white/15 bg-[#111111]">
                 <div className="border-b border-white/15 p-5">
@@ -138,23 +143,9 @@ function ProductDetailPage({ item, backHref, backLabel }: { item: ContentItem; b
                 </div>
               </section>
             ) : null}
-
-            <section className="mt-8 border-t border-white/15 pt-8">
-              <p className="font-mono text-xs uppercase tracking-[0.26em] text-[#b9ff3b]">Details</p>
-              <p className="mt-4 text-base leading-8 text-[#d8cfc2]">{item.body}</p>
-            </section>
           </div>
         </aside>
       </section>
-
-      <div className="sticky bottom-0 z-40 border-t border-white/15 bg-[#090909]/95 p-3 backdrop-blur lg:hidden">
-        <Link
-          href="/shop/basket"
-          className="block bg-[#b9ff3b] px-5 py-4 text-center font-mono text-xs uppercase tracking-[0.22em] text-black"
-        >
-          View basket / checkout
-        </Link>
-      </div>
 
       <SiteFooter />
     </main>
@@ -164,6 +155,7 @@ function ProductDetailPage({ item, backHref, backLabel }: { item: ContentItem; b
 export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; backHref: string; backLabel: string }) {
   const linkSectionLabel = getLinkSectionLabel(item);
   const isRelease = item.category === "release";
+  const isSession = item.category === "session";
   const embeds = item.embeds ?? (item.embed ? [item.embed] : []);
 
   if (item.href.startsWith("/shop/")) {
@@ -174,16 +166,26 @@ export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; b
     <main className="min-h-screen bg-[#090909] text-[#f4efe5]">
       <SiteHeader />
       <section className="grid border-b border-white/15 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className={`relative min-h-[520px] lg:min-h-[calc(100vh-84px)] ${isRelease ? "bg-[#111111]" : ""}`}>
+        <div
+          className={`relative min-h-[520px] lg:min-h-[calc(100vh-84px)] ${
+            isRelease || item.imageFit === "contain" ? "bg-[#111111]" : ""
+          }`}
+        >
           <Image
             src={item.image}
             alt=""
             fill
             priority
             sizes="(min-width: 1024px) 45vw, 100vw"
-            className={isRelease ? "object-contain" : "object-cover"}
+            className={
+              isRelease
+                ? "object-contain"
+                : item.imageFit === "contain"
+                  ? "object-contain p-4 sm:p-8"
+                  : "object-cover"
+            }
           />
-          {isRelease ? null : (
+          {isRelease || item.imageFit === "contain" ? null : (
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent lg:bg-gradient-to-r" />
           )}
         </div>
@@ -209,30 +211,48 @@ export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; b
       </section>
 
       <section className="px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="grid gap-8 border-b border-white/15 pb-10 lg:grid-cols-[280px_1fr] lg:gap-16">
+        <div className="w-full">
+          <div className="grid gap-6 border-b border-white/15 pb-10 lg:grid-cols-[180px_minmax(0,1fr)] lg:gap-8">
             <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">Archive note</p>
-            <p className="max-w-5xl text-2xl leading-10 text-[#e6ddcf] lg:text-3xl lg:leading-[1.45]">{item.body}</p>
+            <p className="max-w-none text-left text-2xl leading-10 text-[#e6ddcf] lg:text-[2rem] lg:leading-[1.4] xl:text-[2.35rem]">
+              {item.body}
+            </p>
           </div>
           {item.gallery && item.gallery.length > 0 ? (
             <div className="mt-12">
               <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">
                 Media
               </p>
-              <div className="mt-5 grid gap-px overflow-hidden border border-white/15 bg-white/15 sm:grid-cols-2 xl:grid-cols-3">
+              <div
+                className={`mt-5 grid gap-px overflow-hidden border border-white/15 bg-white/15 ${
+                  isSession ? "grid-cols-2 lg:grid-cols-4" : "sm:grid-cols-2 xl:grid-cols-3"
+                }`}
+              >
                 {item.gallery.map((image, index) => (
                   <Reveal
                     key={image.src}
                     as="article"
                     delay={Math.min(index * 45, 360)}
-                    className="media-lift bg-[#111111]"
+                    className={`media-lift bg-[#111111] ${
+                      isSession && index % 7 === 0 ? "col-span-2" : ""
+                    }`}
                   >
-                    <div className="relative aspect-[4/5] overflow-hidden bg-[#1a1a1a]">
+                    <div
+                      className={`relative overflow-hidden bg-[#1a1a1a] ${
+                        isSession && index % 7 === 0 ? "aspect-[8/5]" : "aspect-[4/5]"
+                      }`}
+                    >
                       <Image
                         src={image.src}
                         alt={image.alt ?? ""}
                         fill
-                        sizes="(min-width: 1280px) 32vw, (min-width: 640px) 50vw, 100vw"
+                        sizes={
+                          isSession
+                            ? index % 7 === 0
+                              ? "(min-width: 1024px) 50vw, 100vw"
+                              : "(min-width: 1024px) 25vw, 50vw"
+                            : "(min-width: 1280px) 32vw, (min-width: 640px) 50vw, 100vw"
+                        }
                         className="object-cover"
                       />
                     </div>

@@ -14,6 +14,7 @@ export default function ShopPage() {
       eyebrow="Shop"
       title="Take a piece of the story."
       intro="Explore limited editions inspired by our music, events, and creative collaborations, from books and prints to apparel, jewelry, and collectible objects."
+      meta="Irie Collectibles"
     >
       <EditorialGrid
         items={artifacts}

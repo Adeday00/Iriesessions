@@ -1,166 +1,126 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { Metadata } from "next";
 import { PageShell } from "@/components/PageShell";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Meet Irie Global, a culture-driven company building platforms across music, media, fashion, events, and technology.",
+  description:
+    "Irie is infrastructure for culture, connecting artists, ideas, and communities through music, media, and experiences.",
   alternates: { canonical: "/about" },
 };
 
+const principles = [
+  "Creativity is infrastructure.",
+  "Culture is collective power.",
+  "Build rooms, not audiences.",
+  "Think global. Create local.",
+];
+
 const pillars = [
-  ["People", "We center artists, curators, and creative minds, building meaningful relationships that fuel everything we create."],
-  ["Togetherness", "We foster connection through shared cultural experiences, storytelling, and collective expression."],
-  ["Giving Back", "We create access and opportunity for emerging talent, ensuring culture grows forward with integrity."],
-  ["Platforms", "Irie Sessions is the flagship platform: releases, original series, live events, stories, products, and collaborators."],
+  ["People", "Artists, curators and communities are the starting point for everything we build."],
+  ["Togetherness", "Culture grows when people share rooms, ideas and experiences."],
+  ["Giving Back", "Access and opportunity keep the creative ecosystem moving forward."],
+  ["Platforms", "Music, media, experiences and objects give ideas somewhere to live."],
 ];
 
-const work = [
-  "Artist development platforms",
-  "Community-driven experiences",
-  "Creative direction & content production",
-  "Cultural programming & events",
-];
-
-const collaborators = [
-  { name: "Chopstix", role: "Producer", image: "/media/collab-chopstix.jpg" },
-  { name: "Michael Brun", role: "Bayo × Irie", image: "/media/collab-michael-brun.jpg" },
-  { name: "Mohogany", role: "DJ / Transitions", image: "/media/collab-mohogany.jpg" },
-];
-
-const talentSignals = [
-  ["Mohogany", "Collaborator"],
-  ["Easyscope", "Singer"],
-  ["TrillXoe", "Pop singer"],
-  ["Michael Brun", "Collaborator"],
-  ["Chopstix", "Collaborator"],
-  ["Zen", "Artist"],
+const impact = [
+  ["Founded", "2017"],
+  ["Artists Supported", "200+"],
+  ["Projects", "100+"],
+  ["Cities", "15+"],
+  ["Countries", "10+"],
 ];
 
 export default function AboutPage() {
   return (
     <PageShell
       eyebrow="About"
-      title="Who We Are"
-      intro="Irie Global is a culture-driven company building platforms across music, media, fashion, and technology."
+      title="Where ideas become culture."
+      intro="Irie is infrastructure for culture, connecting artists, ideas, and communities through music, media, and experiences."
+      meta="Founded 2017"
     >
-      <section className="grid border-y border-white/15 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="grid min-h-[220px] place-items-center bg-[#0c0c0c] p-8 sm:min-h-[320px] lg:min-h-[560px] lg:p-10">
+      <section className="grid border-b border-white/15 lg:grid-cols-[0.75fr_1.25fr]">
+        <div className="grid min-h-[300px] place-items-center border-b border-white/15 bg-[#0c0c0c] p-8 lg:min-h-[620px] lg:border-b-0 lg:border-r">
           <Image
             src="/irie-logo.png"
             alt="Irie"
             width={360}
             height={211}
-            sizes="(min-width: 1024px) 360px, 58vw"
-            className="h-auto w-[min(44vw,180px)] sm:w-[min(46vw,240px)] lg:w-[min(58vw,360px)]"
+            sizes="(min-width: 1024px) 320px, 58vw"
+            className="h-auto w-[min(58vw,280px)] lg:w-[min(30vw,360px)]"
           />
         </div>
-        <div className="grid content-center gap-7 p-6 sm:p-10 lg:p-14">
-          <h2 className="max-w-2xl text-4xl font-black uppercase leading-none md:text-7xl">
-            Build culture, not just document it.
-          </h2>
-          <p className="max-w-2xl text-lg leading-8 text-[#cfc5b8] md:text-xl md:leading-9">
-            Founded in 2017 as a community-led event series celebrating Afrobeats and Caribbean
-            music, Irie has grown into a creative ecosystem supporting artists, creators, and
-            cultural ideas shaping the future.
+        <div className="grid content-center gap-8 p-6 sm:p-10 lg:p-14">
+          <p className="max-w-3xl text-2xl leading-10 text-[#e6ddcf] md:text-3xl md:leading-[1.4]">
+            Founded in New York in 2017, Irie began as a community-led music platform and has
+            grown into a creative ecosystem spanning music, media, experiences, and artist
+            development.
           </p>
-          <p className="max-w-2xl text-lg leading-8 text-[#bdb3a5]">
-            Through content, experiences, and creative direction, Irie Global develops platforms
-            that showcase emerging talent and document the creative process led by Irie Sessions,
-            its flagship platform.
-          </p>
-          <p className="max-w-2xl text-base leading-7 text-[#9f968a] md:text-lg md:leading-8">
-            Everything we build is rooted in community, collaboration, and the belief that culture
-            is meant to be experienced, not just observed.
-          </p>
+          <div className="grid gap-6 border-t border-white/15 pt-8 md:grid-cols-2">
+            <p className="max-w-xl text-lg leading-8 text-[#cfc5b8]">
+              Everything we build exists to help artists create, connect, and grow.
+            </p>
+            <p className="max-w-xl text-lg leading-8 text-[#cfc5b8]">
+              We believe culture should be experienced, not simply consumed.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="grid border-b border-white/15 bg-[#090909] lg:grid-cols-[0.85fr_1.15fr]">
+      <section className="grid border-b border-white/15 bg-[#111111] lg:grid-cols-[0.8fr_1.2fr]">
         <div className="border-b border-white/15 p-6 sm:p-10 lg:border-b-0 lg:border-r lg:p-12">
-          <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">What we do</p>
-          <h2 className="mt-4 max-w-xl text-4xl font-black uppercase leading-none md:text-6xl">
-            Platforms for artists, rooms, and ideas.
+          <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">
+            Our principles
+          </p>
+          <h2 className="mt-5 max-w-xl text-4xl font-black uppercase leading-none md:text-6xl">
+            Language we build by.
           </h2>
         </div>
-        <div className="grid sm:grid-cols-2">
-          {work.map((item) => (
-            <div key={item} className="border-b border-white/15 p-6 sm:border-r lg:p-8">
-              <p className="font-mono text-xs uppercase leading-6 tracking-[0.22em] text-[#cfc5b8]">
-                {item}
-              </p>
-            </div>
+        <ol className="grid">
+          {principles.map((principle, index) => (
+            <li
+              key={principle}
+              className="grid grid-cols-[48px_1fr] items-center gap-4 border-b border-white/15 p-6 sm:grid-cols-[72px_1fr] sm:p-8"
+            >
+              <span className="font-mono text-xs tracking-[0.2em] text-[#81786d]">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span className="text-2xl font-black uppercase leading-none sm:text-3xl">
+                {principle}
+              </span>
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
 
-      <section className="grid border-b border-white/15 bg-[#111111] md:grid-cols-2 xl:grid-cols-4">
+      <section className="grid border-b border-white/15 bg-[#090909] md:grid-cols-2 xl:grid-cols-4">
         {pillars.map(([title, copy]) => (
-          <article key={title} className="border-white/15 p-6 md:border-r lg:p-8">
-            <h3 className="text-3xl font-black uppercase">{title}</h3>
+          <article key={title} className="border-b border-white/15 p-6 md:border-r lg:p-8">
+            <h2 className="text-3xl font-black uppercase">{title}</h2>
             <p className="mt-5 text-base leading-7 text-[#bdb3a5]">{copy}</p>
           </article>
         ))}
       </section>
 
       <section className="border-b border-white/15 px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
-        <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">Our talents</p>
-        <h2 className="mt-4 max-w-2xl text-4xl font-black uppercase leading-none md:text-6xl">
-          Artist development & collaboration.
-        </h2>
-        <div className="mt-10 grid gap-px overflow-hidden border border-white/15 bg-white/15 sm:grid-cols-3">
-          {collaborators.map((person) => (
-            <figure key={person.name} className="media-lift group bg-[#0c0c0c]">
-              <div className="relative aspect-[4/5] overflow-hidden bg-[#1a1a1a]">
-                <Image
-                  src={person.image}
-                  alt={person.name}
-                  fill
-                  sizes="(min-width: 640px) 33vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <figcaption className="flex items-baseline justify-between gap-3 p-5">
-                <span className="text-2xl font-black uppercase">{person.name}</span>
-                <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#81786d]">{person.role}</span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-        <div className="mt-px grid overflow-hidden border border-white/15 bg-white/15 sm:grid-cols-2 lg:grid-cols-3">
-          {talentSignals.map(([name, role]) => (
-            <div key={`${name}-${role}`} className="archive-row bg-[#090909] p-5 hover:bg-[#b9ff3b] hover:text-black">
-              <p className="text-2xl font-black uppercase">{name}</p>
-              <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.18em] opacity-70">{role}</p>
+        <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">
+          Built over time
+        </p>
+        <div className="mt-8 grid gap-px overflow-hidden border border-white/15 bg-white/15 sm:grid-cols-2 lg:grid-cols-5">
+          {impact.map(([label, value]) => (
+            <div key={label} className="bg-[#0c0c0c] p-6 lg:p-8">
+              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#81786d]">
+                {label}
+              </p>
+              <p className="mt-4 text-5xl font-black uppercase leading-none text-[#f4efe5]">
+                {value}
+              </p>
             </div>
           ))}
         </div>
-      </section>
-
-      <section className="px-5 py-20 sm:px-8 lg:px-12">
-        <div className="flex flex-col gap-6 border border-white/15 p-8 sm:flex-row sm:items-center sm:justify-between lg:p-12">
-          <div>
-            <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">Think Global / Create Local</p>
-            <h2 className="mt-4 max-w-2xl text-3xl font-black uppercase leading-none sm:text-4xl md:text-5xl">
-              Creativity is infrastructure.
-            </h2>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-[#bdb3a5] md:text-lg md:leading-8">
-              Irie Global designs ecosystems where artists, brands, and ideas can grow with
-              intention, longevity, and global relevance. We focus on building worlds, not moments:
-              spaces where storytelling, identity, and commerce align.
-            </p>
-          </div>
-          <Link
-            href="/opportunities"
-            className="pressable group inline-flex w-fit shrink-0 items-center gap-2 bg-[#b9ff3b] px-5 py-4 font-mono text-xs uppercase tracking-[0.22em] text-black hover:bg-[#f4efe5]"
-          >
-            See opportunities
-            <span aria-hidden className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1">
-              →
-            </span>
-          </Link>
-        </div>
+        <p className="mt-10 max-w-5xl text-4xl font-black uppercase leading-[0.95] md:text-6xl">
+          We believe culture grows through collaboration, not competition.
+        </p>
       </section>
     </PageShell>
   );

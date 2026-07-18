@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { footerExtraLinks, navItems, socialLinks } from "@/lib/content";
+import { navItems, socialLinks } from "@/lib/content";
 
 export function SiteFooter() {
   return (
@@ -19,16 +19,10 @@ export function SiteFooter() {
           <p className="mt-6 max-w-md text-xl leading-8 text-[#cfc5b8]">
             Think global. Create local.
           </p>
-          <p className="mt-4 font-mono text-xs uppercase tracking-[0.22em] text-[#81786d]">
-            Have a cool project?{" "}
-            <Link href="/contact" className="link-underline text-[#b9ff3b]">
-              Get in touch
-            </Link>
-          </p>
         </div>
         <div className="grid gap-8 sm:grid-cols-2">
           <div className="grid justify-items-start gap-3 font-mono text-xs uppercase tracking-[0.18em] text-[#c8c0b4]">
-            {[...navItems, ...footerExtraLinks].map((item) => (
+            {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -52,10 +46,6 @@ export function SiteFooter() {
             ))}
           </div>
         </div>
-      </div>
-      <div className="mt-10 flex flex-col gap-4 border-t border-white/15 pt-6 font-mono text-[11px] uppercase tracking-[0.18em] text-[#81786d] sm:flex-row sm:items-center sm:justify-between">
-        <span>Brooklyn / Lagos / London / Paris</span>
-        <span>Archive-first cultural platform</span>
       </div>
     </footer>
   );

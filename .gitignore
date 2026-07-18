@@ -20,6 +20,7 @@
 
 # production
 /build
+/dist/
 
 # local research captures
 /research/

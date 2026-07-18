@@ -37,7 +37,7 @@ const programming = [
     kind: "Live event",
     title: "Book Launch - BORDERS: The Visualscaping Zine",
     date: "March 7, 2026",
-    href: "/shop/borders-visualscaping-zine",
+    href: "/sessions/borders-visualscaping-zine-launch",
   },
   {
     kind: "Live event",
@@ -48,8 +48,8 @@ const programming = [
   {
     kind: "Live event",
     title: "Paris",
-    date: "January 10, 2025",
-    href: "/sessions/january-session",
+    date: "January 10, 2026",
+    href: "/sessions/irie-global-paris-january-2026",
   },
 ] as const;
 
