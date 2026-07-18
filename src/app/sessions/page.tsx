@@ -8,6 +8,15 @@ export const metadata = createPageMetadata({
   path: "/sessions",
 });
 
+function getSessionTimestamp(kicker: string) {
+  const timestamp = Date.parse(kicker.split(" / ")[0]);
+  return Number.isNaN(timestamp) ? Number.NEGATIVE_INFINITY : timestamp;
+}
+
+const sessionsByDate = [...sessions].sort(
+  (first, second) => getSessionTimestamp(second.kicker) - getSessionTimestamp(first.kicker),
+);
+
 export default function SessionsPage() {
   return (
     <PageShell
@@ -15,7 +24,7 @@ export default function SessionsPage() {
       title="Rooms that become memory."
       intro="Live rooms, pop-ups, listening nights, and city-led gatherings captured before they disappear into the feed."
     >
-      <EditorialGrid items={sessions} cta="View session" />
+      <EditorialGrid items={sessionsByDate} cta="View session" />
     </PageShell>
   );
 }

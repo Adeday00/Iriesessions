@@ -410,7 +410,7 @@ export const sessions: ContentItem[] = [
     title: "Be There Weekly",
     slug: "be-there-weekly",
     category: "session",
-    kicker: "BTW / Community room",
+    kicker: "2024 / Community room",
     image: "/media/btw-02.jpg",
     imageFit: "contain",
     summary:
@@ -418,7 +418,7 @@ export const sessions: ContentItem[] = [
     body:
       "Be There Weekly sits inside the archive as more than a flyer. The room, the people, the stills, and the atmosphere carry the story after each weekly gathering passes.",
     href: "/sessions/be-there-weekly",
-    metadata: ["BTW", "Community", "Weekly room"],
+    metadata: ["2024", "BTW", "Community", "Weekly room"],
     gallery: [
       { src: "/media/btw-01.jpg", label: "Be There Weekly poster" },
       { src: "/media/btw-photo-01.jpg", label: "Room frame" },
@@ -973,7 +973,7 @@ export const archiveItems = [
     "March 6–7, 2026",
     "/sessions/borders-visualscaping-zine-launch",
   ],
-  ["Be There Weekly", "Event", "Archive", "/sessions/be-there-weekly"],
+  ["Be There Weekly", "Event", "2024", "/sessions/be-there-weekly"],
   ["IRIE Global Paris", "Session", "2026", "/sessions/irie-global-paris-january-2026"],
   ["Women Make Things 10X Better", "Merch", "2026", "/shop/women-make-things-10x-better-hat"],
   ["Irie Stud Earrings", "Jewelry", "2026", "/shop/irie-stud-earrings"],
