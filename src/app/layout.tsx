@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Archivo, Space_Mono } from "next/font/google";
 import { BasketProvider } from "@/components/commerce/BasketProvider";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -18,7 +19,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://iriesessions.netlify.app"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Irie Sessions",
     template: "%s | Irie Sessions",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     description:
       "A diasporic culture studio turning local scenes into shared global memory through sound, style, image, and gathering.",
     siteName: "Irie Sessions",
-    images: [{ url: "/media/irie-paris.jpg", width: 1200, height: 1500 }],
+    images: [{ url: "/media/irie-paris.jpg", width: 1280, height: 1600 }],
   },
   twitter: {
     card: "summary_large_image",

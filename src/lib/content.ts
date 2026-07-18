@@ -146,6 +146,7 @@ export const sessions: ContentItem[] = [
     category: "session",
     kicker: "August 23, 2018 / Williamsburg Hotel / New York City",
     image: "/media/sessions/august-23-2018/cover.jpg",
+    imageFit: "contain",
     summary:
       "A rooftop gathering centered around global music, community, and summer-night connection.",
     body:
@@ -175,6 +176,7 @@ export const sessions: ContentItem[] = [
     category: "session",
     kicker: "January 10, 2019 / PUBLIC Hotel / New York City",
     image: "/media/sessions/day-in-life-2019/cover.jpg",
+    imageFit: "contain",
     summary:
       "A birthday gathering that became a meeting point for more than 800 members of New York's creative community.",
     body:
@@ -278,6 +280,7 @@ export const sessions: ContentItem[] = [
     category: "session",
     kicker: "July 28, 2022 / The Jane Hotel / New York City",
     image: "/media/sessions/homecoming-2022/cover.jpg",
+    imageFit: "contain",
     summary:
       "A homecoming shaped by nostalgia, connection, and the sounds that brought the community back together.",
     body:
@@ -321,6 +324,7 @@ export const sessions: ContentItem[] = [
     category: "session",
     kicker: "July 4, 2024 / London, England",
     image: "/media/sessions/culture-shock-london-2024/cover.jpg",
+    imageFit: "contain",
     summary:
       "IRIE's first United Kingdom collaboration, connecting London, Lagos, and beyond.",
     body:
@@ -349,6 +353,7 @@ export const sessions: ContentItem[] = [
     category: "session",
     kicker: "October 24, 2024 / London, England",
     image: "/media/sessions/culture-shock-q4-2024/cover.jpg",
+    imageFit: "contain",
     summary:
       "An intimate evening of conversation, dinner, sound, and connection with London's creative community.",
     body:
@@ -361,7 +366,7 @@ export const sessions: ContentItem[] = [
     title: "IRIE Global Paris",
     slug: "irie-global-paris-january-2026",
     category: "session",
-    kicker: "January 10, 2025 / Paris, France",
+    kicker: "January 10, 2026 / Paris, France",
     image: "/media/sessions/paris-january-2026/cover.jpg",
     imageFit: "contain",
     summary:

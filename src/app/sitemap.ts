@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { allItems } from "@/lib/content";
-
-const siteUrl = "https://iriesessions.netlify.app";
+import { siteUrl } from "@/lib/site";
 
 export const dynamic = "force-static";
 

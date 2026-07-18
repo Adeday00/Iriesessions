@@ -1,10 +1,12 @@
-import type { Metadata } from "next";
 import { ShopifyBasket } from "@/components/commerce/ShopifyBasket";
+import { createPageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Basket",
-  robots: { index: false, follow: false },
-};
+  description: "Review the items in your Irie Sessions basket before checkout.",
+  path: "/shop/basket",
+  noIndex: true,
+});
 
 export default function BasketPage() {
   return <ShopifyBasket />;

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useBasket } from "@/components/commerce/BasketProvider";
 import {
   canCreateShopifyCart,
@@ -16,10 +16,90 @@ export function MiniCart() {
   const { lines, quantity, isOpen, closeDrawer } = useBasket();
   const [isCheckingOut, setIsCheckingOut] = useState(false);
   const [checkoutError, setCheckoutError] = useState<string | null>(null);
+  const dialogRef = useRef<HTMLElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   const subtotal = getBasketSubtotal(lines);
   const canCheckout = canCreateShopifyCart(lines);
   const hasMissingConfig = lines.some((line) => !line.shopifyVariantId);
+
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const returnFocusTo = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const pageContent = document.querySelector<HTMLElement>("body > main");
+    const pageWasInert = pageContent?.inert ?? false;
+    const previousAriaHidden = pageContent?.getAttribute("aria-hidden") ?? null;
+
+    if (pageContent) {
+      pageContent.inert = true;
+      pageContent.setAttribute("aria-hidden", "true");
+    }
+
+    const focusFrame = window.requestAnimationFrame(() => closeButtonRef.current?.focus());
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeDrawer();
+        return;
+      }
+
+      if (event.key !== "Tab") {
+        return;
+      }
+
+      const controls = Array.from(
+        dialogRef.current?.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ) ?? [],
+      ).filter((element) => element.getClientRects().length > 0);
+
+      if (controls.length === 0) {
+        event.preventDefault();
+        return;
+      }
+
+      const first = controls[0];
+      const last = controls[controls.length - 1];
+      const focusIsInside = dialogRef.current?.contains(document.activeElement) ?? false;
+
+      if (!focusIsInside || (event.shiftKey && document.activeElement === first)) {
+        event.preventDefault();
+        (event.shiftKey ? last : first).focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.cancelAnimationFrame(focusFrame);
+      document.removeEventListener("keydown", handleKeyDown);
+
+      if (pageContent) {
+        pageContent.inert = pageWasInert;
+        if (previousAriaHidden === null) {
+          pageContent.removeAttribute("aria-hidden");
+        } else {
+          pageContent.setAttribute("aria-hidden", previousAriaHidden);
+        }
+      }
+
+      window.requestAnimationFrame(() => {
+        if (returnFocusTo?.isConnected && returnFocusTo !== document.body) {
+          returnFocusTo.focus();
+          return;
+        }
+
+        document.querySelector<HTMLElement>('[aria-label^="Open Basket"]')?.focus();
+      });
+    };
+  }, [closeDrawer, isOpen]);
 
   async function handleCheckout() {
     if (!canCheckout || isCheckingOut) {
@@ -54,6 +134,7 @@ export function MiniCart() {
 
       {/* Panel */}
       <aside
+        ref={dialogRef}
         role="dialog"
         aria-modal="true"
         aria-label="Basket"
@@ -66,6 +147,7 @@ export function MiniCart() {
             Basket{quantity > 0 ? ` / ${quantity} ${quantity === 1 ? "item" : "items"}` : ""}
           </p>
           <button
+            ref={closeButtonRef}
             type="button"
             onClick={closeDrawer}
             aria-label="Close basket"
@@ -156,7 +238,7 @@ export function MiniCart() {
               </p>
             ) : null}
             {checkoutError ? (
-              <p className="mt-4 border border-red-300/25 bg-red-950/20 p-3 text-xs leading-5 text-red-100">
+              <p role="alert" className="mt-4 border border-red-300/25 bg-red-950/20 p-3 text-xs leading-5 text-red-100">
                 {checkoutError}
               </p>
             ) : null}

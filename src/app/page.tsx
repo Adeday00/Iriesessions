@@ -43,7 +43,7 @@ const programming = [
     kind: "Live event",
     title: "Soho House Paris",
     date: "March 6, 2026",
-    href: "/sessions/soho-house-paris",
+    href: "/sessions/irie-global-paris-soho-house-preview",
   },
   {
     kind: "Live event",

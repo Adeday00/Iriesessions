@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import { PageShell } from "@/components/PageShell";
+import { createPageMetadata } from "@/lib/site";
 
 const contactPaths = [
   ["Creative direction", "Campaigns, content and cultural storytelling."],
@@ -7,11 +7,11 @@ const contactPaths = [
   ["Artist support", "Open calls, releases and creative opportunities."],
 ];
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Contact",
   description: "Contact Irie Global for creative direction, programming, partnerships, artist support, and cultural collaboration.",
-  alternates: { canonical: "/contact" },
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (
@@ -27,9 +27,10 @@ export default function ContactPage() {
           <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">Get in touch</p>
           <a
             href="mailto:info@iriesessions.global"
-            className="link-underline mt-5 inline-block break-all text-3xl font-black uppercase leading-none text-[#f4efe5] sm:text-4xl lg:text-5xl"
+            className="link-underline mt-5 inline-block text-2xl font-black uppercase leading-none text-[#f4efe5] sm:text-4xl"
           >
-            info@iriesessions.global
+            <span>info@</span>
+            <span className="block">iriesessions.global</span>
           </a>
         </div>
         <div className="grid md:grid-cols-3">

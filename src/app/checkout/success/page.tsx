@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "@/components/PageShell";
 import { ClearBasketOnMount } from "@/components/commerce/ClearBasketOnMount";
+import { createPageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Order Received",
-  robots: { index: false, follow: false },
-};
+  description: "Your Irie Sessions checkout is complete.",
+  path: "/checkout/success",
+  noIndex: true,
+});
 
 export default function CheckoutSuccessPage() {
   return (

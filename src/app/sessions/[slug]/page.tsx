@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { DetailPage } from "@/components/detail/DetailPage";
 import { getItemBySlug, sessions } from "@/lib/content";
+import { createPageMetadata } from "@/lib/site";
 
 export function generateStaticParams() {
   return sessions.map((item) => ({ slug: item.slug }));
@@ -10,12 +11,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const item = getItemBySlug(sessions, slug);
   return item
-    ? {
+    ? createPageMetadata({
         title: item.title,
         description: item.summary,
-        alternates: { canonical: item.href },
-        openGraph: { title: item.title, description: item.summary, images: [item.image] },
-      }
+        path: item.href,
+        image: item.image,
+      })
     : { title: "Sessions" };
 }
 

@@ -12,6 +12,7 @@ type Card = {
   category?: string;
   kicker?: string;
   metadata?: string[];
+  imageFit?: "cover" | "contain";
 };
 
 type PageShellProps = {
@@ -88,6 +89,8 @@ export function EditorialGrid({
       {items.map((item, index) => {
         const isRelease = item.category === "release";
         const isArtifact = item.category === "artifact";
+        const isFlyer = item.imageFit === "contain" && !isRelease && !isArtifact;
+        const kicker = kickerLabels?.[index] ?? item.kicker ?? item.metadata?.slice(0, 2).join(" / ");
 
         return (
           <Reveal
@@ -118,10 +121,12 @@ export function EditorialGrid({
                       ? "object-contain"
                       : isArtifact
                         ? "object-contain p-6 sm:p-8"
-                        : "object-cover"
+                        : isFlyer
+                          ? "object-contain"
+                          : "object-cover"
                   }
                 />
-                {isArtifact ? null : (
+                {isArtifact || isFlyer ? null : (
                   <div
                     className={`absolute inset-0 bg-gradient-to-t ${
                       isRelease
@@ -130,14 +135,21 @@ export function EditorialGrid({
                     }`}
                   />
                 )}
-                <p
-                  className={`absolute bottom-4 left-4 max-w-[calc(100%-2rem)] font-mono text-[11px] uppercase tracking-[0.2em] ${
-                    isArtifact ? "text-black" : "text-[#b9ff3b]"
-                  }`}
-                >
-                  {kickerLabels?.[index] ?? item.kicker ?? item.metadata?.slice(0, 2).join(" / ")}
-                </p>
+                {isFlyer ? null : (
+                  <p
+                    className={`absolute bottom-4 left-4 max-w-[calc(100%-2rem)] font-mono text-[11px] uppercase tracking-[0.2em] ${
+                      isArtifact ? "text-black" : "text-[#b9ff3b]"
+                    }`}
+                  >
+                    {kicker}
+                  </p>
+                )}
               </div>
+              {isFlyer ? (
+                <p className="border-t border-white/15 bg-[#111111] px-4 py-3 font-mono text-[10px] uppercase leading-5 tracking-[0.16em] text-[#b9ff3b]">
+                  {kicker}
+                </p>
+              ) : null}
             </Link>
             <h2 className="text-3xl font-black uppercase tracking-tight md:text-4xl">{item.title}</h2>
             <p className="mt-4 max-w-md grow text-base leading-7 text-[#bdb3a5]">{item.summary}</p>

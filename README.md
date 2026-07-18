@@ -12,6 +12,17 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Canonical production URL
+
+Set the final public origin at build time so page canonicals, social metadata,
+`robots.txt`, and `sitemap.xml` all agree:
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://iriesessions.global
+```
+
+Until that variable is set, builds use the current Netlify URL.
+
 ## Shopify Checkout
 
 Product pages add items to a local basket at `/shop/basket`, then a Netlify Function creates a Shopify Cart through the Storefront API and redirects to Shopify checkout.

@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
 import { EditorialGrid, PageShell } from "@/components/PageShell";
 import { sessions } from "@/lib/content";
+import { createPageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Sessions",
   description: "Live Irie rooms, pop-ups, listening nights, and city-led gatherings preserved as a cultural archive.",
-  alternates: { canonical: "/sessions" },
-};
+  path: "/sessions",
+});
 
 export default function SessionsPage() {
   return (

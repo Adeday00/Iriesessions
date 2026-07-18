@@ -1,13 +1,13 @@
 import Image from "next/image";
-import type { Metadata } from "next";
 import { PageShell } from "@/components/PageShell";
+import { createPageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "About",
   description:
     "Irie is infrastructure for culture, connecting artists, ideas, and communities through music, media, and experiences.",
-  alternates: { canonical: "/about" },
-};
+  path: "/about",
+});
 
 const principles = [
   "Creativity is infrastructure.",

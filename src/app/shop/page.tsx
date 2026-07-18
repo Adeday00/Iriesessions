@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
 import { EditorialGrid, PageShell } from "@/components/PageShell";
 import { artifacts } from "@/lib/content";
+import { createPageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Shop",
   description: "Shop limited Irie headwear, jewelry, print objects, and artifacts connected to the music and community.",
-  alternates: { canonical: "/shop" },
-};
+  path: "/shop",
+});
 
 export default function ShopPage() {
   return (

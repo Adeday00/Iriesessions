@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { createPageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Thank You",
   description: "Your submission has been received by Irie Global.",
-  robots: { index: false, follow: false },
-};
+  path: "/thanks",
+  noIndex: true,
+});
 
 export default function ThanksPage() {
   return (

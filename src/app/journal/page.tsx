@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
 import { PageShell } from "@/components/PageShell";
 import { JournalArchive } from "@/components/JournalArchive";
 import { archiveItems } from "@/lib/content";
+import { createPageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Journal",
   description: "Explore the Irie archive of sessions, releases, cultural projects, zines, product drops, and partner work.",
-  alternates: { canonical: "/journal" },
-};
+  path: "/journal",
+});
 
 export default function JournalPage() {
   return (

@@ -62,7 +62,7 @@ export function JournalArchive({ items }: { items: readonly ArchiveRow[] }) {
         </p>
       )}
 
-      <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-[#81786d]">
+      <p aria-live="polite" aria-atomic="true" className="mt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-[#81786d]">
         {filtered.length} {filtered.length === 1 ? "entry" : "entries"}
       </p>
     </section>

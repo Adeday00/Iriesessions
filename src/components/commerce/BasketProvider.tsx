@@ -50,7 +50,8 @@ export function BasketProvider({ children }: { children: React.ReactNode }) {
   const openDrawer = useCallback(() => setIsOpen(true), []);
   const closeDrawer = useCallback(() => setIsOpen(false), []);
 
-  // Lock body scroll while the drawer is open.
+  // Lock body scroll while the drawer is open. Focus and keyboard behavior
+  // live with the dialog itself in MiniCart.
   useEffect(() => {
     if (!isOpen) {
       return;
@@ -58,16 +59,8 @@ export function BasketProvider({ children }: { children: React.ReactNode }) {
     const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
-    const handleKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener("keydown", handleKey);
-
     return () => {
       document.body.style.overflow = previous;
-      document.removeEventListener("keydown", handleKey);
     };
   }, [isOpen]);
 

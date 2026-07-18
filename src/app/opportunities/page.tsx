@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
 import { PageShell } from "@/components/PageShell";
+import { createPageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Opportunities",
   description: "Open calls, grants, commissions, and partnership opportunities from Irie Global.",
-  alternates: { canonical: "/opportunities" },
-};
+  path: "/opportunities",
+});
 
 const opportunities = [
   ["Open calls", "Artist submissions, producer calls, visual commissions, and city-specific collaborator windows."],
@@ -50,32 +50,42 @@ export default function OpportunitiesPage() {
             <h2 className="mt-5 max-w-xl text-5xl font-black uppercase leading-none">Build the next room.</h2>
           </div>
           <div className="grid gap-4">
-            <input
-              type="text"
-              name="name"
-              autoComplete="name"
-              aria-label="Name"
-              required
-              className="min-h-14 border border-white/20 bg-white/5 px-4 outline-none transition-colors placeholder:text-[#847b70] focus:border-[#b9ff3b]"
-              placeholder="Name"
-            />
-            <input
-              type="email"
-              name="email"
-              autoComplete="email"
-              aria-label="Email"
-              required
-              className="min-h-14 border border-white/20 bg-white/5 px-4 outline-none transition-colors placeholder:text-[#847b70] focus:border-[#b9ff3b]"
-              placeholder="Email"
-            />
-            <textarea
-              name="message"
-              required
-              minLength={20}
-              aria-label="Tell us what you want to build"
-              className="min-h-36 border border-white/20 bg-white/5 p-4 outline-none transition-colors placeholder:text-[#847b70] focus:border-[#b9ff3b]"
-              placeholder="Tell us what you want to build"
-            />
+            <label className="grid gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-[#c8c0b4]">
+              Name
+              <input
+                type="text"
+                name="name"
+                autoComplete="name"
+                required
+                className="min-h-14 border border-white/20 bg-white/5 px-4 font-sans text-base normal-case tracking-normal text-[#f4efe5] outline-none transition-colors placeholder:text-[#847b70] focus:border-[#b9ff3b]"
+                placeholder="Your name"
+              />
+            </label>
+            <label className="grid gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-[#c8c0b4]">
+              Email
+              <input
+                type="email"
+                name="email"
+                autoComplete="email"
+                required
+                className="min-h-14 border border-white/20 bg-white/5 px-4 font-sans text-base normal-case tracking-normal text-[#f4efe5] outline-none transition-colors placeholder:text-[#847b70] focus:border-[#b9ff3b]"
+                placeholder="you@example.com"
+              />
+            </label>
+            <label className="grid gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-[#c8c0b4]">
+              Tell us what you want to build
+              <textarea
+                name="message"
+                required
+                minLength={20}
+                aria-describedby="opportunity-message-hint"
+                className="min-h-36 border border-white/20 bg-white/5 p-4 font-sans text-base normal-case tracking-normal text-[#f4efe5] outline-none transition-colors placeholder:text-[#847b70] focus:border-[#b9ff3b]"
+                placeholder="Share the project, timing, and where you need support."
+              />
+              <span id="opportunity-message-hint" className="text-[10px] text-[#81786d]">
+                Minimum 20 characters.
+              </span>
+            </label>
             <button type="submit" className="min-h-14 bg-[#b9ff3b] px-6 font-mono text-xs uppercase tracking-[0.2em] text-black transition-colors hover:bg-[#f4efe5]">
               Submit interest
             </button>

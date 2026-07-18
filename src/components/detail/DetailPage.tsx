@@ -50,8 +50,8 @@ function ProductDetailPage({ item, backHref, backLabel }: { item: ContentItem; b
         </Link>
       </section>
 
-      <section className="grid lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="border-b border-white/15 bg-[#111111] lg:border-b-0 lg:border-r">
+      <section className="grid min-w-0 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="min-w-0 border-b border-white/15 bg-[#111111] lg:border-b-0 lg:border-r">
           <div className="relative aspect-square bg-[#f4efe5]">
             <Image
               src={item.image}
@@ -86,10 +86,10 @@ function ProductDetailPage({ item, backHref, backLabel }: { item: ContentItem; b
           ) : null}
         </div>
 
-        <aside className="p-5 sm:p-8 lg:p-12">
+        <aside className="min-w-0 p-5 sm:p-8 lg:p-12">
           <div className="lg:sticky lg:top-28">
-            <p className="hero-enter font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">{item.kicker}</p>
-            <h1 className="hero-enter hero-enter-2 mt-4 text-5xl font-black uppercase leading-[0.9] md:text-7xl">
+            <p className="hero-enter font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b] [overflow-wrap:anywhere]">{item.kicker}</p>
+            <h1 className="hero-enter hero-enter-2 mt-4 text-5xl font-black uppercase leading-[0.9] [overflow-wrap:anywhere] md:text-7xl">
               {item.title}
             </h1>
             {commerce?.price ? (
@@ -165,7 +165,7 @@ export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; b
   return (
     <main className="min-h-screen bg-[#090909] text-[#f4efe5]">
       <SiteHeader />
-      <section className="grid border-b border-white/15 lg:grid-cols-[0.9fr_1.1fr]">
+      <section className="grid min-w-0 border-b border-white/15 lg:grid-cols-[0.9fr_1.1fr]">
         <div
           className={`relative min-h-[520px] lg:min-h-[calc(100vh-84px)] ${
             isRelease || item.imageFit === "contain" ? "bg-[#111111]" : ""
@@ -173,13 +173,13 @@ export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; b
         >
           <ZoomableHero image={item.image} title={item.title} contain={isRelease || item.imageFit === "contain"} />
         </div>
-        <div className="flex min-h-[520px] flex-col justify-between p-6 sm:p-10 lg:p-14">
+        <div className="flex min-h-[520px] min-w-0 flex-col justify-between p-6 sm:p-10 lg:p-14">
           <div>
             <Link href={backHref} className="font-mono text-xs uppercase tracking-[0.22em] text-[#b9ff3b]">
               {backLabel}
             </Link>
-            <p className="hero-enter font-mono mt-10 text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">{item.kicker}</p>
-            <h1 className="hero-enter hero-enter-2 mt-5 max-w-4xl text-5xl font-black uppercase leading-[0.88] md:text-7xl lg:text-8xl">
+            <p className="hero-enter font-mono mt-10 text-xs uppercase tracking-[0.34em] text-[#b9ff3b] [overflow-wrap:anywhere]">{item.kicker}</p>
+            <h1 className="hero-enter hero-enter-2 mt-5 max-w-4xl text-5xl font-black uppercase leading-[0.88] [overflow-wrap:anywhere] md:text-7xl lg:text-8xl">
               {item.title}
             </h1>
             <p className="hero-enter hero-enter-3 mt-8 max-w-2xl text-xl leading-9 text-[#cfc5b8]">{item.summary}</p>

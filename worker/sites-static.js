@@ -8,7 +8,7 @@ async function fetchAsset(request, env, pathname) {
   return env.ASSETS.fetch(new Request(url, request));
 }
 
-export default {
+const worker = {
   async fetch(request, env) {
     const url = new URL(request.url);
     const direct = await env.ASSETS.fetch(request);
@@ -44,3 +44,5 @@ export default {
     });
   },
 };
+
+export default worker;

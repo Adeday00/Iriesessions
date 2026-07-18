@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
 import { EditorialGrid, PageShell } from "@/components/PageShell";
 import { releases } from "@/lib/content";
+import { createPageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Music",
   description: "Irie Sessions releases with cover art, credits, visuals, collaborators, and direct listening links.",
-  alternates: { canonical: "/music" },
-};
+  path: "/music",
+});
 
 export default function MusicPage() {
   return (
