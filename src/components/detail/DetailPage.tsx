@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { AddToBasket } from "@/components/commerce/AddToBasket";
-import { Reveal } from "@/components/motion/Reveal";
+import { ArchiveMediaGallery, ZoomableHero } from "@/components/detail/MediaLightbox";
 import type { ContentItem } from "@/lib/content";
 
 const trustPoints = ["Ships in 24–48h", "Secure checkout", "Tracked delivery"];
@@ -171,23 +171,7 @@ export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; b
             isRelease || item.imageFit === "contain" ? "bg-[#111111]" : ""
           }`}
         >
-          <Image
-            src={item.image}
-            alt=""
-            fill
-            priority
-            sizes="(min-width: 1024px) 45vw, 100vw"
-            className={
-              isRelease
-                ? "object-contain"
-                : item.imageFit === "contain"
-                  ? "object-contain p-4 sm:p-8"
-                  : "object-cover"
-            }
-          />
-          {isRelease || item.imageFit === "contain" ? null : (
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent lg:bg-gradient-to-r" />
-          )}
+          <ZoomableHero image={item.image} title={item.title} contain={isRelease || item.imageFit === "contain"} />
         </div>
         <div className="flex min-h-[520px] flex-col justify-between p-6 sm:p-10 lg:p-14">
           <div>
@@ -223,45 +207,7 @@ export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; b
               <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">
                 Media
               </p>
-              <div
-                className={`mt-5 grid gap-px overflow-hidden border border-white/15 bg-white/15 ${
-                  isSession ? "grid-cols-2 lg:grid-cols-4" : "sm:grid-cols-2 xl:grid-cols-3"
-                }`}
-              >
-                {item.gallery.map((image, index) => (
-                  <Reveal
-                    key={image.src}
-                    as="article"
-                    delay={Math.min(index * 45, 360)}
-                    className={`media-lift bg-[#111111] ${
-                      isSession && index % 7 === 0 ? "col-span-2" : ""
-                    }`}
-                  >
-                    <div
-                      className={`relative overflow-hidden bg-[#1a1a1a] ${
-                        isSession && index % 7 === 0 ? "aspect-[8/5]" : "aspect-[4/5]"
-                      }`}
-                    >
-                      <Image
-                        src={image.src}
-                        alt={image.alt ?? ""}
-                        fill
-                        sizes={
-                          isSession
-                            ? index % 7 === 0
-                              ? "(min-width: 1024px) 50vw, 100vw"
-                              : "(min-width: 1024px) 25vw, 50vw"
-                            : "(min-width: 1280px) 32vw, (min-width: 640px) 50vw, 100vw"
-                        }
-                        className="object-cover"
-                      />
-                    </div>
-                    <figcaption className="p-4 font-mono text-[11px] uppercase tracking-[0.18em] text-[#c8c0b4]">
-                      {image.label}
-                    </figcaption>
-                  </Reveal>
-                ))}
-              </div>
+              <ArchiveMediaGallery images={item.gallery} isSession={isSession} />
             </div>
           ) : null}
           {item.commerce ? (
