@@ -90,7 +90,7 @@ export const socialLinks: LinkItem[] = [
 export const navItems = [
   { label: "Sessions", href: "/sessions" },
   { label: "Music", href: "/music" },
-  { label: "Journal", href: "/journal" },
+  { label: "Collaborations", href: "/collaborations" },
   { label: "Shop", href: "/shop" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -899,7 +899,7 @@ export const projects: ContentItem[] = [
       "A limited tour merchandise collaboration with BAYO, rooted in Brooklyn, Port-au-Prince, and the rooms where the music lived.",
     body:
       "Rooted in Port-au-Prince and shaped in Brooklyn, Michaël Brun built BAYO into a global celebration of Haitian culture through sound, movement, and community. In 2024-2025, Irie Sessions partnered with BAYO on limited-edition hats released exclusively across Brun's American tour, including his landmark Barclays Center show. The rollout was intentionally scarce: no online release, no restocks, only available in the rooms where the music lived. A product not just to wear, but to remember.",
-    href: "/journal/irie-sessions-x-bayo-project",
+    href: "/collaborations/irie-sessions-x-bayo-project",
     metadata: ["BAYO", "Tour merch", "Diaspora"],
     gallery: [
       { src: "/media/bayo-tour-02.jpg", label: "Polaroid direction" },
@@ -922,7 +922,7 @@ export const projects: ContentItem[] = [
       "A two-part London cultural series curated by IRIE Global and No Noise, powered by Eventbrite.",
     body:
       "Culture Shock was built as an intersection of music, conversation, and community. The first installment introduced the room through live conversation, curated sound, and thoughtful production. The second installment evolved into a more intimate dinner and discussion around London nightlife, community infrastructure, and the platforms that support emerging cultural scenes. The work turned event partnership into a room with memory.",
-    href: "/journal/culture-shock-eventbrite",
+    href: "/collaborations/culture-shock-eventbrite",
     metadata: ["Eventbrite", "London", "Partner room"],
     gallery: [
       { src: "/media/eventbrite-project-02.jpg", label: "4th Quarter Roses" },
@@ -945,7 +945,7 @@ export const projects: ContentItem[] = [
       "A visual wall of early Irie event language: flyers, room signals, and the graphic proof that the platform has been building over time.",
     body:
       "Before the archive becomes polished, it starts as a flyer, a date, a room, and a promise that people will show up. The flyer wall keeps those early signals visible: not as disposable promotion, but as evidence of a platform learning its own visual language through events, collaborators, and community memory.",
-    href: "/journal/irie-flyer-wall",
+    href: "/collaborations/irie-flyer-wall",
     metadata: ["Flyers", "Archive", "Past events"],
     gallery: [
       { src: "/media/flyer-wall-03.jpg", label: "Flyer 03" },
@@ -959,34 +959,11 @@ export const projects: ContentItem[] = [
 
 export const allItems = [...sessions, ...releases, ...artifacts, ...opportunities, ...projects];
 
-export const archiveItems = [
-  ["BORDERS", "EP / Zine", "2022", "/music/borders"],
-  ["BORDERS: The Visualscaping Zine", "Print artifact", "2022", "/shop/borders-visualscaping-zine"],
-  ["IRIE Sessions x BAYO", "Project", "2024-2025", "/journal/irie-sessions-x-bayo-project"],
-  ["Culture Shock x Eventbrite", "Project", "London", "/journal/culture-shock-eventbrite"],
-  ["Irie Flyer Wall", "Flyer archive", "Past events", "/journal/irie-flyer-wall"],
-  ["Lust on the Coast", "Album", "2025", "/music/lust-on-the-coast"],
-  [
-    "BORDERS: The Visualscaping Zine — Paris",
-    "Session",
-    "March 6–7, 2026",
-    "/sessions/borders-visualscaping-zine-launch",
-  ],
-  ["Be There Weekly", "Event", "2024", "/sessions/be-there-weekly"],
-  ["IRIE Global Paris", "Session", "2026", "/sessions/irie-global-paris-january-2026"],
-  ["Women Make Things 10X Better", "Merch", "2026", "/shop/women-make-things-10x-better-hat"],
-  ["Irie Stud Earrings", "Jewelry", "2026", "/shop/irie-stud-earrings"],
-  ["Irie Global Grant", "Opportunity", "2025", "/opportunities/irie-global-grant"],
-  ["Culture Shock", "Live Series", "London", "/sessions/culture-shock"],
-  ["I forgot to press send", "EP", "2025", "/music/i-forgot-to-press-send"],
-  ["A.L.T.E", "EP", "2025", "/music/alte"],
-  ["2AM", "Single", "2025", "/music/2am"],
-  ["Ridiculous Flex", "Single", "2025", "/music/ridiculous-flex"],
-  ["Go outside", "Single", "2023", "/music/go-outside"],
-  ["Ibiza", "Single", "2024", "/music/ibiza"],
-] as const;
+export const collaborationItems = projects.map(
+  (item) => [item.title, item.metadata[0] ?? "Collaboration", item.kicker.split(" / ")[0], item.href] as const,
+);
 
-export const featuredArchiveItems = archiveItems.slice(0, 5);
+export const featuredCollaborationItems = collaborationItems;
 
 export function getItemBySlug(items: ContentItem[], slug: string) {
   return items.find((item) => item.slug === slug);

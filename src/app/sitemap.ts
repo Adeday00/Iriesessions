@@ -5,7 +5,16 @@ import { siteUrl } from "@/lib/site";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/about", "/contact", "/journal", "/music", "/opportunities", "/sessions", "/shop"];
+  const staticRoutes = [
+    "",
+    "/about",
+    "/collaborations",
+    "/contact",
+    "/music",
+    "/opportunities",
+    "/sessions",
+    "/shop",
+  ];
   const routes = [...new Set([...staticRoutes, ...allItems.map((item) => item.href)])];
 
   return routes.map((route) => ({

@@ -17,12 +17,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         path: item.href,
         image: item.image,
       })
-    : { title: "Journal" };
+    : { title: "Collaborations" };
 }
 
-export default async function JournalDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function CollaborationDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const item = getItemBySlug(projects, slug);
   if (!item) notFound();
-  return <DetailPage item={item} backHref="/journal" backLabel="Back to journal" />;
+  return (
+    <DetailPage
+      item={item}
+      backHref="/collaborations"
+      backLabel="Back to collaborations"
+    />
+  );
 }

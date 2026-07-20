@@ -77,7 +77,7 @@ export function PosterWall() {
         {posters.map((poster) => (
           <Link
             key={poster.src}
-            href="/journal/irie-flyer-wall"
+            href="/collaborations/irie-flyer-wall"
             className="media-lift relative aspect-[4/5] w-60 shrink-0 snap-start overflow-hidden bg-[#151515] sm:w-72 lg:w-80"
           >
             <Image src={poster.src} alt={poster.alt} fill sizes="320px" className="object-contain" />

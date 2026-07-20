@@ -29,10 +29,10 @@ export default function ThanksPage() {
               Return home
             </Link>
             <Link
-              href="/journal"
+              href="/collaborations"
               className="pressable border border-white/20 px-5 py-4 font-mono text-xs uppercase tracking-[0.22em] text-[#f4efe5] hover:border-[#b9ff3b] hover:text-[#b9ff3b]"
             >
-              Browse the archive
+              Explore collaborations
             </Link>
           </div>
         </div>

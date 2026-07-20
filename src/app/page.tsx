@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/motion/Reveal";
 import { PosterWall } from "@/components/PosterWall";
-import { featuredArchiveItems } from "@/lib/content";
+import { featuredCollaborationItems } from "@/lib/content";
 
 const pillars = [
   {
@@ -28,7 +28,7 @@ const pillars = [
 ];
 
 const heroActions = [
-  { label: "Browse archive", href: "/journal" },
+  { label: "Explore collaborations", href: "/collaborations" },
   { label: "Listen now", href: "/music" },
 ];
 
@@ -160,24 +160,24 @@ export default function Home() {
       </Reveal>
 
       <Reveal>
-      <section id="journal" className="grid gap-10 px-5 py-20 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:px-12 lg:py-28">
+      <section id="collaborations" className="grid gap-10 px-5 py-20 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:px-12 lg:py-28">
         <div>
-          <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">Archive wall</p>
+          <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">Collaborations</p>
           <h2 className="mt-5 max-w-xl text-5xl font-black uppercase leading-none md:text-7xl">
-            Featured traces from the archive.
+            Created together.
           </h2>
           <Link
-            href="/journal"
+            href="/collaborations"
             className="pressable group mt-8 inline-flex w-fit items-center gap-2 border border-white/25 px-5 py-4 font-mono text-xs uppercase tracking-[0.22em] text-[#f4efe5] hover:border-[#b9ff3b] hover:text-[#b9ff3b]"
           >
-            Browse the full archive
+            Explore collaborations
             <span aria-hidden className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1">
               →
             </span>
           </Link>
         </div>
         <div className="grid gap-px overflow-hidden border border-white/15 bg-white/15">
-          {featuredArchiveItems.map(([title, type, year, href]) => (
+          {featuredCollaborationItems.map(([title, type, year, href]) => (
             <Link
               key={title}
               href={href}

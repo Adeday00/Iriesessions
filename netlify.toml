@@ -10,6 +10,18 @@
 [functions]
   directory = "netlify/functions"
 
+[[redirects]]
+  from = "/journal"
+  to = "/collaborations"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/journal/*"
+  to = "/collaborations/:splat"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]
