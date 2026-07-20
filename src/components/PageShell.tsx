@@ -78,11 +78,13 @@ export function EditorialGrid({
   cta = "Open",
   categoryLabels,
   kickerLabels,
+  showSummaries = true,
 }: {
   items: Card[];
   cta?: string;
   categoryLabels?: string[];
   kickerLabels?: string[];
+  showSummaries?: boolean;
 }) {
   return (
     <section className="grid border-b border-white/15 bg-[#111111] md:grid-cols-2 xl:grid-cols-3">
@@ -152,7 +154,11 @@ export function EditorialGrid({
               ) : null}
             </Link>
             <h2 className="text-3xl font-black uppercase tracking-tight md:text-4xl">{item.title}</h2>
-            <p className="mt-4 max-w-md grow text-base leading-7 text-[#bdb3a5]">{item.summary}</p>
+            {showSummaries ? (
+              <p className="mt-4 max-w-md grow text-base leading-7 text-[#bdb3a5]">{item.summary}</p>
+            ) : (
+              <div className="grow" />
+            )}
             <Link
               href={item.href}
               className="group/cta mt-6 inline-flex w-fit items-center gap-2 font-mono text-xs uppercase tracking-[0.22em] text-[#b9ff3b] transition-colors hover:text-[#f4efe5]"

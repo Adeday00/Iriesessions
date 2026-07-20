@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" role="img" aria-labelledby="title desc">
+  <title id="title">BAYO x IRIE New York Homecoming flyer</title>
+  <desc id="desc">New York Fashion Week pop-up at AVA Galerie on September 8, 2024.</desc>
+  <rect width="1200" height="1500" fill="#f2eee4"/>
+  <path d="M0 0h1200v260H0z" fill="#111"/>
+  <path d="M0 1240h1200v260H0z" fill="#111"/>
+  <circle cx="1000" cy="470" r="320" fill="#ff6a2b"/>
+  <circle cx="1080" cy="470" r="210" fill="#b9ff3b"/>
+  <path d="M-80 980C220 700 420 1180 760 850s530-70 620 40v350H-80z" fill="#ff6a2b"/>
+  <g fill="#111" font-family="Arial, Helvetica, sans-serif" font-weight="900">
+    <text x="70" y="410" font-size="104" letter-spacing="-5">BAYO × IRIE</text>
+    <text x="70" y="555" font-size="132" letter-spacing="-7">NY</text>
+    <text x="70" y="675" font-size="118" letter-spacing="-6">HOMECOMING</text>
+  </g>
+  <g fill="#111" font-family="Courier New, monospace" font-size="32" font-weight="700" letter-spacing="5">
+    <text x="74" y="785">NEW YORK FASHION WEEK POP-UP</text>
+    <text x="74" y="845">FASHION / DESIGN / MUSIC / COMMUNITY</text>
+  </g>
+  <g fill="#f2eee4" font-family="Arial, Helvetica, sans-serif">
+    <text x="70" y="120" font-size="48" font-weight="900">IRIE GLOBAL</text>
+    <text x="1130" y="120" text-anchor="end" font-family="Courier New, monospace" font-size="28" font-weight="700">SESSION</text>
+    <text x="70" y="1340" font-size="52" font-weight="900">SEPTEMBER 8, 2024</text>
+    <text x="70" y="1410" font-family="Courier New, monospace" font-size="31" font-weight="700" letter-spacing="4">AVA GALERIE / NEW YORK CITY</text>
+  </g>
+</svg>

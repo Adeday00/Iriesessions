@@ -96,15 +96,11 @@ export const navItems = [
   { label: "Contact", href: "/contact" },
 ];
 
-const sessionArchive = (slug: string) =>
-  [
-    "Arrival",
-    "Faces",
-    "Room energy",
-    "In motion",
-    "Detail",
-    "Closing frame",
-  ].map((label, index) => ({
+const sessionArchive = (slug: string, count = 6) =>
+  Array.from({ length: count }, (_, index) =>
+    ["Arrival", "Faces", "Room energy", "In motion", "Detail", "Closing frame"][index] ??
+    `Archive frame ${String(index + 1).padStart(2, "0")}`,
+  ).map((label, index) => ({
     src: `/media/sessions/${slug}/${String(index + 1).padStart(2, "0")}.jpg`,
     label,
   }));
@@ -205,7 +201,7 @@ export const sessions: ContentItem[] = [
     slug: "irie-sessions-second-anniversary",
     category: "session",
     kicker: "July 19, 2019 / Mailroom / New York City",
-    image: "/media/sessions/second-anniversary-2019/cover.jpg",
+    image: "/media/flyer-wall-06.jpg",
     imageFit: "contain",
     summary:
       "Two years of community, connection, and the movement built around culture.",
@@ -265,7 +261,8 @@ export const sessions: ContentItem[] = [
     slug: "borders-soundscaping-series",
     category: "session",
     kicker: "February 2, 2022 / Lagos, Nigeria",
-    image: "/media/sessions/borders-soundscaping-2022/cover.jpg",
+    image: "/media/session-flyers/borders-soundscaping-2022.jpg",
+    imageFit: "contain",
     summary:
       "An immersive live performance bringing the BORDERS EP beyond the studio.",
     body:
@@ -294,7 +291,8 @@ export const sessions: ContentItem[] = [
     slug: "irie-global-los-angeles",
     category: "session",
     kicker: "July 6, 2023 / Apotheke / Los Angeles",
-    image: "/media/sessions/los-angeles-2023/cover.jpg",
+    image: "/media/session-flyers/los-angeles-2023.jpg",
+    imageFit: "contain",
     summary:
       "IRIE's Los Angeles debut, introducing a new creative community to the platform's global sound.",
     body:
@@ -308,7 +306,7 @@ export const sessions: ContentItem[] = [
     slug: "coast-to-coast-grammy-weekend",
     category: "session",
     kicker: "November 3, 2023 / Los Angeles + New York City",
-    image: "/media/sessions/coast-to-coast-2023/cover.jpg",
+    image: "/media/coast-to-coast-2023.jpg",
     imageFit: "contain",
     summary:
       "Two simultaneous Grammy Weekend gatherings connecting creative communities across the country.",
@@ -338,7 +336,8 @@ export const sessions: ContentItem[] = [
     slug: "ny-homecoming-nyfw-pop-up",
     category: "session",
     kicker: "September 8, 2024 / AVA Galerie / New York City",
-    image: "/media/sessions/bayo-x-irie-2024/cover.jpg",
+    image: "/media/session-flyers/bayo-x-irie-2024.svg",
+    imageFit: "contain",
     summary:
       "A New York Fashion Week pop-up celebrating fashion, design, music, and community.",
     body:
@@ -375,7 +374,7 @@ export const sessions: ContentItem[] = [
       "IRIE Sessions made its Paris debut with an intimate late-night gathering that also marked the official birthday celebration of founder Aday, ADAYLIVING. Bringing together Paris' growing community of artists, creatives, and members of the African diaspora, the evening introduced IRIE's next chapter in Europe through music, conversation, and connection. Soundtracked by Eastwood Danso - fashion designer and DJ - alongside Ngozi Diamond and Vivendi Sound, the night reflected the global spirit that has come to define IRIE. More than a first event in a new city, it was the beginning of a new home for the community and another milestone in IRIE's mission to create spaces where culture, collaboration, and meaningful relationships can thrive.",
     href: "/sessions/irie-global-paris-january-2026",
     metadata: ["Paris", "City debut", "ADAYLIVING"],
-    gallery: sessionArchive("paris-january-2026"),
+    gallery: sessionArchive("paris-january-2026", 7),
   },
   {
     title: "IRIE Global Paris — Soho House Preview",
@@ -390,21 +389,22 @@ export const sessions: ContentItem[] = [
       "Ahead of the public launch of BORDERS: The Visualscaping Zine, IRIE and Soho House Paris hosted an intimate preview for artists, founders, and members of the city's creative community. Soundtracked by Shifa Ligero and RONI, the evening created room for conversation around art, diaspora, migration, collaboration, and creative freedom—the ideas at the heart of the publication. The preview stands as its own gathering: a first look at the printed work and a quiet opening chapter before the exhibition moved into the city the following day.",
     href: "/sessions/irie-global-paris-soho-house-preview",
     metadata: ["Paris", "Soho House", "Publication preview"],
-    gallery: sessionArchive("paris-soho-house-2026"),
+    gallery: sessionArchive("paris-soho-house-2026", 15),
   },
   {
     title: "BORDERS: The Visualscaping Zine — Paris",
     slug: "borders-visualscaping-zine-launch",
     category: "session",
     kicker: "March 7, 2026 / Union de la Jeunesse Internationale / Paris",
-    image: "/media/sessions/borders-zine-paris-2026/cover.jpg",
+    image: "/media/sessions/borders-zine-paris-2026/06.jpg",
+    imageFit: "contain",
     summary:
       "The public Paris launch of IRIE's debut publication through exhibition and live performance.",
     body:
       "The public launch of BORDERS: The Visualscaping Zine transformed Union de la Jeunesse Internationale into an immersive exhibition where photography, storytelling, and live performance converged. Curated by founder Aday, ADAYLIVING, the publication explores art, diaspora, migration, collaboration, and creative freedom. A live performance by Olga Kiav extended those themes through memory, movement, and identity, turning the printed object into a shared cultural experience.",
     href: "/sessions/borders-visualscaping-zine-launch",
     metadata: ["Paris", "Publication launch", "Live exhibition"],
-    gallery: sessionArchive("borders-zine-paris-2026"),
+    gallery: sessionArchive("borders-zine-paris-2026", 15),
   },
   {
     title: "Be There Weekly",
@@ -940,7 +940,7 @@ export const projects: ContentItem[] = [
     slug: "irie-flyer-wall",
     category: "project",
     kicker: "Archive / Past rooms",
-    image: "/media/flyer-wall-01.jpg",
+    image: "/media/flyer-wall-02.jpg",
     summary:
       "A visual wall of early Irie event language: flyers, room signals, and the graphic proof that the platform has been building over time.",
     body:
@@ -948,7 +948,6 @@ export const projects: ContentItem[] = [
     href: "/journal/irie-flyer-wall",
     metadata: ["Flyers", "Archive", "Past events"],
     gallery: [
-      { src: "/media/flyer-wall-02.jpg", label: "Flyer 02" },
       { src: "/media/flyer-wall-03.jpg", label: "Flyer 03" },
       { src: "/media/flyer-wall-04.jpg", label: "Flyer 04" },
       { src: "/media/flyer-wall-05.jpg", label: "Flyer 05" },

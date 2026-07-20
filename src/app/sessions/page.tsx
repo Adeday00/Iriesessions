@@ -13,9 +13,18 @@ function getSessionTimestamp(kicker: string) {
   return Number.isNaN(timestamp) ? Number.NEGATIVE_INFINITY : timestamp;
 }
 
-const sessionsByDate = [...sessions].sort(
-  (first, second) => getSessionTimestamp(second.kicker) - getSessionTimestamp(first.kicker),
-);
+let sessionNumber = 0;
+const sessionsByDate = [...sessions]
+  .sort((first, second) => getSessionTimestamp(second.kicker) - getSessionTimestamp(first.kicker))
+  .map((session) => {
+    if (session.slug === "be-there-weekly") return session;
+
+    sessionNumber += 1;
+    return {
+      ...session,
+      title: `IRIE Global: Session ${String(sessionNumber).padStart(3, "0")}`,
+    };
+  });
 
 export default function SessionsPage() {
   return (
@@ -24,7 +33,7 @@ export default function SessionsPage() {
       title="Rooms that become memory."
       intro="Live rooms, pop-ups, listening nights, and city-led gatherings captured before they disappear into the feed."
     >
-      <EditorialGrid items={sessionsByDate} cta="View session" />
+      <EditorialGrid items={sessionsByDate} cta="View session" showSummaries={false} />
     </PageShell>
   );
 }

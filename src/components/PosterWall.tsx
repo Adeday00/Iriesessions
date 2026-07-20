@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useCallback, useEffect, useRef } from "react";
 
 const posters = [
-  { src: "/media/flyer-wall-01.jpg", alt: "Irie event poster" },
   { src: "/media/flyer-wall-02.jpg", alt: "Irie Sessions event poster" },
   { src: "/media/flyer-wall-03.jpg", alt: "Irie live event poster" },
   { src: "/media/flyer-wall-04.jpg", alt: "Irie community event poster" },
