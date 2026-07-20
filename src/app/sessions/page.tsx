@@ -13,13 +13,19 @@ function getSessionTimestamp(kicker: string) {
   return Number.isNaN(timestamp) ? Number.NEGATIVE_INFINITY : timestamp;
 }
 
-let sessionNumber = 0;
+const sessionNumbers = new Map(
+  [...sessions]
+    .filter((session) => session.slug !== "be-there-weekly")
+    .sort((first, second) => getSessionTimestamp(first.kicker) - getSessionTimestamp(second.kicker))
+    .map((session, index) => [session.slug, index + 1]),
+);
+
 const sessionsByDate = [...sessions]
   .sort((first, second) => getSessionTimestamp(second.kicker) - getSessionTimestamp(first.kicker))
   .map((session) => {
     if (session.slug === "be-there-weekly") return session;
 
-    sessionNumber += 1;
+    const sessionNumber = sessionNumbers.get(session.slug);
     return {
       ...session,
       title: `IRIE Global: Session ${String(sessionNumber).padStart(3, "0")}`,
