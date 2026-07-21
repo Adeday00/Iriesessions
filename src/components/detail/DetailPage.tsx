@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { AddToBasket } from "@/components/commerce/AddToBasket";
 import { ArchiveMediaGallery, ZoomableHero } from "@/components/detail/MediaLightbox";
 import type { ContentItem } from "@/lib/content";
+import { SHOW_GALLERY_IMAGE_CAPTIONS } from "@/lib/ui-config";
 
 const trustPoints = ["Ships in 24–48h", "Secure checkout", "Tracked delivery"];
 
@@ -75,7 +76,7 @@ function ProductDetailPage({ item, backHref, backLabel }: { item: ContentItem; b
                       className="object-contain p-4"
                     />
                   </div>
-                  {image.label ? (
+                  {SHOW_GALLERY_IMAGE_CAPTIONS && image.label ? (
                     <figcaption className="px-4 py-3 font-mono text-[10px] uppercase tracking-[0.16em] text-[#c8c0b4]">
                       {image.label}
                     </figcaption>

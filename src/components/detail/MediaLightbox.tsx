@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { Reveal } from "@/components/motion/Reveal";
 import type { ContentItem } from "@/lib/content";
+import { SHOW_GALLERY_IMAGE_CAPTIONS } from "@/lib/ui-config";
 
 type GalleryImage = NonNullable<ContentItem["gallery"]>[number];
 
@@ -127,9 +128,11 @@ function Lightbox({
           </>
         ) : null}
 
-        <p className="absolute inset-x-20 bottom-6 z-10 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-white/70">
-          {activeImage.label}
-        </p>
+        {SHOW_GALLERY_IMAGE_CAPTIONS ? (
+          <p className="absolute inset-x-20 bottom-6 z-10 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-white/70">
+            {activeImage.label}
+          </p>
+        ) : null}
       </div>
     </div>
   );
@@ -237,9 +240,11 @@ export function ArchiveMediaGallery({ images, isSession }: { images: GalleryImag
                   Enlarge ↗
                 </span>
               </div>
-              <span className="block p-4 font-mono text-[11px] uppercase tracking-[0.18em] text-[#c8c0b4]">
-                {image.label}
-              </span>
+              {SHOW_GALLERY_IMAGE_CAPTIONS ? (
+                <span className="block p-4 font-mono text-[11px] uppercase tracking-[0.18em] text-[#c8c0b4]">
+                  {image.label}
+                </span>
+              ) : null}
             </button>
           </Reveal>
         ))}
