@@ -108,7 +108,7 @@ export function EditorialGrid({
             <Link
               href={item.href}
               className={`relative mb-6 block overflow-hidden ${
-                isArtifact ? "bg-[#f4efe5]" : "bg-[#1a1a1a]"
+                isArtifact ? "bg-white" : "bg-[#1a1a1a]"
               }`}
               aria-label={`${cta}: ${item.title}`}
             >
@@ -137,7 +137,7 @@ export function EditorialGrid({
                     }`}
                   />
                 )}
-                {isFlyer ? null : (
+                {isFlyer || isArtifact ? null : (
                   <p
                     className={`absolute bottom-4 left-4 max-w-[calc(100%-2rem)] font-mono text-[11px] uppercase tracking-[0.2em] ${
                       isArtifact ? "text-black" : "text-[#b9ff3b]"

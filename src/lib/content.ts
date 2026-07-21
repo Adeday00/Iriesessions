@@ -114,12 +114,12 @@ export const sessions: ContentItem[] = [
     image: "/media/sessions/june-29-2018/cover.jpg",
     imageFit: "contain",
     summary:
-      "The second edition of IRIE Sessions, where music sparked conversation and strangers became community.",
+      "The first edition of IRIE Sessions, where music sparked conversation and strangers became community.",
     body:
-      "The second edition of IRIE Sessions transformed Madame X into a vibrant gathering where music sparked conversation and strangers became community. Soundtracked by Suav, OB1, Khorey & Torey, and Auntie Gabija, with Ronami and No Noise hosting the night, the evening celebrated the sounds of the African diaspora and the spirit of collaboration that continues to define IRIE today.",
+      "The first edition of IRIE Sessions transformed Madame X into a vibrant gathering where music sparked conversation and strangers became community. Soundtracked by Suav, OB1, Khorey & Torey, and Auntie Gabija, with Ronami and No Noise hosting the night, the evening celebrated the sounds of the African diaspora and the spirit of collaboration that continues to define IRIE today.",
     href: "/sessions/irie-sessions-june-29-2018",
     metadata: ["New York City", "Madame X", "IRIE Sessions"],
-    gallery: sessionArchive("june-29-2018"),
+    gallery: sessionArchive("june-29-2018", 23),
   },
   {
     title: "IRIE Sessions - July 20, 2018",
@@ -129,12 +129,12 @@ export const sessions: ContentItem[] = [
     image: "/media/sessions/july-20-2018/cover.jpg",
     imageFit: "contain",
     summary:
-      "The third edition brought the community back together for music, discovery, and connection.",
+      "The second edition brought the community back together for music, discovery, and connection.",
     body:
-      "The third edition of IRIE Sessions brought the community to The Vinyl for another night of music, discovery, and connection. Led by DJ Tunez, alongside DJ Suav, Khorey + Torey, and Young Wavy Fox, the evening carried the energy of the African diaspora from the first record to the last. More than a lineup, it was a room full of people exchanging ideas, building relationships, and celebrating the culture that continues to bring us together.",
+      "The second edition of IRIE Sessions brought the community to The Vinyl for another night of music, discovery, and connection. Led by DJ Tunez, alongside DJ Suav, Khorey + Torey, and Young Wavy Fox, the evening carried the energy of the African diaspora from the first record to the last. More than a lineup, it was a room full of people exchanging ideas, building relationships, and celebrating the culture that continues to bring us together.",
     href: "/sessions/irie-sessions-july-20-2018",
     metadata: ["New York City", "The Vinyl", "DJ Tunez"],
-    gallery: sessionArchive("july-20-2018"),
+    gallery: sessionArchive("july-20-2018", 12),
   },
   {
     title: "IRIE Sessions - August 23, 2018",
@@ -146,10 +146,10 @@ export const sessions: ContentItem[] = [
     summary:
       "A rooftop gathering centered around global music, community, and summer-night connection.",
     body:
-      "For the fourth edition, we brought a fresh energy to The Williamsburg Hotel, hosting the rooftop's first cultural gathering centered around global music and community. Austin Millz, Eli Fola, DJ Suav, KittySayWord, and special guest violinist MAPY set the tone for a summer night filled with good people, great conversations, and sounds that traveled far beyond one place. It was another reminder that the best communities are built one gathering at a time.",
+      "For the third edition, we brought a fresh energy to The Williamsburg Hotel, hosting the rooftop's first cultural gathering centered around global music and community. Austin Millz, Eli Fola, DJ Suav, KittySayWord, and special guest violinist MAPY set the tone for a summer night filled with good people, great conversations, and sounds that traveled far beyond one place. It was another reminder that the best communities are built one gathering at a time.",
     href: "/sessions/irie-sessions-august-23-2018",
     metadata: ["New York City", "Williamsburg Hotel", "Rooftop"],
-    gallery: sessionArchive("august-23-2018"),
+    gallery: sessionArchive("august-23-2018", 12),
   },
   {
     title: "Wicked Fright Night",
@@ -164,7 +164,7 @@ export const sessions: ContentItem[] = [
       "Halloween took on a new identity as IRIE Sessions transformed The Williamsburg Hotel Ballroom into a celebration for more than 1,000 guests. Blending costumes, music, and culture under one roof, the night featured DJ Tunez alongside Bobby Ishak, Ameme, and Zack Zannini, creating an atmosphere that felt equal parts Halloween party and cultural gathering. From the first costume to the final song, Wicked Fright Night proved that community could be built anywhere, even on the biggest night of the year.",
     href: "/sessions/wicked-fright-night-2018",
     metadata: ["New York City", "Halloween", "1,000+ guests"],
-    gallery: sessionArchive("wicked-fright-night-2018"),
+    gallery: sessionArchive("wicked-fright-night-2018", 11),
   },
   {
     title: "A Day in the Life",
@@ -179,7 +179,7 @@ export const sessions: ContentItem[] = [
       "To celebrate founder Aday's birthday, IRIE Sessions took over Public Arts at PUBLIC Hotel for a night that brought together more than 800 creatives, artists, and tastemakers under one roof. Soundtracked by KittySayWord, Rich Boss, Angel, Dren, and Suav, the evening became a meeting point for New York's creative community, with appearances from Michael Brun, Justine Skye, GoldLink, and more. More than a birthday celebration, A Day in the Life reflected what IRIE has always been about: creating spaces where culture, community, and collaboration happen naturally.",
     href: "/sessions/a-day-in-the-life-2019",
     metadata: ["New York City", "PUBLIC Hotel", "800+ guests"],
-    gallery: sessionArchive("day-in-life-2019"),
+    gallery: sessionArchive("day-in-life-2019", 15),
   },
   {
     title: "Home Is Where the Love Is",
@@ -194,14 +194,14 @@ export const sessions: ContentItem[] = [
       "IRIE Sessions expanded beyond music with an evening that celebrated the people shaping culture across disciplines. Hosted at Mailroom NYC, the gathering brought together photographers, filmmakers, designers, storytellers, and musicians through a curated exhibition featuring Amarachi Nwosu, Anaka, Flo Ngala, Prince Aday, Sooflight, Travis Matthews, and Unscripted Moments, alongside sounds by Angel + Dren, KittySayWord, and Sounds of Reality. From documentary photography and visual storytelling to contemporary art and conversation, the night reflected IRIE's belief that culture grows when different creative worlds share the same room.",
     href: "/sessions/home-is-where-the-love-is",
     metadata: ["New York City", "Mailroom", "Exhibition"],
-    gallery: sessionArchive("home-is-where-love-is-2019"),
+    gallery: sessionArchive("home-is-where-love-is-2019", 34),
   },
   {
     title: "IRIE Sessions 2nd Anniversary",
     slug: "irie-sessions-second-anniversary",
     category: "session",
     kicker: "July 19, 2019 / Mailroom / New York City",
-    image: "/media/flyer-wall-06.jpg",
+    image: "/media/sessions/second-anniversary-2019/cover.jpg",
     imageFit: "contain",
     summary:
       "Two years of community, connection, and the movement built around culture.",
@@ -209,7 +209,7 @@ export const sessions: ContentItem[] = [
       "Two years after its founding, IRIE Sessions celebrated its 2nd Anniversary with a night that honored the community built along the way. Hosted by DJ Tunez, with sets from DJ Khalil, DJ Hol' Up, DJ Tee Marie, popularly known as Nomi, and DJ Rich Boss, the gathering brought together artists, creatives, and music lovers for an evening rooted in connection and celebration. More than an anniversary, it marked a growing movement, proof that when people gather around culture, lasting communities are created.",
     href: "/sessions/irie-sessions-second-anniversary",
     metadata: ["New York City", "2nd anniversary", "Mailroom"],
-    gallery: sessionArchive("second-anniversary-2019"),
+    gallery: sessionArchive("second-anniversary-2019", 14),
   },
   {
     title: "IRIE Sessions - NYFW Finale",
@@ -224,7 +224,7 @@ export const sessions: ContentItem[] = [
       "Closing out New York Fashion Week, IRIE Sessions transformed Freehold Brooklyn into a gathering where fashion, music, and visual culture shared the spotlight. The evening featured DJ Tunez, the official DJ for Wizkid, alongside Eli Fola, GabSoul, one of New York's leading curators of global sounds, and Suav. Guests also experienced a special exhibition from acclaimed fashion photographer Tracy Bailey Jr., whose work has documented some of fashion's most recognizable faces and campaigns. Together, the night reflected IRIE's belief that the most memorable cultural moments happen when music, art, and creative communities come together under one roof.",
     href: "/sessions/irie-sessions-nyfw-finale-2019",
     metadata: ["New York City", "NYFW", "Freehold Brooklyn"],
-    gallery: sessionArchive("nyfw-finale-2019"),
+    gallery: sessionArchive("nyfw-finale-2019", 44),
   },
   {
     title: "Wicked Fright Night II",
@@ -239,7 +239,7 @@ export const sessions: ContentItem[] = [
       "Following the success of the previous year, IRIE Sessions returned to The Williamsburg Hotel Ballroom for the second edition of Wicked Fright Night, bringing together another packed house for one of Brooklyn's most anticipated Halloween celebrations. The evening featured a special live set from NY Theo, Theophilus London, alongside Khalil, Mike Nasty, The Large, Tobz, and Suav, blending music, fashion, and creative expression into one unforgettable night. More than a Halloween party, Wicked Fright Night II continued IRIE's tradition of creating spaces where culture, community, and celebration come together.",
     href: "/sessions/wicked-fright-night-ii",
     metadata: ["Brooklyn", "Halloween", "Live set"],
-    gallery: sessionArchive("wicked-fright-night-ii-2019"),
+    gallery: sessionArchive("wicked-fright-night-ii-2019", 22),
   },
   {
     title: "Transitions (Live)",
@@ -254,7 +254,7 @@ export const sessions: ContentItem[] = [
       "Transitions (Live) marked the return of IRIE Global with an evening where purpose and community came together. Hosted at Mission NYC, the event featured an all-women lineup led by Angel x Dren, AQ, GabSoul, Mohogany, and Siobhan Bell, alongside The Large, while raising support for Haiti earthquake relief. The night also welcomed special guest appearances from Metro Boomin and other artists, turning the gathering into a celebration of generosity, creativity, and connection. More than a comeback, Transitions reflected IRIE's belief that when culture leads with intention, community always follows.",
     href: "/sessions/transitions-live",
     metadata: ["New York City", "Haiti relief", "All-women lineup"],
-    gallery: sessionArchive("transitions-live-2021"),
+    gallery: sessionArchive("transitions-live-2021", 38),
   },
   {
     title: "BORDERS: The Soundscaping Series",
@@ -269,7 +269,7 @@ export const sessions: ContentItem[] = [
       "To celebrate the release of the BORDERS EP, IRIE Sessions debuted BORDERS: The Soundscaping Series, an immersive live performance that brought the project to life beyond the studio. Executive produced by Grammy-nominated producer Chopstix and Aday, ADAYLIVING, the evening featured live performances from Chopstix, Yung L, Minz, Ria Sean, and more, with DJ Obi curating the soundtrack between performances. Blending music, cinematic storytelling, and immersive production, BORDERS introduced a new chapter for IRIE Sessions, one where every release becomes a shared cultural experience.",
     href: "/sessions/borders-soundscaping-series",
     metadata: ["Lagos", "BORDERS", "Live performance"],
-    gallery: sessionArchive("borders-soundscaping-2022"),
+    gallery: sessionArchive("borders-soundscaping-2022", 50),
   },
   {
     title: "IRIE Homecoming",
@@ -284,7 +284,7 @@ export const sessions: ContentItem[] = [
       "IRIE Homecoming welcomed the community back to New York with an evening inspired by nostalgia, connection, and the sounds that shaped a generation. Headlined by Jamaican artist Projexx, alongside Angel + Dren, Givijin, Odalys, and YB, the night brought together music lovers, creatives, and familiar faces under one roof. The evening was co-hosted by journalist Ivie Ani, journalist and radio personality Ivy Rivera, and The Jane, creating a space where culture, conversation, and community met effortlessly. More than a homecoming, it was a reminder that no matter where life takes us, the best moments begin when we come back together.",
     href: "/sessions/irie-homecoming-2022",
     metadata: ["New York City", "The Jane Hotel", "Projexx"],
-    gallery: sessionArchive("homecoming-2022"),
+    gallery: sessionArchive("homecoming-2022", 31),
   },
   {
     title: "IRIE Global Los Angeles",
@@ -299,7 +299,7 @@ export const sessions: ContentItem[] = [
       "IRIE Sessions made its Los Angeles debut, introducing the city's creative community to the culture and energy that had been building across New York and beyond. Held at Apotheke LA, the evening featured Mike Hector, the Grammy Award-winning producer and songwriter behind records for artists including Doja Cat and Leon Thomas, alongside Noodles, Kehlani's longtime tour DJ, Quinn Blake, a rising force in Los Angeles' underground dance scene, and Tomi Tribe, founder of the Lagos 2 LA concert series and one of the city's leading voices in Afrobeats. Together, they welcomed a new chapter for IRIE, proving that no matter the city, music remains one of the strongest ways to build community.",
     href: "/sessions/irie-global-los-angeles",
     metadata: ["Los Angeles", "Apotheke", "City debut"],
-    gallery: sessionArchive("los-angeles-2023"),
+    gallery: sessionArchive("los-angeles-2023", 19),
   },
   {
     title: "Coast to Coast",
@@ -314,7 +314,7 @@ export const sessions: ContentItem[] = [
       "During Grammy Weekend, IRIE Sessions delivered its first coast-to-coast activation, creating two intimate experiences that brought together artists, executives, and creatives on opposite sides of the country. In Los Angeles, APT 200 was hosted by Nissi, with music from Mode Nads, Mona Sed, and global music producer Meska of Jugglerz, offering a space for meaningful conversations beyond the industry's biggest stage. At the same time in New York City, IRIE partnered with GabSoul to curate Riddim & Soul at Dumbo House, hosted by Alex Mali with sounds by Angel + Dren, GabSoul, and Mohogany. More than two events, the simultaneous gatherings reflected IRIE's growing global vision: creating intentional spaces where culture, collaboration, and community thrive, proving that meaningful connections are not defined by geography, but by the people in the room.",
     href: "/sessions/coast-to-coast-grammy-weekend",
     metadata: ["Grammy Weekend", "Los Angeles", "New York City"],
-    gallery: sessionArchive("coast-to-coast-2023"),
+    gallery: sessionArchive("coast-to-coast-2023", 22),
   },
   {
     title: "Culture Shock",
@@ -329,14 +329,14 @@ export const sessions: ContentItem[] = [
       "Culture Shock marked IRIE Sessions' first collaborative activation in the United Kingdom, produced alongside No Noise and presented with support from Eventbrite UK. Held in London, the evening brought together music, conversation, and community through an intimate program featuring Grammy-nominated producer Chopstix, moderated by BBC Radio 1Xtra presenter Issra, with performances from Denz, Jameela Elfaki, Jamo Beatz, Mode Nads, and Ngozi Diamond. More than a panel or showcase, Culture Shock created a space where artists, producers, and creatives exchanged ideas, celebrated African creativity, and strengthened cultural ties between London, Lagos, and beyond - continuing IRIE's mission of building community through collaboration.",
     href: "/sessions/culture-shock",
     metadata: ["London", "Eventbrite UK", "No Noise"],
-    gallery: sessionArchive("culture-shock-london-2024"),
+    gallery: sessionArchive("culture-shock-london-2024", 24),
   },
   {
     title: "BAYO x IRIE — NY Homecoming",
     slug: "ny-homecoming-nyfw-pop-up",
     category: "session",
     kicker: "September 8, 2024 / AVA Galerie / New York City",
-    image: "/media/session-flyers/bayo-x-irie-2024.svg",
+    image: "/media/sessions/bayo-x-irie-2024/cover.jpg",
     imageFit: "contain",
     summary:
       "A New York Fashion Week pop-up celebrating fashion, design, music, and community.",
@@ -344,7 +344,7 @@ export const sessions: ContentItem[] = [
       "During New York Fashion Week, IRIE Sessions returned home with NY Homecoming, a one-day pop-up celebrating creativity through fashion, design, and community. Hosted at AVA Galerie, the event debuted a limited-edition capsule collection produced across Paris, London, New York, and beyond, bringing together creatives, collectors, and supporters in an intimate setting. The afternoon was soundtracked by Deja Monet, known for her work across fashion, luxury, and New York's creative scene, while guests enjoyed an open bar presented by BSB Whiskey and Ten To One Rum. More than a product launch, NY Homecoming reflected IRIE's evolving vision of building cultural experiences where fashion, music, and community exist as one.",
     href: "/sessions/ny-homecoming-nyfw-pop-up",
     metadata: ["New York City", "NYFW", "BAYO x IRIE"],
-    gallery: sessionArchive("bayo-x-irie-2024"),
+    gallery: sessionArchive("bayo-x-irie-2024", 28),
   },
   {
     title: "Culture Shock: 4th Quarter Roses",
@@ -359,7 +359,7 @@ export const sessions: ContentItem[] = [
       "As the second chapter of Culture Shock, IRIE Sessions and No Noise partnered with Eventbrite UK to bring together some of London's leading cultural curators, music executives, founders, and creative communities for an intimate evening of conversation, dinner, and connection. The gathering welcomed representatives from collectives including BLT Brunch and other influential voices shaping the city's creative landscape, creating space for meaningful dialogue on the future of community and cultural experiences. Guests were joined by Eastwood Danso - fashion designer and DJ - alongside AAA, Malix, and Vivendi Sound, before the evening transitioned into a private afterparty celebrating the relationships formed around the table. More than an event, 4th Quarter Roses reflected IRIE's belief that the strongest creative ecosystems are built when conversation comes first and collaboration follows.",
     href: "/sessions/culture-shock-fourth-quarter-roses",
     metadata: ["London", "Eventbrite UK", "Dinner + conversation"],
-    gallery: sessionArchive("culture-shock-q4-2024"),
+    gallery: sessionArchive("culture-shock-q4-2024", 16),
   },
   {
     title: "IRIE Global Paris",
@@ -389,7 +389,7 @@ export const sessions: ContentItem[] = [
       "Ahead of the public launch of BORDERS: The Visualscaping Zine, IRIE and Soho House Paris hosted an intimate preview for artists, founders, and members of the city's creative community. Soundtracked by Shifa Ligero and RONI, the evening created room for conversation around art, diaspora, migration, collaboration, and creative freedom—the ideas at the heart of the publication. The preview stands as its own gathering: a first look at the printed work and a quiet opening chapter before the exhibition moved into the city the following day.",
     href: "/sessions/irie-global-paris-soho-house-preview",
     metadata: ["Paris", "Soho House", "Publication preview"],
-    gallery: sessionArchive("paris-soho-house-2026", 15),
+    gallery: sessionArchive("paris-soho-house-2026", 14),
   },
   {
     title: "BORDERS: The Visualscaping Zine — Paris",
@@ -441,7 +441,253 @@ export const sessions: ContentItem[] = [
   },
 ];
 
-export const releases: ContentItem[] = [
+const releaseCatalog: ContentItem[] = [
+  {
+    title: "Whine Sum",
+    slug: "whine-sum",
+    category: "release",
+    kicker: "May 22, 2026 / Single",
+    image: "/media/music/whine-sum.jpg",
+    summary: "A 2026 Afrobeats single with JEBO and Joel Prodigee.",
+    body:
+      "IRIE SESSIONS connects with JEBO and Joel Prodigee on \"Whine Sum,\" a one-track Afrobeats release and the newest chapter in the label's collaborative catalog.",
+    href: "/music/whine-sum",
+    metadata: ["Afrobeats", "Single", "Released May 22, 2026", "JEBO / Joel Prodigee"],
+    links: [
+      {
+        label: "Spotify",
+        href: "https://open.spotify.com/track/1xO7bkq8V770b7Ism08VWJ",
+        kind: "dsp",
+      },
+      {
+        label: "Apple Music",
+        href: "https://music.apple.com/us/album/whine-sum-single/6764885204",
+        kind: "dsp",
+      },
+      {
+        label: "YouTube",
+        href: "https://www.youtube.com/watch?v=Ki_CyaQz0Ik",
+        kind: "video",
+      },
+    ],
+  },
+  {
+    title: "IN A MOOD",
+    slug: "in-a-mood",
+    category: "release",
+    kicker: "Jan 30, 2026 / Single",
+    image: "/media/music/in-a-mood.jpg",
+    summary: "A 2026 Afrobeats collaboration between IRIE SESSIONS and Bête.",
+    body:
+      "\"IN A MOOD\" brings IRIE SESSIONS and Bête together for a concise Afrobeats release built around a shared musical atmosphere.",
+    href: "/music/in-a-mood",
+    metadata: ["Afrobeats", "Single", "Released Jan 30, 2026", "Bête"],
+    links: [
+      {
+        label: "Spotify",
+        href: "https://open.spotify.com/track/4lYhxHvQBYPJYivtlcXmez",
+        kind: "dsp",
+      },
+      {
+        label: "Apple Music",
+        href: "https://music.apple.com/us/album/in-a-mood-single/1863801750",
+        kind: "dsp",
+      },
+      {
+        label: "YouTube",
+        href: "https://www.youtube.com/watch?v=S7tCwHhGlfg",
+        kind: "video",
+      },
+    ],
+  },
+  {
+    title: "Feel'n You",
+    slug: "feeln-you",
+    category: "release",
+    kicker: "Oct 3, 2025 / Single",
+    image: "/media/music/feeln-you.jpg",
+    summary: "An Afrobeats single from Skillz 8Figure and IRIE SESSIONS.",
+    body:
+      "\"Feel'n You\" reunites IRIE SESSIONS with Skillz 8Figure for a one-track Afrobeats collaboration released in October 2025.",
+    href: "/music/feeln-you",
+    metadata: ["Afrobeats", "Single", "Released Oct 3, 2025", "Skillz 8Figure"],
+    links: [
+      {
+        label: "Spotify",
+        href: "https://open.spotify.com/track/3KNkRBOagJJM0oWX2rRD5w",
+        kind: "dsp",
+      },
+      {
+        label: "Apple Music",
+        href: "https://music.apple.com/us/album/feeln-you-single/1837435647",
+        kind: "dsp",
+      },
+      {
+        label: "YouTube",
+        href: "https://www.youtube.com/watch?v=L_2e9KDJ1Bc",
+        kind: "video",
+      },
+    ],
+  },
+  {
+    title: "REASON (CHANGED SEASONS)",
+    slug: "reason-changed-seasons",
+    category: "release",
+    kicker: "Aug 22, 2025 / Single",
+    image: "/media/music/reason.jpg",
+    summary: "A 2025 Afrobeats single from IRIE SESSIONS and Omagz.",
+    body:
+      "\"REASON (CHANGED SEASONS)\" pairs IRIE SESSIONS with Omagz in an Afrobeats collaboration released in August 2025.",
+    href: "/music/reason-changed-seasons",
+    metadata: ["Afrobeats", "Single", "Released Aug 22, 2025", "Omagz"],
+    links: [
+      {
+        label: "Apple Music",
+        href: "https://music.apple.com/us/album/reason-changed-seasons-single/1833040540",
+        kind: "dsp",
+      },
+      {
+        label: "YouTube",
+        href: "https://www.youtube.com/watch?v=buWZncxZyO8",
+        kind: "video",
+      },
+    ],
+  },
+  {
+    title: "GWAN BIGGER",
+    slug: "gwan-bigger",
+    category: "release",
+    kicker: "Jun 6, 2025 / Single",
+    image: "/media/music/gwan-bigger.jpg",
+    summary: "A 2025 Afrobeats single from IRIE SESSIONS and Omagz.",
+    body:
+      "\"GWAN BIGGER\" brings IRIE SESSIONS and Omagz together for a direct, one-track Afrobeats release.",
+    href: "/music/gwan-bigger",
+    metadata: ["Afrobeats", "Single", "Released Jun 6, 2025", "Omagz"],
+    links: [
+      {
+        label: "Apple Music",
+        href: "https://music.apple.com/us/album/gwan-bigger-single/1817028897",
+        kind: "dsp",
+      },
+      {
+        label: "YouTube",
+        href: "https://www.youtube.com/watch?v=KBoVAgGOO7A",
+        kind: "video",
+      },
+    ],
+  },
+  {
+    title: "4:30",
+    slug: "4-30",
+    category: "release",
+    kicker: "Mar 21, 2025 / Single",
+    image: "/media/music/4-30.jpg",
+    summary: "An Afrobeats collaboration featuring Zen Univrse, Easyscope, and Trill Xoe.",
+    body:
+      "\"4:30\" brings Zen Univrse, Easyscope, and Trill Xoe into the IRIE SESSIONS world for a collaborative Afrobeats single released in March 2025.",
+    href: "/music/4-30",
+    metadata: ["Afrobeats", "Single", "Released Mar 21, 2025", "Zen Univrse / Easyscope / Trill Xoe"],
+    links: [
+      {
+        label: "Spotify",
+        href: "https://open.spotify.com/track/4QbDWhLqMf9XhiiD4itZIs",
+        kind: "dsp",
+      },
+      {
+        label: "Apple Music",
+        href: "https://music.apple.com/us/album/4-30-feat-trill-xoe-zen-univrse-easyscope-single/1800533405",
+        kind: "dsp",
+      },
+      {
+        label: "YouTube",
+        href: "https://www.youtube.com/watch?v=wHAbGwSm6Go",
+        kind: "video",
+      },
+    ],
+  },
+  {
+    title: "RADIO",
+    slug: "radio",
+    category: "release",
+    kicker: "Jan 24, 2025 / Single",
+    image: "/media/music/radio.jpg",
+    summary: "A 2025 Afrobeats single from IRIE SESSIONS and Zen Univrse.",
+    body:
+      "\"RADIO\" connects IRIE SESSIONS with Zen Univrse for a one-track Afrobeats collaboration released in January 2025.",
+    href: "/music/radio",
+    metadata: ["Afrobeats", "Single", "Released Jan 24, 2025", "Zen Univrse"],
+    links: [
+      {
+        label: "Apple Music",
+        href: "https://music.apple.com/us/album/radio-single/1780544994",
+        kind: "dsp",
+      },
+      {
+        label: "YouTube",
+        href: "https://www.youtube.com/watch?v=iWyu-DIPhY0",
+        kind: "video",
+      },
+    ],
+  },
+  {
+    title: "Old Flame",
+    slug: "old-flame",
+    category: "release",
+    kicker: "Jan 19, 2024 / Single",
+    image: "/media/music/old-flame.jpg",
+    summary: "An R&B and soul collaboration from Niels featuring IRIE SESSIONS.",
+    body:
+      "Niels brings IRIE SESSIONS into \"Old Flame,\" a collaborative R&B and soul single released in January 2024.",
+    href: "/music/old-flame",
+    metadata: ["R&B / Soul", "Single", "Released Jan 19, 2024", "Niels"],
+    links: [
+      {
+        label: "Spotify",
+        href: "https://open.spotify.com/track/0YXDPxD3AhdNBox9PBGIQ5",
+        kind: "dsp",
+      },
+      {
+        label: "Apple Music",
+        href: "https://music.apple.com/us/album/old-flame-single/1784922569",
+        kind: "dsp",
+      },
+      {
+        label: "YouTube",
+        href: "https://www.youtube.com/watch?v=x8BlqOHSd7Y",
+        kind: "video",
+      },
+    ],
+  },
+  {
+    title: "Move Slow",
+    slug: "move-slow",
+    category: "release",
+    kicker: "Jun 16, 2023 / Single",
+    image: "/media/music/move-slow.jpg",
+    summary: "An Afro-pop collaboration with Niels and Le Mav.",
+    body:
+      "\"Move Slow\" connects IRIE SESSIONS, Niels, and Le Mav in an Afro-pop single released in June 2023.",
+    href: "/music/move-slow",
+    metadata: ["Afro-pop", "Single", "Released Jun 16, 2023", "Niels / Le Mav"],
+    links: [
+      {
+        label: "Spotify",
+        href: "https://open.spotify.com/track/4qnDgYYyAGh5wk7c2mZ6Z0",
+        kind: "dsp",
+      },
+      {
+        label: "Apple Music",
+        href: "https://music.apple.com/us/album/move-slow-single/1691426417",
+        kind: "dsp",
+      },
+      {
+        label: "YouTube",
+        href: "https://www.youtube.com/watch?v=ewCFmhqEHOE",
+        kind: "video",
+      },
+    ],
+  },
   {
     title: "Lust on the Coast",
     slug: "lust-on-the-coast",
@@ -502,10 +748,7 @@ export const releases: ContentItem[] = [
       { src: "/media/borders-legacy-01.jpg", label: "Archive portrait" },
       { src: "/media/borders-legacy-02.jpg", label: "Women Make Things frame" },
       { src: "/media/borders-legacy-03.jpg", label: "Golden portrait" },
-      { src: "/media/borders-legacy-04.jpg", label: "Artist frame" },
       { src: "/media/borders-legacy-05.jpg", label: "Room memory" },
-      { src: "/media/borders-legacy-06.jpg", label: "Outdoor frame" },
-      { src: "/media/borders-legacy-07.jpg", label: "Studio portrait" },
       { src: "/media/borders-legacy-08.jpg", label: "Night portrait" },
       { src: "/media/borders-legacy-09.jpg", label: "Seated portrait" },
       { src: "/media/borders-soundscaping-01.jpg", label: "Soundscaping" },
@@ -733,6 +976,11 @@ export const releases: ContentItem[] = [
   },
 ];
 
+export const releases = [...releaseCatalog].sort(
+  (first, second) =>
+    Date.parse(second.kicker.split(" / ")[0]) - Date.parse(first.kicker.split(" / ")[0]),
+);
+
 export const artifacts: ContentItem[] = [
   {
     title: "BORDERS: The Visualscaping Zine",
@@ -831,7 +1079,7 @@ export const artifacts: ContentItem[] = [
     slug: "irie-stud-earrings",
     category: "artifact",
     kicker: "Merch / Object",
-    image: "/media/irie-stud-box.jpg",
+    image: "/media/irie-earrings.jpg",
     summary: "925 sterling silver stud earrings with sculpted 3D Irie lettering.",
     body:
       "925 sterling silver with a high-polish finish, sculpted 3D Irie lettering, and butterfly backs for pierced ears. Ships within 24–48 hours of processing.",
@@ -852,14 +1100,6 @@ export const artifacts: ContentItem[] = [
       ],
     },
     gallery: [
-      {
-        src: "/media/irie-earrings.jpg",
-        label: "Stud detail",
-      },
-      {
-        src: "/media/earrings-product-01.jpg",
-        label: "Product detail",
-      },
       {
         src: "/media/earrings-product-02.jpg",
         label: "Gift box",
@@ -889,6 +1129,55 @@ export const opportunities: ContentItem[] = [
 ];
 
 export const projects: ContentItem[] = [
+  {
+    title: "Michaël Brun / BAYO",
+    slug: "michael-brun-bayo",
+    category: "project",
+    kicker: "2024-2025 / Music, merchandise, and diaspora",
+    image: "/media/collaborations/michael-brun/cover.jpg",
+    summary:
+      "A collaboration with Michaël Brun and BAYO connecting Haitian culture, live music, and limited-edition objects.",
+    body:
+      "Michaël Brun's BAYO brings Haitian culture into rooms built around sound, movement, and community. IRIE's collaboration extended that world through limited-edition hats created for Brun's American tour, including his Barclays Center show. Released only in the rooms where the music lived, the pieces became both merchandise and memory: a physical record of a partnership grounded in diaspora, creative exchange, and collective celebration.",
+    href: "/collaborations/michael-brun-bayo",
+    metadata: ["Michaël Brun", "BAYO", "Tour collaboration"],
+    gallery: [
+      { src: "/media/collaborations/michael-brun/01.jpg", label: "BAYO portrait" },
+    ],
+  },
+  {
+    title: "Chopstix",
+    slug: "chopstix",
+    category: "project",
+    kicker: "2022-present / Music and visual worlds",
+    image: "/media/collaborations/chopstix/cover.jpg",
+    summary:
+      "An ongoing creative partnership spanning BORDERS, live soundscaping, and LUST On The Coast.",
+    body:
+      "IRIE's work with Grammy-winning producer Chopstix moves between records, images, and live experience. Together with Aday, Chopstix executive produced BORDERS and helped shape its borderless musical language before carrying that collaboration into the Soundscaping Series and LUST On The Coast. The partnership treats music as a complete world: something written in the studio, translated through film and design, and finally shared in a room.",
+    href: "/collaborations/chopstix",
+    metadata: ["Chopstix", "Music", "Creative direction"],
+    gallery: [
+      { src: "/media/collaborations/chopstix/01.jpg", label: "Studio portrait" },
+    ],
+  },
+  {
+    title: "DJ Mohogany",
+    slug: "dj-mohogany",
+    category: "project",
+    kicker: "New York / Sound and community",
+    image: "/media/collaborations/mohogany/cover.jpg",
+    summary:
+      "A recurring musical collaboration shaped across IRIE rooms in New York and beyond.",
+    body:
+      "DJ Mohogany has helped soundtrack IRIE gatherings where music is the connective tissue between artists, guests, and the wider community. From Transitions (Live) to Riddim & Soul, her selections have moved through rooms built for discovery, generosity, and exchange. The collaboration reflects IRIE's belief that the person shaping the sound also shapes how a community remembers the night.",
+    href: "/collaborations/dj-mohogany",
+    metadata: ["DJ Mohogany", "New York", "Sound"],
+    gallery: [
+      { src: "/media/collaborations/mohogany/01.jpg", label: "Portrait study" },
+      { src: "/media/collaborations/mohogany/02.jpg", label: "Full portrait" },
+    ],
+  },
   {
     title: "IRIE Sessions x BAYO",
     slug: "irie-sessions-x-bayo-project",

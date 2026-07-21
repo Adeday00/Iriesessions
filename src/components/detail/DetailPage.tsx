@@ -52,7 +52,7 @@ function ProductDetailPage({ item, backHref, backLabel }: { item: ContentItem; b
 
       <section className="grid min-w-0 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="min-w-0 border-b border-white/15 bg-[#111111] lg:border-b-0 lg:border-r">
-          <div className="relative aspect-square bg-[#f4efe5]">
+          <div className="relative aspect-square bg-white">
             <Image
               src={item.image}
               alt={item.title}
@@ -66,7 +66,7 @@ function ProductDetailPage({ item, backHref, backLabel }: { item: ContentItem; b
             <div className="grid grid-cols-2 gap-px border-t border-white/15 bg-white/15 sm:grid-cols-3">
               {gallery.map((image) => (
                 <figure key={image.src} className="media-lift bg-[#111111]">
-                  <div className="relative aspect-square bg-[#f4efe5]">
+                  <div className="relative aspect-square bg-white">
                     <Image
                       src={image.src}
                       alt={image.alt ?? image.label ?? item.title}

@@ -20,7 +20,6 @@ export default function ShopPage() {
         items={artifacts}
         cta="Shop / view"
         categoryLabels={["Publication", "Headwear", "Jewelry"]}
-        kickerLabels={["Print / Edition", "Wear / Edition", "Object / Edition"]}
       />
     </PageShell>
   );
