@@ -39,8 +39,8 @@ export default function AboutPage() {
       intro="Irie Global brings artists, creatives and communities together through music, experiences and cultural storytelling, rooted in connection and the belief that culture moves further when we build it together."
       meta="Founded 2017"
     >
-      <section className="grid border-b border-white/15 lg:grid-cols-[0.75fr_1.25fr]">
-        <div className="grid min-h-[300px] place-items-center border-b border-white/15 bg-[#0c0c0c] p-8 lg:min-h-[620px] lg:border-b-0 lg:border-r">
+      <section className="grid border-b border-white/15 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)]">
+        <div className="grid min-h-[300px] min-w-0 place-items-center border-b border-white/15 bg-[#0c0c0c] p-8 lg:min-h-[620px] lg:border-b-0 lg:border-r">
           <Image
             src="/irie-logo.png"
             alt="Irie"
@@ -50,7 +50,7 @@ export default function AboutPage() {
             className="h-auto w-[min(58vw,280px)] lg:w-[min(30vw,360px)]"
           />
         </div>
-        <div className="grid content-center gap-8 p-6 sm:p-10 lg:p-14">
+        <div className="grid min-w-0 content-center gap-8 p-6 sm:p-10 lg:p-14">
           <p className="max-w-3xl text-2xl leading-10 text-[#e6ddcf] md:text-3xl md:leading-[1.4]">
             Founded in Brooklyn in 2017, Irie Sessions began as a community-led event series and
             has since evolved into Irie Global, a creative ecosystem spanning music releases,
@@ -68,16 +68,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="grid border-b border-white/15 bg-[#111111] lg:grid-cols-[0.75fr_1.25fr]">
-        <div className="border-b border-white/15 p-6 sm:p-10 lg:border-b-0 lg:border-r lg:p-12">
+      <section className="grid border-b border-white/15 bg-[#111111] lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)]">
+        <div className="min-w-0 border-b border-white/15 p-6 sm:p-10 lg:border-b-0 lg:border-r lg:p-12">
           <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">
             Our principles
           </p>
-          <h2 className="mt-5 max-w-xl text-4xl font-black uppercase leading-none md:text-6xl">
+          <h2 className="title-safe-wrap mt-5 max-w-xl text-4xl font-black uppercase leading-none md:text-5xl xl:text-6xl">
             Language we build by.
           </h2>
         </div>
-        <ol className="grid">
+        <ol className="grid min-w-0">
           {principles.map((principle, index) => (
             <li
               key={principle}
