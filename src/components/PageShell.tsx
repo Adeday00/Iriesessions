@@ -17,7 +17,7 @@ type Card = {
 
 type PageShellProps = {
   eyebrow: string;
-  title: string;
+  title: React.ReactNode;
   intro: string;
   meta?: string;
   compact?: boolean;

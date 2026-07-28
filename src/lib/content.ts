@@ -578,59 +578,6 @@ const releaseCatalog: ContentItem[] = [
     ],
   },
   {
-    title: "4:30",
-    slug: "4-30",
-    category: "release",
-    kicker: "Mar 21, 2025 / Single",
-    image: "/media/music/4-30.jpg",
-    summary: "An Afrobeats collaboration featuring Zen Univrse, Easyscope, and Trill Xoe.",
-    body:
-      "\"4:30\" brings Zen Univrse, Easyscope, and Trill Xoe into the IRIE SESSIONS world for a collaborative Afrobeats single released in March 2025.",
-    href: "/music/4-30",
-    metadata: ["Afrobeats", "Single", "Released Mar 21, 2025", "Zen Univrse / Easyscope / Trill Xoe"],
-    links: [
-      {
-        label: "Spotify",
-        href: "https://open.spotify.com/track/4QbDWhLqMf9XhiiD4itZIs",
-        kind: "dsp",
-      },
-      {
-        label: "Apple Music",
-        href: "https://music.apple.com/us/album/4-30-feat-trill-xoe-zen-univrse-easyscope-single/1800533405",
-        kind: "dsp",
-      },
-      {
-        label: "YouTube",
-        href: "https://www.youtube.com/watch?v=wHAbGwSm6Go",
-        kind: "video",
-      },
-    ],
-  },
-  {
-    title: "RADIO",
-    slug: "radio",
-    category: "release",
-    kicker: "Jan 24, 2025 / Single",
-    image: "/media/music/radio.jpg",
-    summary: "A 2025 Afrobeats single from IRIE SESSIONS and Zen Univrse.",
-    body:
-      "\"RADIO\" connects IRIE SESSIONS with Zen Univrse for a one-track Afrobeats collaboration released in January 2025.",
-    href: "/music/radio",
-    metadata: ["Afrobeats", "Single", "Released Jan 24, 2025", "Zen Univrse"],
-    links: [
-      {
-        label: "Apple Music",
-        href: "https://music.apple.com/us/album/radio-single/1780544994",
-        kind: "dsp",
-      },
-      {
-        label: "YouTube",
-        href: "https://www.youtube.com/watch?v=iWyu-DIPhY0",
-        kind: "video",
-      },
-    ],
-  },
-  {
     title: "Old Flame",
     slug: "old-flame",
     category: "release",
@@ -655,35 +602,6 @@ const releaseCatalog: ContentItem[] = [
       {
         label: "YouTube",
         href: "https://www.youtube.com/watch?v=x8BlqOHSd7Y",
-        kind: "video",
-      },
-    ],
-  },
-  {
-    title: "Move Slow",
-    slug: "move-slow",
-    category: "release",
-    kicker: "Jun 16, 2023 / Single",
-    image: "/media/music/move-slow.jpg",
-    summary: "An Afro-pop collaboration with Niels and Le Mav.",
-    body:
-      "\"Move Slow\" connects IRIE SESSIONS, Niels, and Le Mav in an Afro-pop single released in June 2023.",
-    href: "/music/move-slow",
-    metadata: ["Afro-pop", "Single", "Released Jun 16, 2023", "Niels / Le Mav"],
-    links: [
-      {
-        label: "Spotify",
-        href: "https://open.spotify.com/track/4qnDgYYyAGh5wk7c2mZ6Z0",
-        kind: "dsp",
-      },
-      {
-        label: "Apple Music",
-        href: "https://music.apple.com/us/album/move-slow-single/1691426417",
-        kind: "dsp",
-      },
-      {
-        label: "YouTube",
-        href: "https://www.youtube.com/watch?v=ewCFmhqEHOE",
         kind: "video",
       },
     ],
@@ -917,35 +835,6 @@ const releaseCatalog: ContentItem[] = [
     },
   },
   {
-    title: "Go outside",
-    slug: "go-outside",
-    category: "release",
-    kicker: "Aug 24, 2023 / Single",
-    image: "/media/go-outside-cover.jpg",
-    summary: "A 2023 single with Kobi Jonz — and a video shot across Lagos and Los Angeles.",
-    body:
-      "\"Go Outside\" teams Irie Sessions with Kobi Jonz for a breezy, get-up-and-move single. Its video — directed by Aday Living and shot across Lagos and Los Angeles — carries the track's two-cities, one-feeling energy.",
-    href: "/music/go-outside",
-    metadata: ["Afrobeats", "Single", "Released Aug 24, 2023", "Kobi Jonz"],
-    links: [
-      {
-        label: "Spotify",
-        href: "https://open.spotify.com/album/3J49EKlW1qKyTwAt5K2Kij",
-        kind: "dsp",
-      },
-      {
-        label: "Apple Music",
-        href: "https://music.apple.com/us/album/go-outside-single/1701859758",
-        kind: "dsp",
-      },
-    ],
-    embed: {
-      type: "spotify",
-      src: "https://open.spotify.com/embed/album/3J49EKlW1qKyTwAt5K2Kij?utm_source=generator",
-      title: "Go Outside on Spotify",
-    },
-  },
-  {
     title: "Ibiza",
     slug: "ibiza",
     category: "release",
@@ -988,9 +877,10 @@ export const artifacts: ContentItem[] = [
     category: "artifact",
     kicker: "Print / Editorial",
     image: "/media/irie-book-cover.jpg",
-    summary: "A full-color archival print publication documenting the creative process behind BORDERS.",
+    summary:
+      "A full-color archival publication documenting the ideas, people and creative process behind BORDERS.",
     body:
-      "A limited first-edition softcover with a matte cover, documenting the making of the 2022 BORDERS EP — executive produced by Aday with Grammy-winning Nigerian producer Chopstix. Photography, layered composition, and sequencing become a record of artistry, diaspora, and collaboration.",
+      "A limited first-edition visual archive of the 2022 BORDERS EP. Created by Aday in collaboration with Grammy-winning Nigerian producer Chopstix, the softcover publication brings together original photography, layered compositions and behind-the-scenes storytelling from the project’s creation.\n\nDesigned for collectors of music, photography and contemporary culture.",
     href: "/shop/borders-visualscaping-zine",
     metadata: ["Full-color print", "Limited edition", "BORDERS"],
     commerce: {
@@ -1035,10 +925,11 @@ export const artifacts: ContentItem[] = [
     slug: "women-make-things-10x-better-hat",
     category: "artifact",
     kicker: "Merch / Statement",
-    image: "/media/hat-black-front.jpg",
-    summary: "A limited edition 100% corduroy cotton hat with 3D embroidered Irie text.",
+    image: "/media/hat-black-white-text.jpg",
+    summary:
+      "A limited-edition cotton corduroy hat featuring raised embroidery and IRIE detailing.",
     body:
-      "Black corduroy with a classic snap closure, 3D-embroidered statement text, and the Irie logo in white. Ships within 24–48 hours of processing.",
+      "A statement worth wearing. Crafted in black cotton corduroy, this limited-edition hat features raised “Women Make Things 10X Better” embroidery, signature white IRIE detailing and an adjustable snapback closure.\n\nDesigned as a celebration of the women who elevate our lives, ideas and culture.\n\nOrders ship within 24–48 hours after processing.",
     href: "/shop/women-make-things-10x-better-hat",
     metadata: ["100% corduroy cotton", "Limited edition", "Snap closure"],
     commerce: {
@@ -1057,14 +948,6 @@ export const artifacts: ContentItem[] = [
     },
     gallery: [
       {
-        src: "/media/hat-black-white-text.jpg",
-        label: "White text variant",
-      },
-      {
-        src: "/media/hat-product-01.jpg",
-        label: "Front detail",
-      },
-      {
         src: "/media/hat-product-02.jpg",
         label: "Embroidery detail",
       },
@@ -1075,14 +958,15 @@ export const artifacts: ContentItem[] = [
     ],
   },
   {
-    title: "Irie Stud Earrings",
+    title: "IRIE Stud Earrings",
     slug: "irie-stud-earrings",
     category: "artifact",
     kicker: "Merch / Object",
     image: "/media/irie-earrings.jpg",
-    summary: "925 sterling silver stud earrings with sculpted 3D Irie lettering.",
+    summary:
+      "925 sterling silver stud earrings featuring sculpted, three-dimensional IRIE lettering.",
     body:
-      "925 sterling silver with a high-polish finish, sculpted 3D Irie lettering, and butterfly backs for pierced ears. Ships within 24–48 hours of processing.",
+      "A signature made to be worn. Crafted from 925 sterling silver with a high-polish finish, these stud earrings feature sculpted three-dimensional IRIE lettering and secure butterfly backs for pierced ears.\n\nA refined everyday piece representing creativity, connection and culture.\n\nOrders ship within 24–48 hours after processing.",
     href: "/shop/irie-stud-earrings",
     metadata: ["925 sterling silver", "High-polish finish", "Butterfly backs"],
     commerce: {
@@ -1130,22 +1014,6 @@ export const opportunities: ContentItem[] = [
 
 export const projects: ContentItem[] = [
   {
-    title: "Michaël Brun / BAYO",
-    slug: "michael-brun-bayo",
-    category: "project",
-    kicker: "2024-2025 / Music, merchandise, and diaspora",
-    image: "/media/collaborations/michael-brun/cover.jpg",
-    summary:
-      "A collaboration with Michaël Brun and BAYO connecting Haitian culture, live music, and limited-edition objects.",
-    body:
-      "Michaël Brun's BAYO brings Haitian culture into rooms built around sound, movement, and community. IRIE's collaboration extended that world through limited-edition hats created for Brun's American tour, including his Barclays Center show. Released only in the rooms where the music lived, the pieces became both merchandise and memory: a physical record of a partnership grounded in diaspora, creative exchange, and collective celebration.",
-    href: "/collaborations/michael-brun-bayo",
-    metadata: ["Michaël Brun", "BAYO", "Tour collaboration"],
-    gallery: [
-      { src: "/media/collaborations/michael-brun/01.jpg", label: "BAYO portrait" },
-    ],
-  },
-  {
     title: "Chopstix",
     slug: "chopstix",
     category: "project",
@@ -1165,21 +1033,21 @@ export const projects: ContentItem[] = [
     title: "DJ Mohogany",
     slug: "dj-mohogany",
     category: "project",
-    kicker: "New York / Sound and community",
+    kicker: "New York / Sound / Artist Development",
     image: "/media/collaborations/mohogany/cover.jpg",
     summary:
-      "A recurring musical collaboration shaped across IRIE rooms in New York and beyond.",
+      "IRIE Global resident DJ and managed artist, shaping the sound of our rooms in New York and beyond.",
     body:
-      "DJ Mohogany has helped soundtrack IRIE gatherings where music is the connective tissue between artists, guests, and the wider community. From Transitions (Live) to Riddim & Soul, her selections have moved through rooms built for discovery, generosity, and exchange. The collaboration reflects IRIE's belief that the person shaping the sound also shapes how a community remembers the night.",
+      "Brooklyn-born with Liberian roots, DJ Mohogany is a defining part of the IRIE Global sound. Known for seamlessly moving between Afrobeats, Amapiano, Dancehall, Hip-Hop and R&B, she brings a distinct cultural fluency to every room she enters.\n\nFrom Transitions (Live) to Riddim & Soul, Mohogany has helped soundtrack IRIE gatherings built around discovery, movement and exchange. Her role extends beyond performance: as an IRIE Global–managed artist and resident DJ, the collaboration includes creative direction, bookings, partnerships, brand positioning and long-term artist development.\n\nHer wider work spans major festivals, cultural stages and brand environments, including SummerStage, AfroFuture, AfroNation and Piano People, alongside collaborations with names across fashion, beauty and technology.\n\nThe relationship reflects a core IRIE belief: the person shaping the sound also shapes how a community experiences—and remembers—the room.",
     href: "/collaborations/dj-mohogany",
-    metadata: ["DJ Mohogany", "New York", "Sound"],
+    metadata: ["DJ Mohogany", "New York", "Sound / Artist Development", "Resident Artist"],
     gallery: [
       { src: "/media/collaborations/mohogany/01.jpg", label: "Portrait study" },
       { src: "/media/collaborations/mohogany/02.jpg", label: "Full portrait" },
     ],
   },
   {
-    title: "IRIE Sessions x BAYO",
+    title: "IRIE SESSIONS X BAYO",
     slug: "irie-sessions-x-bayo-project",
     category: "project",
     kicker: "2024-2025 / Limited tour merchandise",
@@ -1214,14 +1082,16 @@ export const projects: ContentItem[] = [
     href: "/collaborations/culture-shock-eventbrite",
     metadata: ["Eventbrite", "London", "Partner room"],
     gallery: [
-      { src: "/media/eventbrite-project-02.jpg", label: "4th Quarter Roses" },
-      { src: "/media/eventbrite-project-03.jpg", label: "Dinner room" },
-      { src: "/media/eventbrite-project-04.jpg", label: "Guest table" },
-      { src: "/media/eventbrite-project-05.jpg", label: "Conversation" },
-      { src: "/media/eventbrite-project-06.jpg", label: "Roses" },
-      { src: "/media/eventbrite-project-07.jpg", label: "Cultural series" },
-      { src: "/media/culture-shock-01.jpg", label: "Culture Shock" },
-      { src: "/media/culture-shock-03.jpg", label: "Community frame" },
+      {
+        src: "/media/sessions/culture-shock-london-2024/cover.jpg",
+        label: "Culture Shock 1",
+      },
+      ...sessionArchive("culture-shock-london-2024", 24),
+      {
+        src: "/media/sessions/culture-shock-q4-2024/cover.jpg",
+        label: "Culture Shock 2",
+      },
+      ...sessionArchive("culture-shock-q4-2024", 16),
     ],
   },
   {

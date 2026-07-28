@@ -1,11 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { AddToBasket } from "@/components/commerce/AddToBasket";
-import { ArchiveMediaGallery, ZoomableHero } from "@/components/detail/MediaLightbox";
+import { ArchiveMediaGallery, ProductMediaGallery, ZoomableHero } from "@/components/detail/MediaLightbox";
 import type { ContentItem } from "@/lib/content";
-import { SHOW_GALLERY_IMAGE_CAPTIONS } from "@/lib/ui-config";
 
 const trustPoints = ["Ships in 24–48h", "Secure checkout", "Tracked delivery"];
 
@@ -54,36 +52,10 @@ function ProductDetailPage({ item, backHref, backLabel }: { item: ContentItem; b
       <section className="grid min-w-0 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="min-w-0 border-b border-white/15 bg-[#111111] lg:border-b-0 lg:border-r">
           <div className="relative aspect-square bg-white">
-            <Image
-              src={item.image}
-              alt={item.title}
-              fill
-              priority
-              sizes="(min-width: 1024px) 52vw, 100vw"
-              className="object-contain p-5 sm:p-10"
-            />
+            <ZoomableHero image={item.image} title={item.title} contain />
           </div>
           {gallery.length > 1 ? (
-            <div className="grid grid-cols-2 gap-px border-t border-white/15 bg-white/15 sm:grid-cols-3">
-              {gallery.map((image) => (
-                <figure key={image.src} className="media-lift bg-[#111111]">
-                  <div className="relative aspect-square bg-white">
-                    <Image
-                      src={image.src}
-                      alt={image.alt ?? image.label ?? item.title}
-                      fill
-                      sizes="(min-width: 1024px) 18vw, 50vw"
-                      className="object-contain p-4"
-                    />
-                  </div>
-                  {SHOW_GALLERY_IMAGE_CAPTIONS && image.label ? (
-                    <figcaption className="px-4 py-3 font-mono text-[10px] uppercase tracking-[0.16em] text-[#c8c0b4]">
-                      {image.label}
-                    </figcaption>
-                  ) : null}
-                </figure>
-              ))}
-            </div>
+            <ProductMediaGallery images={gallery} title={item.title} />
           ) : null}
         </div>
 
@@ -112,7 +84,7 @@ function ProductDetailPage({ item, backHref, backLabel }: { item: ContentItem; b
 
             <section className="mt-8 border-t border-white/15 pt-8">
               <p className="font-mono text-xs uppercase tracking-[0.26em] text-[#b9ff3b]">Details</p>
-              <p className="mt-4 text-base leading-8 text-[#d8cfc2]">{item.body}</p>
+              <p className="mt-4 whitespace-pre-line text-base leading-8 text-[#d8cfc2]">{item.body}</p>
             </section>
 
             {commerce ? (
@@ -199,7 +171,7 @@ export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; b
         <div className="w-full">
           <div className="grid gap-6 border-b border-white/15 pb-10 lg:grid-cols-[180px_minmax(0,1fr)] lg:gap-8">
             <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">Archive note</p>
-            <p className="max-w-none text-left text-2xl leading-10 text-[#e6ddcf] lg:text-[2rem] lg:leading-[1.4] xl:text-[2.35rem]">
+            <p className="max-w-none whitespace-pre-line text-left text-lg leading-8 text-[#e6ddcf] sm:text-xl sm:leading-9 xl:text-2xl xl:leading-10">
               {item.body}
             </p>
           </div>

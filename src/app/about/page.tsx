@@ -5,7 +5,7 @@ import { createPageMetadata } from "@/lib/site";
 export const metadata = createPageMetadata({
   title: "About",
   description:
-    "Irie is infrastructure for culture, connecting artists, ideas, and communities through music, media, and experiences.",
+    "Irie Global brings artists, creatives and communities together through music, experiences and cultural storytelling.",
   path: "/about",
 });
 
@@ -19,24 +19,24 @@ const principles = [
 const pillars = [
   ["People", "Artists, curators and communities are the starting point for everything we build."],
   ["Togetherness", "Culture grows when people share rooms, ideas and experiences."],
-  ["Giving Back", "Access and opportunity keep the creative ecosystem moving forward."],
-  ["Platforms", "Music, media, experiences and objects give ideas somewhere to live."],
+  ["Access", "Opportunity and access keep creative ecosystems moving forward."],
+  ["Platforms", "Music, storytelling, experiences and products give ideas somewhere to live."],
 ];
 
 const impact = [
   ["Founded", "2017"],
-  ["Artists Supported", "200+"],
-  ["Projects", "100+"],
-  ["Cities", "15+"],
-  ["Countries", "10+"],
+  ["Artists Supported", "20+"],
+  ["Projects", "30+"],
+  ["Cities", "40+"],
+  ["Countries", "25+"],
 ];
 
 export default function AboutPage() {
   return (
     <PageShell
       eyebrow="About"
-      title="Where ideas become culture."
-      intro="Irie is infrastructure for culture, connecting artists, ideas, and communities through music, media, and experiences."
+      title="Where ideas become culture"
+      intro="Irie Global brings artists, creatives and communities together through music, experiences and cultural storytelling, rooted in connection and the belief that culture moves further when we build it together."
       meta="Founded 2017"
     >
       <section className="grid border-b border-white/15 lg:grid-cols-[0.75fr_1.25fr]">
@@ -52,22 +52,23 @@ export default function AboutPage() {
         </div>
         <div className="grid content-center gap-8 p-6 sm:p-10 lg:p-14">
           <p className="max-w-3xl text-2xl leading-10 text-[#e6ddcf] md:text-3xl md:leading-[1.4]">
-            Founded in New York in 2017, Irie began as a community-led music platform and has
-            grown into a creative ecosystem spanning music, media, experiences, and artist
-            development.
+            Founded in Brooklyn in 2017, Irie Sessions began as a community-led event series and
+            has since evolved into Irie Global, a creative ecosystem spanning music releases,
+            artist development, storytelling, experiences and products.
           </p>
           <div className="grid gap-6 border-t border-white/15 pt-8 md:grid-cols-2">
             <p className="max-w-xl text-lg leading-8 text-[#cfc5b8]">
-              Everything we build exists to help artists create, connect, and grow.
+              Everything we build is designed to help artists and ideas connect, grow and move
+              culture forward.
             </p>
             <p className="max-w-xl text-lg leading-8 text-[#cfc5b8]">
-              We believe culture should be experienced, not simply consumed.
+              We believe culture should be participated in, not simply consumed.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="grid border-b border-white/15 bg-[#111111] lg:grid-cols-[0.8fr_1.2fr]">
+      <section className="grid border-b border-white/15 bg-[#111111] lg:grid-cols-[0.75fr_1.25fr]">
         <div className="border-b border-white/15 p-6 sm:p-10 lg:border-b-0 lg:border-r lg:p-12">
           <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">
             Our principles

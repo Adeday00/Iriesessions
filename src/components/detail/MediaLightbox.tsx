@@ -183,6 +183,61 @@ export function ZoomableHero({
   );
 }
 
+export function ProductMediaGallery({ images, title }: { images: GalleryImage[]; title: string }) {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const triggerRefs = useRef<Array<HTMLButtonElement | null>>([]);
+
+  const close = () => {
+    const previousIndex = activeIndex;
+    setActiveIndex(null);
+    if (previousIndex !== null) {
+      window.requestAnimationFrame(() => triggerRefs.current[previousIndex]?.focus());
+    }
+  };
+
+  return (
+    <>
+      <div className="grid grid-cols-2 gap-px border-t border-white/15 bg-white/15 sm:grid-cols-3">
+        {images.map((image, index) => (
+          <figure key={`${image.src}-${index}`} className="media-lift bg-[#111111]">
+            <button
+              ref={(element) => {
+                triggerRefs.current[index] = element;
+              }}
+              type="button"
+              onClick={() => setActiveIndex(index)}
+              aria-label={`Enlarge ${image.label ?? title}`}
+              className="group block w-full cursor-zoom-in text-left"
+            >
+              <div className="relative aspect-square overflow-hidden bg-white">
+                <Image
+                  src={image.src}
+                  alt={image.alt ?? ""}
+                  fill
+                  sizes="(min-width: 1024px) 18vw, 50vw"
+                  className="object-contain p-4"
+                />
+                <span className="absolute bottom-3 right-3 border border-white/30 bg-black/70 px-2.5 py-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white transition-colors group-hover:border-[#b9ff3b] group-hover:bg-[#b9ff3b] group-hover:text-black">
+                  Enlarge ↗
+                </span>
+              </div>
+              {SHOW_GALLERY_IMAGE_CAPTIONS && image.label ? (
+                <span className="block px-4 py-3 font-mono text-[10px] uppercase tracking-[0.16em] text-[#c8c0b4]">
+                  {image.label}
+                </span>
+              ) : null}
+            </button>
+          </figure>
+        ))}
+      </div>
+
+      {activeIndex !== null ? (
+        <Lightbox images={images} activeIndex={activeIndex} onChange={setActiveIndex} onClose={close} />
+      ) : null}
+    </>
+  );
+}
+
 export function ArchiveMediaGallery({ images, isSession }: { images: GalleryImage[]; isSession: boolean }) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const triggerRefs = useRef<Array<HTMLButtonElement | null>>([]);
