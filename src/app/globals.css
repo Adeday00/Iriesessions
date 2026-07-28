@@ -140,6 +140,13 @@ a {
   animation-delay: 0.3s;
 }
 
+.title-safe-wrap {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  text-wrap: balance;
+}
+
 .mobile-menu-panel {
   animation: irie-menu-in 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
   transform-origin: top center;

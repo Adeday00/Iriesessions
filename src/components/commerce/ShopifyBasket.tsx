@@ -102,7 +102,7 @@ export function ShopifyBasket() {
           Back to shop
         </Link>
         <p className="mt-10 font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">Basket</p>
-        <h1 className="mt-5 max-w-6xl text-6xl font-black uppercase leading-[0.86] md:text-8xl lg:text-9xl">
+        <h1 className="title-safe-wrap mt-5 max-w-6xl text-6xl font-black uppercase leading-[0.86] md:text-8xl lg:text-9xl">
           Your basket.
         </h1>
       </section>

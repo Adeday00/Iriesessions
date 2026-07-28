@@ -90,7 +90,7 @@ function ProductDetailPage({ item, backHref, backLabel }: { item: ContentItem; b
         <aside className="min-w-0 p-5 sm:p-8 lg:p-12">
           <div className="lg:sticky lg:top-28">
             <p className="hero-enter font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b] [overflow-wrap:anywhere]">{item.kicker}</p>
-            <h1 className="hero-enter hero-enter-2 mt-4 text-5xl font-black uppercase leading-[0.9] [overflow-wrap:anywhere] md:text-7xl">
+            <h1 className="title-safe-wrap hero-enter hero-enter-2 mt-4 text-[clamp(2.5rem,4vw,3.5rem)] font-black uppercase leading-[0.9]">
               {item.title}
             </h1>
             {commerce?.price ? (
@@ -180,7 +180,7 @@ export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; b
               {backLabel}
             </Link>
             <p className="hero-enter font-mono mt-10 text-xs uppercase tracking-[0.34em] text-[#b9ff3b] [overflow-wrap:anywhere]">{item.kicker}</p>
-            <h1 className="hero-enter hero-enter-2 mt-5 max-w-4xl text-5xl font-black uppercase leading-[0.88] [overflow-wrap:anywhere] md:text-7xl lg:text-8xl">
+            <h1 className="title-safe-wrap hero-enter hero-enter-2 mt-5 max-w-4xl text-4xl font-black uppercase leading-[0.92] sm:text-5xl md:text-6xl lg:text-[clamp(3rem,4vw,4rem)]">
               {item.title}
             </h1>
             <p className="hero-enter hero-enter-3 mt-8 max-w-2xl text-xl leading-9 text-[#cfc5b8]">{item.summary}</p>

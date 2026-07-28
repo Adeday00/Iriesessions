@@ -74,7 +74,7 @@ export default function Home() {
 
         <div className="relative z-10 grid min-h-[100svh] content-end px-5 pb-8 pt-32 sm:px-8 lg:px-12">
           <div className="max-w-6xl">
-            <h1 className="hero-enter hero-enter-2 max-w-full text-[clamp(3rem,14vw,9.25rem)] font-black uppercase leading-[0.86] text-[#f4efe5] lg:text-[clamp(5.5rem,9.5vw,9.25rem)]">
+            <h1 className="title-safe-wrap hero-enter hero-enter-2 max-w-full text-[clamp(3rem,14vw,9.25rem)] font-black uppercase leading-[0.86] text-[#f4efe5] lg:text-[clamp(5.5rem,9.5vw,9.25rem)]">
               <span className="block lg:whitespace-nowrap">Think Global.</span>
               <span className="block text-[#b9ff3b] lg:whitespace-nowrap">Create Local.</span>
             </h1>

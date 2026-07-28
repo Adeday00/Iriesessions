@@ -50,7 +50,7 @@ export function PageShell({
           }`}
         >
           <h1
-            className={`hero-enter hero-enter-2 font-black uppercase ${
+            className={`title-safe-wrap hero-enter hero-enter-2 font-black uppercase ${
               compact
                 ? "max-w-4xl text-[clamp(2.5rem,5vw,5rem)] leading-[0.9]"
                 : "text-[clamp(2.75rem,6.5vw,6.5rem)] leading-[0.86] lg:leading-[0.84]"
