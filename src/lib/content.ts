@@ -368,26 +368,6 @@ export const sessions: ContentItem[] = [
     gallery: sessionArchive("culture-shock-q4-2024", 16),
   },
   {
-    title: "LUST On The Coast — Lagos Listening Session",
-    slug: "lust-on-the-coast-listening-session-lagos",
-    category: "session",
-    kicker: "2025 / Lagos, Nigeria / Powered by Jameson",
-    image: "/media/lust-on-the-coast.jpg",
-    imageFit: "contain",
-    summary:
-      "An intimate first listen bringing artists, producers, and tastemakers into the world of LUST On The Coast.",
-    body:
-      "Ahead of the release of LUST On The Coast, IRIE Sessions hosted an intimate listening session in Lagos powered by Jameson. Artists, producers, and tastemakers gathered for an early experience of the project, with Chopstix, Tempoe, Joeboy, Trill Xoe, Delacyn, members of The Orchard team, and close friends of the IRIE community joining the room. The evening created a direct meeting point between the music and the people shaping Nigeria's creative culture.",
-    href: "/sessions/lust-on-the-coast-listening-session-lagos",
-    metadata: ["Lagos", "Listening session", "Jameson", "LUST On The Coast"],
-    embedLabel: "Featured film",
-    embed: {
-      type: "youtube",
-      src: "https://www.youtube.com/embed/jWT94tVacnc",
-      title: "LUST On The Coast — Lagos Listening Session",
-    },
-  },
-  {
     title: "IRIE Global Paris",
     slug: "irie-global-paris-january-2026",
     category: "session",
