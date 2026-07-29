@@ -11,21 +11,21 @@ export type ContentItem = {
   metadata: string[];
   links?: LinkItem[];
   commerce?: CommerceItem;
-  embed?: {
-    type: "spotify" | "youtube";
-    src: string;
-    title: string;
-  };
-  embeds?: {
-    type: "spotify" | "youtube";
-    src: string;
-    title: string;
-  }[];
+  embedLabel?: string;
+  embed?: EmbedItem;
+  embeds?: EmbedItem[];
   gallery?: {
     src: string;
     label: string;
     alt?: string;
   }[];
+};
+
+export type EmbedItem = {
+  type: "spotify" | "youtube";
+  src: string;
+  title: string;
+  aspect?: "landscape" | "portrait";
 };
 
 export type CommerceVariant = {
@@ -269,6 +269,12 @@ export const sessions: ContentItem[] = [
       "To celebrate the release of the BORDERS EP, IRIE Sessions debuted BORDERS: The Soundscaping Series, an immersive live performance that brought the project to life beyond the studio. Executive produced by Grammy-nominated producer Chopstix and Aday, ADAYLIVING, the evening featured live performances from Chopstix, Yung L, Minz, Ria Sean, and more, with DJ Obi curating the soundtrack between performances. Blending music, cinematic storytelling, and immersive production, BORDERS introduced a new chapter for IRIE Sessions, one where every release becomes a shared cultural experience.",
     href: "/sessions/borders-soundscaping-series",
     metadata: ["Lagos", "BORDERS", "Live performance"],
+    embedLabel: "Featured film",
+    embed: {
+      type: "youtube",
+      src: "https://www.youtube.com/embed/b0fiJnOZU-0?start=2",
+      title: "BORDERS: The Soundscaping Series — Lagos",
+    },
     gallery: sessionArchive("borders-soundscaping-2022", 50),
   },
   {
@@ -362,6 +368,26 @@ export const sessions: ContentItem[] = [
     gallery: sessionArchive("culture-shock-q4-2024", 16),
   },
   {
+    title: "LUST On The Coast — Lagos Listening Session",
+    slug: "lust-on-the-coast-listening-session-lagos",
+    category: "session",
+    kicker: "2025 / Lagos, Nigeria / Powered by Jameson",
+    image: "/media/lust-on-the-coast.jpg",
+    imageFit: "contain",
+    summary:
+      "An intimate first listen bringing artists, producers, and tastemakers into the world of LUST On The Coast.",
+    body:
+      "Ahead of the release of LUST On The Coast, IRIE Sessions hosted an intimate listening session in Lagos powered by Jameson. Artists, producers, and tastemakers gathered for an early experience of the project, with Chopstix, Tempoe, Joeboy, Trill Xoe, Delacyn, members of The Orchard team, and close friends of the IRIE community joining the room. The evening created a direct meeting point between the music and the people shaping Nigeria's creative culture.",
+    href: "/sessions/lust-on-the-coast-listening-session-lagos",
+    metadata: ["Lagos", "Listening session", "Jameson", "LUST On The Coast"],
+    embedLabel: "Featured film",
+    embed: {
+      type: "youtube",
+      src: "https://www.youtube.com/embed/jWT94tVacnc",
+      title: "LUST On The Coast — Lagos Listening Session",
+    },
+  },
+  {
     title: "IRIE Global Paris",
     slug: "irie-global-paris-january-2026",
     category: "session",
@@ -404,6 +430,12 @@ export const sessions: ContentItem[] = [
       "The public launch of BORDERS: The Visualscaping Zine transformed Union de la Jeunesse Internationale into an immersive exhibition where photography, storytelling, and live performance converged. Curated by founder Aday, ADAYLIVING, the publication explores art, diaspora, migration, collaboration, and creative freedom. A live performance by Olga Kiav extended those themes through memory, movement, and identity, turning the printed object into a shared cultural experience.",
     href: "/sessions/borders-visualscaping-zine-launch",
     metadata: ["Paris", "Publication launch", "Live exhibition"],
+    embedLabel: "Featured performance",
+    embed: {
+      type: "youtube",
+      src: "https://www.youtube.com/embed/posETFD_WEo",
+      title: "Olga Kiav performing live at the BORDERS Visualscaping Zine release",
+    },
     gallery: sessionArchive("borders-zine-paris-2026", 15),
   },
   {
@@ -530,54 +562,6 @@ const releaseCatalog: ContentItem[] = [
     ],
   },
   {
-    title: "REASON (CHANGED SEASONS)",
-    slug: "reason-changed-seasons",
-    category: "release",
-    kicker: "Aug 22, 2025 / Single",
-    image: "/media/music/reason.jpg",
-    summary: "A 2025 Afrobeats single from IRIE SESSIONS and Omagz.",
-    body:
-      "\"REASON (CHANGED SEASONS)\" pairs IRIE SESSIONS with Omagz in an Afrobeats collaboration released in August 2025.",
-    href: "/music/reason-changed-seasons",
-    metadata: ["Afrobeats", "Single", "Released Aug 22, 2025", "Omagz"],
-    links: [
-      {
-        label: "Apple Music",
-        href: "https://music.apple.com/us/album/reason-changed-seasons-single/1833040540",
-        kind: "dsp",
-      },
-      {
-        label: "YouTube",
-        href: "https://www.youtube.com/watch?v=buWZncxZyO8",
-        kind: "video",
-      },
-    ],
-  },
-  {
-    title: "GWAN BIGGER",
-    slug: "gwan-bigger",
-    category: "release",
-    kicker: "Jun 6, 2025 / Single",
-    image: "/media/music/gwan-bigger.jpg",
-    summary: "A 2025 Afrobeats single from IRIE SESSIONS and Omagz.",
-    body:
-      "\"GWAN BIGGER\" brings IRIE SESSIONS and Omagz together for a direct, one-track Afrobeats release.",
-    href: "/music/gwan-bigger",
-    metadata: ["Afrobeats", "Single", "Released Jun 6, 2025", "Omagz"],
-    links: [
-      {
-        label: "Apple Music",
-        href: "https://music.apple.com/us/album/gwan-bigger-single/1817028897",
-        kind: "dsp",
-      },
-      {
-        label: "YouTube",
-        href: "https://www.youtube.com/watch?v=KBoVAgGOO7A",
-        kind: "video",
-      },
-    ],
-  },
-  {
     title: "Old Flame",
     slug: "old-flame",
     category: "release",
@@ -641,11 +625,49 @@ const releaseCatalog: ContentItem[] = [
         kind: "dsp",
       },
     ],
-    embed: {
-      type: "spotify",
-      src: "https://open.spotify.com/embed/album/2Wa9nqYyLX8mThNSOsLegQ?utm_source=generator",
-      title: "Lust on the Coast on Spotify",
-    },
+    embedLabel: "Listen / Watch the project",
+    embeds: [
+      {
+        type: "spotify",
+        src: "https://open.spotify.com/embed/album/2Wa9nqYyLX8mThNSOsLegQ?utm_source=generator",
+        title: "LUST On The Coast on Spotify",
+      },
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/jWT94tVacnc",
+        title: "Lagos Listening Session powered by Jameson",
+      },
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/PajxJMqXeQE",
+        title: "Was I Not The Man — lyric video",
+      },
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/rR-mVMHyC20",
+        title: "4:30 — live in Epe, Lagos",
+      },
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/wHAbGwSm6Go",
+        title: "4:30 — lyric visualizer",
+      },
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/ewCFmhqEHOE",
+        title: "Move Slow — official video",
+      },
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/2gg8aWplaVM",
+        title: "Only You (Maria) — official video",
+      },
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/AKJGfHIzI94",
+        title: "The Making of Wonderer",
+      },
+    ],
   },
   {
     title: "BORDERS",
@@ -741,11 +763,19 @@ const releaseCatalog: ContentItem[] = [
         kind: "video",
       },
     ],
-    embed: {
-      type: "spotify",
-      src: "https://open.spotify.com/embed/album/6wPNr0i182CRlQMvWqxiiO?utm_source=generator",
-      title: "I forgot to press send on Spotify",
-    },
+    embedLabel: "Listen / Watch the project",
+    embeds: [
+      {
+        type: "spotify",
+        src: "https://open.spotify.com/embed/album/6wPNr0i182CRlQMvWqxiiO?utm_source=generator",
+        title: "I forgot to press send on Spotify",
+      },
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/sagJYNmXo8Y",
+        title: "I forgot to press send — a real life story trailer",
+      },
+    ],
   },
   {
     title: "A.L.T.E",
@@ -828,11 +858,62 @@ const releaseCatalog: ContentItem[] = [
         kind: "dsp",
       },
     ],
-    embed: {
-      type: "spotify",
-      src: "https://open.spotify.com/embed/track/0l9NMqXgPxBYChcNPBqIV5?utm_source=generator",
-      title: "Ridiculous Flex on Spotify",
-    },
+    embedLabel: "Listen / Watch",
+    embeds: [
+      {
+        type: "spotify",
+        src: "https://open.spotify.com/embed/track/0l9NMqXgPxBYChcNPBqIV5?utm_source=generator",
+        title: "Ridiculous Flex on Spotify",
+      },
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/xWxRLITktSc",
+        title: "Ridiculous Flex — official video",
+      },
+    ],
+  },
+  {
+    title: "Go Outside",
+    slug: "go-outside",
+    category: "release",
+    kicker: "Aug 24, 2023 / Single",
+    image: "/media/go-outside-cover.jpg",
+    summary:
+      "A 2023 single with Kobi Jonz — and a video shot across Lagos and Los Angeles.",
+    body:
+      "\"Go Outside\" teams IRIE SESSIONS with Kobi Jonz for a breezy, get-up-and-move single. Its video — directed by Aday Living and shot across Lagos and Los Angeles — carries the track's two-cities, one-feeling energy.",
+    href: "/music/go-outside",
+    metadata: ["Afrobeats", "Single", "Released Aug 24, 2023", "Kobi Jonz"],
+    links: [
+      {
+        label: "Spotify",
+        href: "https://open.spotify.com/album/3J49EKlW1qKyTwAt5K2Kij",
+        kind: "dsp",
+      },
+      {
+        label: "Apple Music",
+        href: "https://music.apple.com/us/album/go-outside-single/1701859758",
+        kind: "dsp",
+      },
+      {
+        label: "YouTube",
+        href: "https://www.youtube.com/watch?v=XAzE5CEfmcw",
+        kind: "video",
+      },
+    ],
+    embedLabel: "Listen / Watch",
+    embeds: [
+      {
+        type: "spotify",
+        src: "https://open.spotify.com/embed/album/3J49EKlW1qKyTwAt5K2Kij?utm_source=generator",
+        title: "Go Outside on Spotify",
+      },
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/XAzE5CEfmcw",
+        title: "Go Outside — official video",
+      },
+    ],
   },
   {
     title: "Ibiza",
@@ -1041,6 +1122,26 @@ export const projects: ContentItem[] = [
       "Brooklyn-born with Liberian roots, DJ Mohogany is a defining part of the IRIE Global sound. Known for seamlessly moving between Afrobeats, Amapiano, Dancehall, Hip-Hop and R&B, she brings a distinct cultural fluency to every room she enters.\n\nFrom Transitions (Live) to Riddim & Soul, Mohogany has helped soundtrack IRIE gatherings built around discovery, movement and exchange. Her role extends beyond performance: as an IRIE Global–managed artist and resident DJ, the collaboration includes creative direction, bookings, partnerships, brand positioning and long-term artist development.\n\nHer wider work spans major festivals, cultural stages and brand environments, including SummerStage, AfroFuture, AfroNation and Piano People, alongside collaborations with names across fashion, beauty and technology.\n\nThe relationship reflects a core IRIE belief: the person shaping the sound also shapes how a community experiences—and remembers—the room.",
     href: "/collaborations/dj-mohogany",
     metadata: ["DJ Mohogany", "New York", "Sound / Artist Development", "Resident Artist"],
+    embedLabel: "Selected films",
+    embeds: [
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/vWoryzqYdlU",
+        title: "Transitions — DJ Mohogany",
+      },
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/E3_WII-i3IU",
+        title: "DJ Mohogany for Nike",
+        aspect: "portrait",
+      },
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/zCFZkU9eMrI",
+        title: "DJ Mohogany in Ghana",
+        aspect: "portrait",
+      },
+    ],
     gallery: [
       { src: "/media/collaborations/mohogany/01.jpg", label: "Portrait study" },
       { src: "/media/collaborations/mohogany/02.jpg", label: "Full portrait" },
@@ -1058,6 +1159,12 @@ export const projects: ContentItem[] = [
       "Rooted in Port-au-Prince and shaped in Brooklyn, Michaël Brun built BAYO into a global celebration of Haitian culture through sound, movement, and community. In 2024-2025, Irie Sessions partnered with BAYO on limited-edition hats released exclusively across Brun's American tour, including his landmark Barclays Center show. The rollout was intentionally scarce: no online release, no restocks, only available in the rooms where the music lived. A product not just to wear, but to remember.",
     href: "/collaborations/irie-sessions-x-bayo-project",
     metadata: ["BAYO", "Tour merch", "Diaspora"],
+    embedLabel: "Campaign film",
+    embed: {
+      type: "youtube",
+      src: "https://www.youtube.com/embed/PTcHmwoXzto",
+      title: "IRIE SESSIONS x BAYO — Barclays Center 2025",
+    },
     gallery: [
       { src: "/media/bayo-tour-02.jpg", label: "Polaroid direction" },
       { src: "/media/bayo-tour-03.jpg", label: "Cover study" },
@@ -1067,6 +1174,80 @@ export const projects: ContentItem[] = [
       { src: "/media/bayo-project-02.jpg", label: "Set detail" },
       { src: "/media/bayo-project-03.jpg", label: "Cover direction" },
       { src: "/media/bayo-project-04.jpg", label: "Campaign still" },
+    ],
+  },
+  {
+    title: "IRIE SESSIONS x Zen Univrse",
+    slug: "irie-sessions-x-zen-univrse",
+    category: "project",
+    kicker: "2025-present / Music / Artist collaboration",
+    image: "/media/music/radio.jpg",
+    imageFit: "contain",
+    summary:
+      "A developing musical partnership built through Radio, 4:30, and Ridiculous Flex.",
+    body:
+      "IRIE SESSIONS and Zen Univrse have built a collaborative language across three records with distinct energies. Radio introduced the partnership through a sleek, atmospheric Afrobeats single. 4:30 expanded the world with Easyscope and Trill Xoe, moving from the studio into a live performance in Epe. Ridiculous Flex followed with a looser, self-assured energy. Together, the releases show how an artist relationship can grow through sound, visual direction, performance, and repetition rather than a single campaign moment.",
+    href: "/collaborations/irie-sessions-x-zen-univrse",
+    metadata: ["Zen Univrse", "Music", "Artist collaboration"],
+    embedLabel: "Selected films",
+    embeds: [
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/iWyu-DIPhY0",
+        title: "Radio — official video",
+      },
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/rR-mVMHyC20",
+        title: "4:30 — live in Epe",
+      },
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/xWxRLITktSc",
+        title: "Ridiculous Flex — official video",
+      },
+    ],
+  },
+  {
+    title: "Transitions — Digital DJ Series",
+    slug: "transitions-digital-series",
+    category: "project",
+    kicker: "2020 / New York / Digital series",
+    image: "/media/transitions-digital-series.svg",
+    imageFit: "contain",
+    summary:
+      "A five-part digital DJ series carrying IRIE's room-building energy beyond the physical venue.",
+    body:
+      "Transitions translated the IRIE gathering into a digital format through five artist-led DJ sets. Mohogany, GabSoul, Mike Nasty, DJ Tunez, and DJ Khalil each shaped an episode around their own musical language, while the visual system held the series together. Created during a moment when physical rooms were unavailable, the project treated the screen as a cultural space of its own: a place for discovery, movement, and connection.",
+    href: "/collaborations/transitions-digital-series",
+    metadata: ["Transitions", "Digital series", "DJ culture"],
+    embedLabel: "Watch the series",
+    embeds: [
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/vWoryzqYdlU",
+        title: "Transitions 01 — DJ Mohogany",
+      },
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/jSj75TmSbOE",
+        title: "Transitions 02 — GabSoul",
+      },
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/2WSwWVcrbxc",
+        title: "Transitions 03 — Mike Nasty",
+      },
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/vq5taIZmZyQ",
+        title: "Transitions 04 — DJ Tunez",
+      },
+      {
+        type: "youtube",
+        src: "https://www.youtube.com/embed/tUfyL3CGkq4",
+        title: "Transitions 05 — DJ Khalil",
+      },
     ],
   },
   {

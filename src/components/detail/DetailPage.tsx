@@ -175,6 +175,45 @@ export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; b
               {item.body}
             </p>
           </div>
+          {embeds.length > 0 ? (
+            <div className="mt-12">
+              <p className="mb-5 font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">
+                {item.embedLabel ?? "Listen / Watch"}
+              </p>
+              <div className={`grid gap-5 ${embeds.length > 1 ? "lg:grid-cols-2" : ""}`}>
+                {embeds.map((embed) => {
+                  const isPortrait = embed.type === "youtube" && embed.aspect === "portrait";
+
+                  return (
+                    <article
+                      key={`${embed.title}-${embed.src}`}
+                      className={`min-w-0 border border-white/15 bg-[#111111] p-4 sm:p-5 ${
+                        isPortrait ? "w-full max-w-[30rem] justify-self-center" : ""
+                      }`}
+                    >
+                      <h3 className="mb-4 text-xl font-black uppercase leading-tight">
+                        {embed.title}
+                      </h3>
+                      <iframe
+                        title={embed.title}
+                        src={embed.src}
+                        className={`w-full border-0 ${
+                          embed.type === "spotify"
+                            ? "h-[352px]"
+                            : isPortrait
+                              ? "aspect-[9/16] h-auto"
+                              : "aspect-video h-auto"
+                        }`}
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        allowFullScreen
+                        loading="lazy"
+                      />
+                    </article>
+                  );
+                })}
+              </div>
+            </div>
+          ) : null}
           {item.gallery && item.gallery.length > 0 ? (
             <div className="mt-12">
               <p className="font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">
@@ -229,25 +268,6 @@ export function DetailPage({ item, backHref, backLabel }: { item: ContentItem; b
                     </span>
                     <span className="mt-2 block text-xl font-black uppercase">{link.label}</span>
                   </a>
-                ))}
-              </div>
-            </div>
-          ) : null}
-          {embeds.length > 0 ? (
-            <div className="mt-12">
-              <p className="mb-5 font-mono text-xs uppercase tracking-[0.34em] text-[#b9ff3b]">
-                Embedded players
-              </p>
-              <div className="grid gap-5 lg:grid-cols-2">
-                {embeds.map((embed) => (
-                  <iframe
-                    key={`${embed.title}-${embed.src}`}
-                    title={embed.title}
-                    src={embed.src}
-                    className={`w-full border-0 ${embed.type === "spotify" ? "h-[352px]" : "h-[352px] lg:h-[420px]"}`}
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="lazy"
-                  />
                 ))}
               </div>
             </div>
