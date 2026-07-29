@@ -1255,26 +1255,6 @@ export const projects: ContentItem[] = [
       ...sessionArchive("culture-shock-q4-2024", 16),
     ],
   },
-  {
-    title: "Irie Flyer Wall",
-    slug: "irie-flyer-wall",
-    category: "project",
-    kicker: "Archive / Past rooms",
-    image: "/media/flyer-wall-02.jpg",
-    summary:
-      "A visual wall of early Irie event language: flyers, room signals, and the graphic proof that the platform has been building over time.",
-    body:
-      "Before the archive becomes polished, it starts as a flyer, a date, a room, and a promise that people will show up. The flyer wall keeps those early signals visible: not as disposable promotion, but as evidence of a platform learning its own visual language through events, collaborators, and community memory.",
-    href: "/collaborations/irie-flyer-wall",
-    metadata: ["Flyers", "Archive", "Past events"],
-    gallery: [
-      { src: "/media/flyer-wall-03.jpg", label: "Flyer 03" },
-      { src: "/media/flyer-wall-04.jpg", label: "Flyer 04" },
-      { src: "/media/flyer-wall-05.jpg", label: "Flyer 05" },
-      { src: "/media/flyer-wall-06.jpg", label: "Flyer 06" },
-      { src: "/media/flyer-wall-07.jpg", label: "Flyer 07" },
-    ],
-  },
 ];
 
 export const allItems = [...sessions, ...releases, ...artifacts, ...opportunities, ...projects];
