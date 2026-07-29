@@ -1086,6 +1086,12 @@ export const projects: ContentItem[] = [
       "IRIE's work with Grammy-winning producer Chopstix moves between records, images, and live experience. Together with Aday, Chopstix executive produced BORDERS and helped shape its borderless musical language before carrying that collaboration into the Soundscaping Series and LUST On The Coast. The partnership treats music as a complete world: something written in the studio, translated through film and design, and finally shared in a room.",
     href: "/collaborations/chopstix",
     metadata: ["Chopstix", "Music", "Creative direction"],
+    embedLabel: "Featured conversation",
+    embed: {
+      type: "youtube",
+      src: "https://www.youtube.com/embed/MlGqLiB-jMI",
+      title: "Chopstix in conversation with IRIE",
+    },
     gallery: [
       { src: "/media/collaborations/chopstix/01.jpg", label: "Studio portrait" },
     ],
@@ -1189,18 +1195,18 @@ export const projects: ContentItem[] = [
     ],
   },
   {
-    title: "Transitions — Digital DJ Series",
+    title: "Transitions",
     slug: "transitions-digital-series",
     category: "project",
-    kicker: "2020 / New York / Digital series",
-    image: "/media/transitions-digital-series.svg",
+    kicker: "2020–2021 / Digital series + live gathering",
+    image: "/media/sessions/transitions-live-2021/cover.jpg",
     imageFit: "contain",
     summary:
-      "A five-part digital DJ series carrying IRIE's room-building energy beyond the physical venue.",
+      "A digital DJ series that evolved into a live New York gathering built around sound and community.",
     body:
-      "Transitions translated the IRIE gathering into a digital format through five artist-led DJ sets. Mohogany, GabSoul, Mike Nasty, DJ Tunez, and DJ Khalil each shaped an episode around their own musical language, while the visual system held the series together. Created during a moment when physical rooms were unavailable, the project treated the screen as a cultural space of its own: a place for discovery, movement, and connection.",
+      "Transitions began as a five-part digital DJ series carrying IRIE's room-building energy beyond the physical venue. Mohogany, GabSoul, Mike Nasty, DJ Tunez, and DJ Khalil each shaped an episode around their own musical language while a shared visual system held the series together. In 2021, the idea moved from screen to room through Transitions (Live), a New York gathering supporting Haiti earthquake relief. Together, both chapters treated music as a bridge between discovery, movement, and community.",
     href: "/collaborations/transitions-digital-series",
-    metadata: ["Transitions", "Digital series", "DJ culture"],
+    metadata: ["Transitions", "Digital + live", "DJ culture"],
     embedLabel: "Watch the series",
     embeds: [
       {
