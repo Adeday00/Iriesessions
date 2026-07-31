@@ -453,6 +453,8 @@ export const sessions: ContentItem[] = [
   },
 ];
 
+const irieAudiomack = "https://audiomack.com/iriesessions";
+
 const releaseCatalog: ContentItem[] = [
   {
     title: "Whine Sum",
@@ -476,6 +478,7 @@ const releaseCatalog: ContentItem[] = [
         href: "https://music.apple.com/us/album/whine-sum-single/6764885204",
         kind: "dsp",
       },
+      { label: "Audiomack", href: irieAudiomack, kind: "dsp" },
       {
         label: "YouTube",
         href: "https://www.youtube.com/watch?v=Ki_CyaQz0Ik",
@@ -505,6 +508,7 @@ const releaseCatalog: ContentItem[] = [
         href: "https://music.apple.com/us/album/in-a-mood-single/1863801750",
         kind: "dsp",
       },
+      { label: "Audiomack", href: irieAudiomack, kind: "dsp" },
       {
         label: "YouTube",
         href: "https://www.youtube.com/watch?v=S7tCwHhGlfg",
@@ -534,6 +538,7 @@ const releaseCatalog: ContentItem[] = [
         href: "https://music.apple.com/us/album/feeln-you-single/1837435647",
         kind: "dsp",
       },
+      { label: "Audiomack", href: irieAudiomack, kind: "dsp" },
       {
         label: "YouTube",
         href: "https://www.youtube.com/watch?v=L_2e9KDJ1Bc",
@@ -563,6 +568,7 @@ const releaseCatalog: ContentItem[] = [
         href: "https://music.apple.com/us/album/old-flame-single/1784922569",
         kind: "dsp",
       },
+      { label: "Audiomack", href: irieAudiomack, kind: "dsp" },
       {
         label: "YouTube",
         href: "https://www.youtube.com/watch?v=x8BlqOHSd7Y",
@@ -612,6 +618,7 @@ If you're listening, I hope you hear a piece of your story in it too.`,
         href: "https://music.apple.com/us/album/lust-on-the-coast/1801228443",
         kind: "dsp",
       },
+      { label: "Audiomack", href: irieAudiomack, kind: "dsp" },
     ],
     embedLabel: "Listen / Watch the project",
     embeds: [
@@ -731,6 +738,7 @@ If you're listening, I hope you hear a piece of your story in it too.`,
         href: "https://music.apple.com/us/album/i-forgot-to-press-send-ep/1847951525",
         kind: "dsp",
       },
+      { label: "Audiomack", href: irieAudiomack, kind: "dsp" },
       {
         label: "YouTube",
         href: "https://youtube.com/playlist?list=OLAK5uy_kqluCjO8H7_YQssKhHw6OVRY4xSHt3HOY&si=EPlq4ci3KpKKq-M7",
@@ -773,6 +781,7 @@ If you're listening, I hope you hear a piece of your story in it too.`,
         href: "https://music.apple.com/us/album/a-l-t-e-all-lost-things-evolve-ep/1836208468",
         kind: "dsp",
       },
+      { label: "Audiomack", href: irieAudiomack, kind: "dsp" },
     ],
     embed: {
       type: "spotify",
@@ -802,6 +811,7 @@ If you're listening, I hope you hear a piece of your story in it too.`,
         href: "https://music.apple.com/us/album/2am-single/1822007622",
         kind: "dsp",
       },
+      { label: "Audiomack", href: irieAudiomack, kind: "dsp" },
     ],
     embed: {
       type: "spotify",
@@ -831,6 +841,7 @@ If you're listening, I hope you hear a piece of your story in it too.`,
         href: "https://music.apple.com/us/album/ridiculous-flex-single/1837435476",
         kind: "dsp",
       },
+      { label: "Audiomack", href: irieAudiomack, kind: "dsp" },
     ],
     embedLabel: "Listen / Watch",
     embeds: [
@@ -911,6 +922,7 @@ If you're listening, I hope you hear a piece of your story in it too.`,
         href: "https://music.apple.com/us/album/ibiza-single/1730010933",
         kind: "dsp",
       },
+      { label: "Audiomack", href: irieAudiomack, kind: "dsp" },
     ],
     embed: {
       type: "spotify",
