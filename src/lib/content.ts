@@ -1171,38 +1171,6 @@ export const projects: ContentItem[] = [
     ],
   },
   {
-    title: "IRIE SESSIONS x Zen Univrse",
-    slug: "irie-sessions-x-zen-univrse",
-    category: "project",
-    kicker: "2025-present / Music / Artist collaboration",
-    image: "/media/music/radio.jpg",
-    imageFit: "contain",
-    summary:
-      "A developing musical partnership built through Radio, 4:30, and Ridiculous Flex.",
-    body:
-      "IRIE SESSIONS and Zen Univrse have built a collaborative language across three records with distinct energies. Radio introduced the partnership through a sleek, atmospheric Afrobeats single. 4:30 expanded the world with Easyscope and Trill Xoe, moving from the studio into a live performance in Epe. Ridiculous Flex followed with a looser, self-assured energy. Together, the releases show how an artist relationship can grow through sound, visual direction, performance, and repetition rather than a single campaign moment.",
-    href: "/collaborations/irie-sessions-x-zen-univrse",
-    metadata: ["Zen Univrse", "Music", "Artist collaboration"],
-    embedLabel: "Selected films",
-    embeds: [
-      {
-        type: "youtube",
-        src: "https://www.youtube.com/embed/iWyu-DIPhY0",
-        title: "Radio — official video",
-      },
-      {
-        type: "youtube",
-        src: "https://www.youtube.com/embed/rR-mVMHyC20",
-        title: "4:30 — live in Epe",
-      },
-      {
-        type: "youtube",
-        src: "https://www.youtube.com/embed/xWxRLITktSc",
-        title: "Ridiculous Flex — official video",
-      },
-    ],
-  },
-  {
     title: "Transitions",
     slug: "transitions-digital-series",
     category: "project",
