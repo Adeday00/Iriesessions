@@ -8,7 +8,7 @@ import { SHOW_GALLERY_IMAGE_CAPTIONS } from "@/lib/ui-config";
 
 type GalleryImage = NonNullable<ContentItem["gallery"]>[number];
 
-function Lightbox({
+export function Lightbox({
   images,
   activeIndex,
   onChange,

@@ -1,22 +1,32 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { Lightbox } from "@/components/detail/MediaLightbox";
 
 const posters = [
-  { src: "/media/flyer-wall-02.jpg", alt: "Irie Sessions event poster" },
-  { src: "/media/flyer-wall-03.jpg", alt: "Irie live event poster" },
-  { src: "/media/flyer-wall-04.jpg", alt: "Irie community event poster" },
-  { src: "/media/flyer-wall-05.jpg", alt: "Irie archive poster" },
-  { src: "/media/flyer-wall-06.jpg", alt: "Irie cultural event poster" },
-  { src: "/media/flyer-wall-07.jpg", alt: "Irie past event poster" },
-  { src: "/media/btw-01.jpg", alt: "Be There Weekly event poster" },
-  { src: "/media/btw-02.jpg", alt: "Be There Weekly lineup poster" },
+  { src: "/media/flyer-wall-02.jpg", alt: "Irie Sessions event poster", label: "Irie Sessions event poster" },
+  { src: "/media/flyer-wall-03.jpg", alt: "Irie live event poster", label: "Irie live event poster" },
+  { src: "/media/flyer-wall-04.jpg", alt: "Irie community event poster", label: "Irie community event poster" },
+  { src: "/media/flyer-wall-05.jpg", alt: "Irie archive poster", label: "Irie archive poster" },
+  { src: "/media/flyer-wall-06.jpg", alt: "Irie cultural event poster", label: "Irie cultural event poster" },
+  { src: "/media/flyer-wall-07.jpg", alt: "Irie past event poster", label: "Irie past event poster" },
+  { src: "/media/btw-01.jpg", alt: "Be There Weekly event poster", label: "Be There Weekly event poster" },
+  { src: "/media/btw-02.jpg", alt: "Be There Weekly lineup poster", label: "Be There Weekly lineup poster" },
 ];
 
 export function PosterWall() {
   const trackRef = useRef<HTMLDivElement>(null);
+  const triggerRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const closeLightbox = () => {
+    const previousIndex = activeIndex;
+    setActiveIndex(null);
+    if (previousIndex !== null) {
+      window.requestAnimationFrame(() => triggerRefs.current[previousIndex]?.focus());
+    }
+  };
 
   const move = useCallback((direction: 1 | -1) => {
     const track = trackRef.current;
@@ -74,16 +84,27 @@ export function PosterWall() {
         data-testid="poster-track"
         className="mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-3 [scrollbar-width:none] sm:px-8 lg:px-12 [&::-webkit-scrollbar]:hidden"
       >
-        {posters.map((poster) => (
-          <Link
+        {posters.map((poster, index) => (
+          <button
             key={poster.src}
-            href="/collaborations/irie-flyer-wall"
-            className="media-lift relative aspect-[4/5] w-60 shrink-0 snap-start overflow-hidden bg-[#151515] sm:w-72 lg:w-80"
+            ref={(element) => {
+              triggerRefs.current[index] = element;
+            }}
+            type="button"
+            onClick={() => setActiveIndex(index)}
+            aria-label={`Enlarge ${poster.alt}`}
+            className="media-lift group relative aspect-[4/5] w-60 shrink-0 snap-start cursor-zoom-in overflow-hidden bg-[#151515] text-left sm:w-72 lg:w-80"
           >
             <Image src={poster.src} alt={poster.alt} fill sizes="320px" className="object-contain" />
-          </Link>
+            <span className="absolute bottom-3 right-3 border border-white/30 bg-black/70 px-2.5 py-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white transition-colors group-hover:border-[#b9ff3b] group-hover:bg-[#b9ff3b] group-hover:text-black">
+              Enlarge ↗
+            </span>
+          </button>
         ))}
       </div>
+      {activeIndex !== null ? (
+        <Lightbox images={posters} activeIndex={activeIndex} onChange={setActiveIndex} onClose={closeLightbox} />
+      ) : null}
     </section>
   );
 }
