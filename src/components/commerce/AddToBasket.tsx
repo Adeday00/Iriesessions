@@ -32,7 +32,7 @@ function getCheckoutLines(
   nextLines.push({
     itemSlug: item.slug,
     title: item.title,
-    image: item.image,
+    image: variant.image ?? item.image,
     variantId: variant.id,
     shopifyVariantId: variant.shopifyVariantId,
     label: variant.label,
@@ -43,13 +43,21 @@ function getCheckoutLines(
   return nextLines;
 }
 
-export function AddToBasket({ item }: { item: ContentItem }) {
+export function AddToBasket({
+  item,
+  selectedVariantId,
+  onVariantChange,
+}: {
+  item: ContentItem;
+  selectedVariantId?: string;
+  onVariantChange?: (variantId: string) => void;
+}) {
   const { lines, openDrawer } = useBasket();
   const variants = item.commerce?.variants ?? [];
   const purchasable = item.commerce?.status === "available";
 
   const firstAvailable = variants.find((variant) => variant.available) ?? variants[0];
-  const [selectedId, setSelectedId] = useState(firstAvailable?.id);
+  const [internalSelectedId, setInternalSelectedId] = useState(firstAvailable?.id);
   const [quantity, setQuantity] = useState(1);
   const [justAdded, setJustAdded] = useState(false);
   const [isBuying, setIsBuying] = useState(false);
@@ -66,10 +74,16 @@ export function AddToBasket({ item }: { item: ContentItem }) {
     return null;
   }
 
+  const selectedId = selectedVariantId ?? internalSelectedId;
   const selected = variants.find((variant) => variant.id === selectedId) ?? firstAvailable;
   const canAdd = Boolean(purchasable && selected?.available);
   const unitPrice = selected?.price ? parsePriceToCents(selected.price) : null;
   const buyNowPrice = unitPrice === null ? selected?.price : formatCents(unitPrice * quantity);
+
+  function handleVariantChange(variantId: string) {
+    setInternalSelectedId(variantId);
+    onVariantChange?.(variantId);
+  }
 
   function handleAdd() {
     if (!canAdd || !selected) {
@@ -114,14 +128,14 @@ export function AddToBasket({ item }: { item: ContentItem }) {
         {variants.length > 1 ? (
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#81786d]">Option</p>
-            <div className="mt-3 flex flex-wrap gap-2">
+            <div className="mt-3 grid grid-cols-1 gap-2 min-[420px]:grid-cols-3">
               {variants.map((variant) => {
                 const isActive = variant.id === selected?.id;
                 return (
                   <button
                     key={variant.id}
                     type="button"
-                    onClick={() => setSelectedId(variant.id)}
+                    onClick={() => handleVariantChange(variant.id)}
                     disabled={!variant.available}
                     aria-pressed={isActive}
                     className={`border px-4 py-3 font-mono text-[11px] uppercase tracking-[0.16em] transition-colors ${

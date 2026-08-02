@@ -34,6 +34,7 @@ export type CommerceVariant = {
   label: string;
   price: string;
   available: boolean;
+  image?: string;
 };
 
 export type CommerceItem = {
@@ -998,7 +999,7 @@ export const artifacts: ContentItem[] = [
     summary:
       "A limited-edition cotton corduroy hat featuring raised embroidery and IRIE detailing.",
     body:
-      "A statement worth wearing. Crafted in black cotton corduroy, this limited-edition hat features raised “Women Make Things 10X Better” embroidery, signature white IRIE detailing and an adjustable snapback closure.\n\nDesigned as a celebration of the women who elevate our lives, ideas and culture.\n\nOrders ship within 24–48 hours after processing.",
+      "A statement worth wearing. Crafted in cotton corduroy, this limited-edition hat features raised “Women Make Things 10X Better” embroidery, signature IRIE detailing and an adjustable snapback closure.\n\nAvailable in Black/White, Black/Black and limited Green. Designed as a celebration of the women who elevate our lives, ideas and culture.\n\nOrders ship within 24–48 hours after processing.",
     href: "/shop/women-make-things-10x-better-hat",
     metadata: ["100% corduroy cotton", "Limited edition", "Snap closure"],
     commerce: {
@@ -1009,9 +1010,26 @@ export const artifacts: ContentItem[] = [
         {
           id: "hat-black-white",
           shopifyVariantId: process.env.NEXT_PUBLIC_SHOPIFY_VARIANT_HAT_BLACK_WHITE ?? "49582180696357",
-          label: "Black / White Text",
+          label: "Black / White",
           price: "$60.00",
           available: true,
+          image: "/media/hat-black-white-text.jpg",
+        },
+        {
+          id: "hat-black-black",
+          shopifyVariantId: process.env.NEXT_PUBLIC_SHOPIFY_VARIANT_HAT_BLACK_BLACK ?? "52041105080613",
+          label: "Black / Black",
+          price: "$60.00",
+          available: true,
+          image: "/media/hat-black-black-01.jpg",
+        },
+        {
+          id: "hat-green-limited",
+          shopifyVariantId: process.env.NEXT_PUBLIC_SHOPIFY_VARIANT_HAT_GREEN ?? "52962431009061",
+          label: "Green / Limited",
+          price: "$60.00",
+          available: true,
+          image: "/media/hat-green-03.jpg",
         },
       ],
     },
@@ -1023,6 +1041,30 @@ export const artifacts: ContentItem[] = [
       {
         src: "/media/hat-product-03.jpg",
         label: "Side detail",
+      },
+      {
+        src: "/media/hat-black-black-01.jpg",
+        label: "Black on black front",
+      },
+      {
+        src: "/media/hat-black-black-02.jpg",
+        label: "Black on black side",
+      },
+      {
+        src: "/media/hat-black-black-03.jpg",
+        label: "Black on black back",
+      },
+      {
+        src: "/media/hat-green-03.jpg",
+        label: "Limited green front",
+      },
+      {
+        src: "/media/hat-green-01.jpg",
+        label: "Limited green side",
+      },
+      {
+        src: "/media/hat-green-02.jpg",
+        label: "Limited green back",
       },
     ],
   },
@@ -1061,6 +1103,10 @@ export const artifacts: ContentItem[] = [
         src: "/media/earrings-product-03.jpg",
         label: "Worn detail",
       },
+      {
+        src: "/media/earrings-box-02.jpg",
+        label: "Earrings in presentation box",
+      },
     ],
   },
 ];
@@ -1091,7 +1137,7 @@ export const projects: ContentItem[] = [
     summary:
       "An ongoing creative partnership spanning BORDERS, live soundscaping, and LUST On The Coast.",
     body:
-      "IRIE's work with Grammy-winning producer Chopstix moves between records, images, and live experience. Together with Aday, Chopstix executive produced BORDERS and helped shape its borderless musical language before carrying that collaboration into the Soundscaping Series and LUST On The Coast. The partnership treats music as a complete world: something written in the studio, translated through film and design, and finally shared in a room.",
+      "Our collaboration with Grammy-winning producer Chopstix spans music, creative direction, and long-term world-building. Led by IRIE founder Aday, the partnership began with BORDERS, where Chopstix served as Executive Producer alongside Aday, helping shape the project's cross-cultural sonic identity and laying the foundation for IRIE's multidisciplinary approach to storytelling.\n\nThe collaboration continued with LUST On The Coast, expanding beyond record-making into a broader creative partnership that connects music with visual direction, live experiences, and artist development. Working closely with Chopstix as Creative Director and A&R, Aday has contributed across creative strategy, project development, and release execution.\n\nBeyond IRIE releases, the partnership has extended into Chopstix's wider career, including creative involvement during the development of his collaboration with Chris Brown and Byron Messia. Their continued work together was further recognized with a Grammy certification, reflecting a relationship built on sustained creative collaboration rather than individual projects.",
     href: "/collaborations/chopstix",
     metadata: ["Chopstix", "Music", "Creative direction"],
     embedLabel: "Featured conversation",
@@ -1102,6 +1148,8 @@ export const projects: ContentItem[] = [
     },
     gallery: [
       { src: "/media/collaborations/chopstix/01.jpg", label: "Studio portrait" },
+      { src: "/media/collaborations/chopstix/02.jpg", label: "Chopstix portrait" },
+      { src: "/media/collaborations/chopstix/03.jpg", label: "Grammy certification" },
     ],
   },
   {
@@ -1113,7 +1161,7 @@ export const projects: ContentItem[] = [
     summary:
       "IRIE Global resident DJ and managed artist, shaping the sound of our rooms in New York and beyond.",
     body:
-      "Brooklyn-born with Liberian roots, DJ Mohogany is a defining part of the IRIE Global sound. Known for seamlessly moving between Afrobeats, Amapiano, Dancehall, Hip-Hop and R&B, she brings a distinct cultural fluency to every room she enters.\n\nFrom Transitions (Live) to Riddim & Soul, Mohogany has helped soundtrack IRIE gatherings built around discovery, movement and exchange. Her role extends beyond performance: as an IRIE Global–managed artist and resident DJ, the collaboration includes creative direction, bookings, partnerships, brand positioning and long-term artist development.\n\nHer wider work spans major festivals, cultural stages and brand environments, including SummerStage, AfroFuture, AfroNation and Piano People, alongside collaborations with names across fashion, beauty and technology.\n\nThe relationship reflects a core IRIE belief: the person shaping the sound also shapes how a community experiences—and remembers—the room.",
+      "IRIE Global's partnership with DJ Mohogany began long before management. Having followed her journey for years, founder Aday brokered her first major breakthrough in 2022, securing her booking for Rihanna and Richie Akiva's Met Gala After Party. Although the experience challenged her, it became the catalyst for years of growth, pushing her to refine her craft and establish herself as one of the most respected DJs within the African diaspora.\n\nThree years later, Aday secured her booking for Burna Boy's New York Met Gala After Party, where her standout performance earned recognition from The New York Times and marked the beginning of a formal partnership.\n\nToday, IRIE Global oversees Mohogany's creative direction, management, bookings, and long-term artist development, supporting a career that spans SummerStage, AfroFuture, AfroNation, and Piano People, alongside collaborations with brands including Burberry, Nike, Hennessy, Google, Foot Locker, Christian Louboutin, and Amazon Music.",
     href: "/collaborations/dj-mohogany",
     metadata: ["DJ Mohogany", "New York", "Sound / Artist Development", "Resident Artist"],
     embedLabel: "Selected films",
@@ -1139,6 +1187,11 @@ export const projects: ContentItem[] = [
     gallery: [
       { src: "/media/collaborations/mohogany/01.jpg", label: "Portrait study" },
       { src: "/media/collaborations/mohogany/02.jpg", label: "Full portrait" },
+      { src: "/media/collaborations/mohogany/03.jpg", label: "Red studio portrait" },
+      { src: "/media/collaborations/mohogany/04.jpg", label: "Live performance" },
+      { src: "/media/collaborations/mohogany/05.jpg", label: "IRIE core member portrait" },
+      { src: "/media/collaborations/mohogany/06.jpg", label: "Red curtain portrait" },
+      { src: "/media/collaborations/mohogany/07.jpg", label: "Studio movement portrait" },
     ],
   },
   {

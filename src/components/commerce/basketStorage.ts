@@ -61,7 +61,7 @@ export function addBasketLine(item: ContentItem, variant: CommerceVariant, quant
     lines.push({
       itemSlug: item.slug,
       title: item.title,
-      image: item.image,
+      image: variant.image ?? item.image,
       variantId: variant.id,
       shopifyVariantId: variant.shopifyVariantId,
       label: variant.label,
