@@ -1209,7 +1209,7 @@ export const projects: ContentItem[] = [
     embedLabel: "Campaign film",
     embed: {
       type: "youtube",
-      src: "https://www.youtube.com/embed/PTcHmwoXzto",
+      src: "https://www.youtube.com/embed/r6HV5X-HPVk",
       title: "IRIE SESSIONS x BAYO — Barclays Center 2025",
     },
     gallery: [
