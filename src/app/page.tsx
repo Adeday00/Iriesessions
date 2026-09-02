@@ -12,18 +12,21 @@ const pillars = [
     kicker: "Gather / Experience / Connect",
     copy: "Spaces for music, conversation, and creative exchange.",
     image: "/media/session-paris-04.jpg",
+    href: "/sessions",
   },
   {
     title: "Music",
     kicker: "Listen / Watch / Discover",
     copy: "An archive of sound, process, and the people behind it.",
     image: "/media/lust-on-the-coast.jpg",
+    href: "/music",
   },
   {
     title: "Shop",
     kicker: "Wear / Read / Collect",
     copy: "Objects, books, apparel, and editions designed to carry culture beyond the moment.",
     image: "/media/hat-black-front.jpg",
+    href: "/shop",
   },
 ];
 
@@ -135,20 +138,31 @@ export default function Home() {
       <section className="grid border-y border-white/15 bg-[#111111] md:grid-cols-3">
         {pillars.map((pillar) => (
           <article key={pillar.title} className="media-lift group border-white/15 p-5 md:border-r lg:p-8">
-            <div className="relative mb-6 aspect-[4/5] overflow-hidden bg-[#1a1a1a]">
+            <Link
+              href={pillar.href}
+              aria-label={`Explore ${pillar.title}`}
+              className="relative mb-6 block aspect-[4/5] overflow-hidden bg-[#1a1a1a] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#b9ff3b]"
+            >
               <Image
                 src={pillar.image}
-                alt=""
+                alt={`${pillar.title}: ${pillar.kicker}`}
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
-                className="object-cover"
+                className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.025]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
               <p className="absolute bottom-4 left-4 font-mono text-[11px] uppercase tracking-[0.22em] text-[#b9ff3b]">
                 {pillar.kicker}
               </p>
-            </div>
-            <h2 className="text-4xl font-black uppercase tracking-tight">{pillar.title}</h2>
+            </Link>
+            <h2 className="text-4xl font-black uppercase tracking-tight">
+              <Link
+                href={pillar.href}
+                className="transition-colors hover:text-[#b9ff3b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#b9ff3b]"
+              >
+                {pillar.title}
+              </Link>
+            </h2>
             <p className="mt-4 max-w-md text-base leading-7 text-[#bdb3a5]">{pillar.copy}</p>
           </article>
         ))}

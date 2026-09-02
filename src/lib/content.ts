@@ -1210,7 +1210,7 @@ export const projects: ContentItem[] = [
     embed: {
       type: "youtube",
       src: "https://www.youtube.com/embed/r6HV5X-HPVk",
-      title: "IRIE SESSIONS x BAYO — Barclays Center 2025",
+      title: "MOMENTUM SZN4 EP1: Michaël Brun",
     },
     gallery: [
       { src: "/media/bayo-tour-02.jpg", label: "Polaroid direction" },
