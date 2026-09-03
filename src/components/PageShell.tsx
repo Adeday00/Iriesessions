@@ -13,6 +13,9 @@ type Card = {
   kicker?: string;
   metadata?: string[];
   imageFit?: "cover" | "contain";
+  commerce?: {
+    status: "available" | "comingSoon" | "soldOut";
+  };
 };
 
 type PageShellProps = {
@@ -91,6 +94,7 @@ export function EditorialGrid({
       {items.map((item, index) => {
         const isRelease = item.category === "release";
         const isArtifact = item.category === "artifact";
+        const isSoldOut = item.commerce?.status === "soldOut";
         const isFlyer = item.imageFit === "contain" && !isRelease && !isArtifact;
         const kicker = kickerLabels?.[index] ?? item.kicker ?? item.metadata?.slice(0, 2).join(" / ");
 
@@ -163,7 +167,7 @@ export function EditorialGrid({
               href={item.href}
               className="group/cta mt-6 inline-flex w-fit items-center gap-2 font-mono text-xs uppercase tracking-[0.22em] text-[#b9ff3b] transition-colors hover:text-[#f4efe5]"
             >
-              {cta}
+              {isSoldOut ? "Sold out" : cta}
               <span aria-hidden className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/cta:translate-x-1">
                 →
               </span>

@@ -954,16 +954,16 @@ export const artifacts: ContentItem[] = [
     href: "/shop/borders-visualscaping-zine",
     metadata: ["Full-color print", "Limited edition", "BORDERS"],
     commerce: {
-      status: "available",
+      status: "soldOut",
       price: "$40.00 USD",
-      note: "Secure checkout. Shipping details are collected at payment.",
+      note: "The limited first edition is sold out.",
       variants: [
         {
           id: "borders-visualscaping-zine",
           shopifyVariantId: process.env.NEXT_PUBLIC_SHOPIFY_VARIANT_BORDERS_ZINE ?? "52564524826917",
           label: "Limited print run",
           price: "$40.00",
-          available: true,
+          available: false,
         },
       ],
     },

@@ -79,6 +79,12 @@ export function AddToBasket({
   const canAdd = Boolean(purchasable && selected?.available);
   const unitPrice = selected?.price ? parsePriceToCents(selected.price) : null;
   const buyNowPrice = unitPrice === null ? selected?.price : formatCents(unitPrice * quantity);
+  const unavailableLabel =
+    item.commerce?.status === "soldOut"
+      ? "Sold out"
+      : item.commerce?.status === "comingSoon"
+        ? "Coming soon"
+        : "Unavailable";
 
   function handleVariantChange(variantId: string) {
     setInternalSelectedId(variantId);
@@ -191,7 +197,7 @@ export function AddToBasket({
               : "cursor-not-allowed bg-white/10 text-white/45"
           }`}
         >
-          {justAdded ? "Added to bag" : canAdd ? "Add to bag" : purchasable ? "Unavailable" : "Coming soon"}
+          {justAdded ? "Added to bag" : canAdd ? "Add to bag" : unavailableLabel}
         </button>
       </div>
 
@@ -218,9 +224,7 @@ export function AddToBasket({
             ? "Opening secure checkout..."
             : canAdd
               ? `Buy now${buyNowPrice ? ` / ${buyNowPrice}` : ""}`
-              : purchasable
-                ? "Unavailable"
-                : "Coming soon"}
+              : unavailableLabel}
         </button>
       </div>
     </>
