@@ -21,7 +21,7 @@ Set the final public origin at build time so page canonicals, social metadata,
 NEXT_PUBLIC_SITE_URL=https://iriesessions.global
 ```
 
-Until that variable is set, builds use the current Netlify URL.
+Builds default to `https://iriesessions.global`. Netlify sets this explicitly for canonical URLs and the sitemap, and redirects its default subdomain to the custom domain.
 
 ## Shopify Checkout
 
@@ -75,7 +75,7 @@ After each Shopify or Netlify configuration change:
 Cart creation can be smoke-tested without placing an order:
 
 ```bash
-curl -X POST https://iriesessions.netlify.app/.netlify/functions/create-shopify-cart \
+curl -X POST https://iriesessions.global/.netlify/functions/create-shopify-cart \
   -H 'Content-Type: application/json' \
   --data '{"lines":[{"merchandiseId":"gid://shopify/ProductVariant/49582180696357","quantity":1}]}'
 ```

@@ -6,9 +6,22 @@
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
   NODE_VERSION = "22"
   PNPM_VERSION = "11.1.1"
+  NEXT_PUBLIC_SITE_URL = "https://iriesessions.global"
 
 [functions]
   directory = "netlify/functions"
+
+[[redirects]]
+  from = "https://iriesessions.netlify.app/*"
+  to = "https://iriesessions.global/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://iriesessions.netlify.app/*"
+  to = "https://iriesessions.global/:splat"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/journal"

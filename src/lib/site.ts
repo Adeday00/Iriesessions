@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
 
-export const siteUrl = (configuredSiteUrl || "https://iriesessions.netlify.app").replace(/\/+$/, "");
+export const siteUrl = (configuredSiteUrl || "https://iriesessions.global").replace(/\/+$/, "");
 
 type PageMetadataOptions = {
   title: string;
