@@ -28,10 +28,9 @@ export const metadata: Metadata = {
     "A diasporic culture studio turning local scenes into shared global memory through sound, style, image, and gathering.",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
       { url: "/icon.png", sizes: "192x192", type: "image/png" },
     ],
-    shortcut: "/favicon.ico",
+    shortcut: "/icon.png",
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
   manifest: "/manifest.webmanifest",
