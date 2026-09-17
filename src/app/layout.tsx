@@ -18,6 +18,32 @@ const spaceMono = Space_Mono({
   variable: "--font-space-mono",
 });
 
+const siteIdentityJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      name: "Irie Sessions",
+      alternateName: "IRIE SESSIONS",
+      url: `${siteUrl}/`,
+      publisher: {
+        "@id": `${siteUrl}/#organization`,
+      },
+    },
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      name: "Irie Sessions",
+      url: `${siteUrl}/`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteUrl}/irie-logo.png`,
+      },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -68,6 +94,12 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: "document.documentElement.classList.add('js')",
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(siteIdentityJsonLd),
           }}
         />
         <SmoothScroll />
